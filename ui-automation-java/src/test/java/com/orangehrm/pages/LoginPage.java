@@ -36,7 +36,7 @@ public class LoginPage extends BasePage {
         return switch (v) {
             case "__ADMIN_USERNAME__" -> TestConfig.adminUsername();
             case "__ADMIN_PASSWORD__" -> TestConfig.adminPassword();
-            case "__ESS_USERNAME__ -> TestConfig.essUsername();
+            case "__ESS_USERNAME__" -> TestConfig.essUsername();
             case "__ESS_PASSWORD__" -> TestConfig.essPassword();
             default -> v;
         };
