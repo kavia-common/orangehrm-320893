@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -42,7 +41,9 @@ public final class DriverFactory {
         }
 
         String browser = TestConfig.browser().toLowerCase();
-        boolean headless = TestConfig.headless();
+
+        // In many CI/container environments DISPLAY/WAYLAND_DISPLAY are absent, so headed mode will fail.
+        boolean headless = TestConfig.headless() || isNoDisplayAvailable();
 
         WebDriver driver;
 
@@ -79,9 +80,16 @@ public final class DriverFactory {
 
                 String chromeBinary = resolveChromeBinaryPath();
                 if (chromeBinary != null) {
-                    // Ensure both Selenium and WebDriverManager point at the same browser binary.
+                    // Ensure Selenium uses the same browser binary we use for driver resolution.
                     options.setBinary(chromeBinary);
-                    wdm.browserPath(chromeBinary);
+
+                    // WebDriverManager 5.8.0 does not have browserPath(...).
+                    // Provide an explicit browser version detection command so WDM can
+                    // resolve a matching driver even when Chrome is not on PATH.
+                    String versionCommand = chromeBinary.contains(" ")
+                            ? "\"" + chromeBinary + "\" --version"
+                            : chromeBinary + " --version";
+                    wdm.browserVersionDetectionCommand(versionCommand);
 
                     // Small diagnostic to help when containers have non-standard Chrome paths.
                     System.out.println("[DriverFactory] Using Chrome binary: " + chromeBinary);
@@ -140,6 +148,12 @@ public final class DriverFactory {
             // best-effort only; fall back to defaults if anything is odd in the environment
         }
         return null;
+    }
+
+    private static boolean isNoDisplayAvailable() {
+        String display = System.getenv("DISPLAY");
+        String wayland = System.getenv("WAYLAND_DISPLAY");
+        return (display == null || display.isBlank()) && (wayland == null || wayland.isBlank());
     }
 
     // PUBLIC_INTERFACE

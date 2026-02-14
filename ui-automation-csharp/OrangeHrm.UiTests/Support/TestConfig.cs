@@ -43,6 +43,9 @@ public static class TestConfig
     public static bool Headless => bool.TryParse(Get("HEADLESS", "false"), out var v) && v;
 
     // PUBLIC_INTERFACE
+    public static string ChromeBinary => Get("CHROME_BINARY", Get("CHROME_BIN", ""));
+
+    // PUBLIC_INTERFACE
     public static string AdminUsername => Get("ADMIN_USERNAME", "__ADMIN_USERNAME__");
 
     // PUBLIC_INTERFACE

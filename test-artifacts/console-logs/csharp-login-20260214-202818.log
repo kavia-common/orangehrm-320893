@@ -1,0 +1,69 @@
+  Determining projects to restore...
+  Restored /home/kavia/workspace/code-generation/orangehrm-320893/ui-automation-csharp/OrangeHrm.UiTests/OrangeHrm.UiTests.csproj (in 1.11 sec).
+  AspectInjector|2.8.1: Found 0 aspects, 0 injections
+  OrangeHrm.UiTests -> /home/kavia/workspace/code-generation/orangehrm-320893/ui-automation-csharp/OrangeHrm.UiTests/bin/Debug/net8.0/OrangeHrm.UiTests.dll
+Test run for /home/kavia/workspace/code-generation/orangehrm-320893/ui-automation-csharp/OrangeHrm.UiTests/bin/Debug/net8.0/OrangeHrm.UiTests.dll (.NETCoreApp,Version=v8.0)
+Microsoft (R) Test Execution Command Line Tool Version 17.8.0 (x64)
+Copyright (c) Microsoft Corporation.  All rights reserved.
+
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+Starting ChromeDriver 114.0.5735.90 (386bc09e8f4f2e025eddae123f36f6263096ae49-refs/branch-heads/5735@{#1052}) on port 35555
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+Given the user is on the OrangeHRM login page
+-> skipped because of previous errors
+When the user logs in with username "__ADMIN_USERNAME__" and password "__ADMIN_PASSWORD__"
+-> skipped because of previous errors
+Then login should succeed and Dashboard should be visible
+-> skipped because of previous errors
+
+  Failed Login_PositiveNegativeBoundaryValidationCaseId("L01","__ADMIN_USERNAME__","__ADMIN_PASSWORD__","login should succeed and Dashboard should be visible","0",null) [928 ms]
+  Error Message:
+   OpenQA.Selenium.WebDriverException : unknown error: Chrome failed to start: crashed.
+  (unknown error: DevToolsActivePort file doesn't exist)
+  (The process started from chrome location /usr/bin/google-chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.)
+  Stack Trace:
+     at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)
+   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   at OpenQA.Selenium.WebDriver.StartSession(ICapabilities capabilities)
+   at OpenQA.Selenium.WebDriver..ctor(ICommandExecutor executor, ICapabilities capabilities)
+   at OpenQA.Selenium.Chromium.ChromiumDriver..ctor(ChromiumDriverService service, ChromiumOptions options, TimeSpan commandTimeout)
+   at OpenQA.Selenium.Chrome.ChromeDriver..ctor(ChromeDriverService service, ChromeOptions options, TimeSpan commandTimeout)
+   at OpenQA.Selenium.Chrome.ChromeDriver..ctor(ChromeOptions options)
+   at OrangeHrm.UiTests.Support.DriverFactory.CreateDriver() in /home/kavia/workspace/code-generation/orangehrm-320893/ui-automation-csharp/OrangeHrm.UiTests/Support/DriverFactory.cs:line 47
+   at OrangeHrm.UiTests.Steps.Hooks.BeforeScenario() in /home/kavia/workspace/code-generation/orangehrm-320893/ui-automation-csharp/OrangeHrm.UiTests/Steps/Hooks.cs:line 22
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+--- End of stack trace from previous location ---
+   at Reqnroll.Bindings.BindingInvoker.InvokeBindingAsync(IBinding binding, IContextManager contextManager, Object[] arguments, ITestTracer testTracer, DurationHolder durationHolder)
+   at Reqnroll.Infrastructure.TestExecutionEngine.InvokeHookAsync(IAsyncBindingInvoker invoker, IHookBinding hookBinding, HookType hookType)
+   at Reqnroll.Infrastructure.TestExecutionEngine.InvokeHookAsync(IAsyncBindingInvoker invoker, IHookBinding hookBinding, HookType hookType)
+   at Reqnroll.Infrastructure.TestExecutionEngine.FireEventsAsync(HookType hookType)
+   at Reqnroll.Infrastructure.TestExecutionEngine.FireEventsAsync(HookType hookType)
+   at Reqnroll.Infrastructure.TestExecutionEngine.FireScenarioEventsAsync(HookType bindingEvent)
+   at Reqnroll.Infrastructure.TestExecutionEngine.OnScenarioStartAsync()
+   at Reqnroll.Infrastructure.TestExecutionEngine.OnAfterLastStepAsync()
+   at Reqnroll.TestRunner.CollectScenarioErrorsAsync()
+   at Allure.ReqnrollPlugin.SelectiveRun.TestPlanAwareTestRunner.CollectScenarioErrorsAsync()
+   at OrangeHrm.UiTests.Features.OrangeHRMRegressionSuite150ScenariosFeature.ScenarioCleanupAsync()
+   at OrangeHrm.UiTests.Features.OrangeHRMRegressionSuite150ScenariosFeature.Login_PositiveNegativeBoundaryValidationCaseId(String caseId, String username, String password, String expectedResult, String __pickleIndex, String[] exampleTags) in /home/kavia/workspace/code-generation/orangehrm-320893/ui-automation-csharp/OrangeHrm.UiTests/Features/OrangeHrmRegression.feature:line 10
+   at NUnit.Framework.Internal.TaskAwaitAdapter.GenericAdapter`1.GetResult()
+   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await(Func`1 invoke)
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.RunTestMethod(TestExecutionContext context)
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.Execute(TestExecutionContext context)
+   at NUnit.Framework.Internal.Commands.BeforeAndAfterTestCommand.<>c__DisplayClass1_0.<Execute>b__0()
+   at NUnit.Framework.Internal.Commands.DelegatingTestCommand.RunTestMethodInThreadAbortSafeZone(TestExecutionContext context, Action action)
+
+  Standard Output Messages:
+ Given the user is on the OrangeHRM login page
+ -> skipped because of previous errors
+ When the user logs in with username "__ADMIN_USERNAME__" and password "__ADMIN_PASSWORD__"
+ -> skipped because of previous errors
+ Then login should succeed and Dashboard should be visible
+ -> skipped because of previous errors
+
+
+
+Failed!  - Failed:     1, Passed:     0, Skipped:     0, Total:     1, Duration: 928 ms - OrangeHrm.UiTests.dll (net8.0)
