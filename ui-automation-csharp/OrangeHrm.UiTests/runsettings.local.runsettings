@@ -5,10 +5,10 @@
     <Parameter name="BROWSER" value="chrome" />
     <Parameter name="HEADLESS" value="false" />
 
-    <!-- Credentials placeholders -->
-    <Parameter name="ADMIN_USERNAME" value="__ADMIN_USERNAME__" />
-    <Parameter name="ADMIN_PASSWORD" value="__ADMIN_PASSWORD__" />
-    <Parameter name="ESS_USERNAME" value="__ESS_USERNAME__" />
-    <Parameter name="ESS_PASSWORD" value="__ESS_PASSWORD__" />
+    <!-- Credentials for this execution run -->
+    <Parameter name="ADMIN_USERNAME" value="Admin" />
+    <Parameter name="ADMIN_PASSWORD" value="admin123" />
+    <Parameter name="ESS_USERNAME" value="" />
+    <Parameter name="ESS_PASSWORD" value="" />
   </TestRunParameters>
 </RunSettings>
