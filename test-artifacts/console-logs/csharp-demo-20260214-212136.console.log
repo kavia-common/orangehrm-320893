@@ -1,0 +1,48 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  OrangeHrm.UiTests -> /home/kavia/workspace/code-generation/orangehrm-320893/ui-automation-csharp/OrangeHrm.UiTests/bin/Debug/net8.0/OrangeHrm.UiTests.dll
+Test run for /home/kavia/workspace/code-generation/orangehrm-320893/ui-automation-csharp/OrangeHrm.UiTests/bin/Debug/net8.0/OrangeHrm.UiTests.dll (.NETCoreApp,Version=v8.0)
+Starting test execution, please wait...
+Logging Vstest Diagnostics in file: /home/kavia/workspace/code-generation/orangehrm-320893/test-artifacts/console-logs/csharp-demo-20260214-212136.diag.log
+A total of 1 test files matched the specified pattern.
+/home/kavia/workspace/code-generation/orangehrm-320893/ui-automation-csharp/OrangeHrm.UiTests/bin/Debug/net8.0/OrangeHrm.UiTests.dll
+Logging TestHost Diagnostics in file: /home/kavia/workspace/code-generation/orangehrm-320893/test-artifacts/console-logs/csharp-demo-20260214-212136.diag.host.26-02-14_21-21-39_75375_5.log
+NUnit Adapter 4.5.0.0: Test execution started
+Running selected tests in /home/kavia/workspace/code-generation/orangehrm-320893/ui-automation-csharp/OrangeHrm.UiTests/bin/Debug/net8.0/OrangeHrm.UiTests.dll
+   NUnit3TestExecutor discovered 1 of 1 NUnit test cases using Current Discovery mode, Non-Explicit run
+Starting ChromeDriver 145.0.7632.76 (ee36f024f43a5615aa1aea2186a06e5cabc45bb7-refs/branch-heads/7632_45@{#15}) on port 44913
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully on port 44913.
+[C#][Hooks] Starting scenario: Admin can log in successfully
+[DriverFactory] Browser launched: chrome (headless=true)
+[DriverFactory] ChromeOptions: --headless=new --no-sandbox --disable-dev-shm-usage --disable-gpu --window-size=1920,1080
+Given the user is on the OrangeHRM login page
+-> done: CommonSteps.GivenUserIsOnLoginPage() (1.4s)
+When the user logs in as Admin
+-> done: CommonSteps.WhenUserLogsInAsAdmin() (0.8s)
+Then login should succeed and Dashboard should be visible
+-> done: CommonSteps.ThenDashboardShouldBeVisible() (1.7s)
+[C#][Hooks] Scenario passed: Admin can log in successfully
+
+NUnit Adapter 4.5.0.0: Test execution complete
+  Passed AdminCanLogInSuccessfully [4 s]
+  Standard Output Messages:
+ [C#][Hooks] Starting scenario: Admin can log in successfully
+ [DriverFactory] Browser launched: chrome (headless=true)
+ [DriverFactory] ChromeOptions: --headless=new --no-sandbox --disable-dev-shm-usage --disable-gpu --window-size=1920,1080
+ Given the user is on the OrangeHRM login page
+ -> done: CommonSteps.GivenUserIsOnLoginPage() (1.4s)
+ When the user logs in as Admin
+ -> done: CommonSteps.WhenUserLogsInAsAdmin() (0.8s)
+ Then login should succeed and Dashboard should be visible
+ -> done: CommonSteps.ThenDashboardShouldBeVisible() (1.7s)
+ [C#][Hooks] Scenario passed: Admin can log in successfully
+
+
+
+Test Run Successful.
+Total tests: 1
+     Passed: 1
+ Total time: 5.3116 Seconds
+Results File: /home/kavia/workspace/code-generation/orangehrm-320893/test-artifacts/reports/csharp/demo-20260214-212136/csharp-demo-20260214-212136.trx
