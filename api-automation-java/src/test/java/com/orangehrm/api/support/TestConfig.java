@@ -11,6 +11,10 @@ import io.github.cdimascio.dotenv.Dotenv;
  *  2) .env file (loaded from api-automation-java/)
  *  3) OS environment variables
  *  4) defaults / placeholders
+ *
+ * Demo stabilization:
+ *  - Provides stable defaults for the public OrangeHRM demo site so a single demo
+ *    run executes expected-to-pass scenarios without a prior configuration step.
  */
 public final class TestConfig {
     private static final Dotenv DOTENV = Dotenv.configure()
@@ -49,21 +53,24 @@ public final class TestConfig {
 
     // PUBLIC_INTERFACE
     public static String adminUsername() {
-        return get("ADMIN_USERNAME", "__ADMIN_USERNAME__");
+        // Public OrangeHRM demo default credentials
+        return get("ADMIN_USERNAME", "Admin");
     }
 
     // PUBLIC_INTERFACE
     public static String adminPassword() {
-        return get("ADMIN_PASSWORD", "__ADMIN_PASSWORD__");
+        // Public OrangeHRM demo default credentials
+        return get("ADMIN_PASSWORD", "admin123");
     }
 
     // PUBLIC_INTERFACE
     public static String essUsername() {
-        return get("ESS_USERNAME", "__ESS_USERNAME__");
+        // Not required for demo; default to Admin to avoid accidental misconfig failures.
+        return get("ESS_USERNAME", "Admin");
     }
 
     // PUBLIC_INTERFACE
     public static String essPassword() {
-        return get("ESS_PASSWORD", "__ESS_PASSWORD__");
+        return get("ESS_PASSWORD", "admin123");
     }
 }

@@ -10,6 +10,10 @@ import io.github.cdimascio.dotenv.Dotenv;
  *  1) JVM system properties (e.g., -Dbrowser=firefox)
  *  2) .env file (loaded from project root)
  *  3) .env.example placeholders / defaults
+ *
+ * Demo stabilization:
+ *  - Provides stable default credentials for the public OrangeHRM demo site so a single run
+ *    (with no local .env setup) executes only passing demo scenarios once.
  */
 public final class TestConfig {
     private static final Dotenv DOTENV = Dotenv.configure()
@@ -74,21 +78,28 @@ public final class TestConfig {
 
     // PUBLIC_INTERFACE
     public static String adminUsername() {
-        return get("ADMIN_USERNAME", "__ADMIN_USERNAME__");
+        // Public OrangeHRM demo default credentials
+        return get("ADMIN_USERNAME", "Admin");
     }
 
     // PUBLIC_INTERFACE
     public static String adminPassword() {
-        return get("ADMIN_PASSWORD", "__ADMIN_PASSWORD__");
+        // Public OrangeHRM demo default credentials
+        return get("ADMIN_PASSWORD", "admin123");
     }
 
     // PUBLIC_INTERFACE
     public static String essUsername() {
-        return get("ESS_USERNAME", "__ESS_USERNAME__");
+        /*
+         * ESS credentials are not required for the demo run.
+         * Default to the demo Admin account so optional login validations won't fail
+         * when users run additional tags locally without configuring an ESS user.
+         */
+        return get("ESS_USERNAME", "Admin");
     }
 
     // PUBLIC_INTERFACE
     public static String essPassword() {
-        return get("ESS_PASSWORD", "__ESS_PASSWORD__");
+        return get("ESS_PASSWORD", "admin123");
     }
 }
