@@ -1,0 +1,6 @@
+# Java API automation
+.env
+target/
+.idea/
+*.iml
+.DS_Store

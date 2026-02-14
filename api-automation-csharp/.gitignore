@@ -1,0 +1,8 @@
+# C# API automation
+**/.env
+**/bin/
+**/obj/
+**/*.user
+**/*.suo
+.vs/
+.DS_Store
