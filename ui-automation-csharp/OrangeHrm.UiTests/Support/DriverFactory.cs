@@ -30,6 +30,7 @@ public static class DriverFactory
                 var ffOptions = new FirefoxOptions();
                 if (headless) ffOptions.AddArgument("-headless");
                 _driver = new FirefoxDriver(ffOptions);
+                Console.WriteLine($"[DriverFactory] Browser launched: firefox (headless={headless})");
                 break;
 
             case "edge":
@@ -37,20 +38,14 @@ public static class DriverFactory
                 var edgeOptions = new EdgeOptions();
                 if (headless) edgeOptions.AddArgument("--headless=new");
                 _driver = new EdgeDriver(edgeOptions);
+                Console.WriteLine($"[DriverFactory] Browser launched: edge (headless={headless})");
                 break;
 
             case "chrome":
-                // IMPORTANT:
-                // Do not use WebDriverManager for Chrome here. In container images the installed
-                // Chrome version can be far ahead of the pinned driver versions, which causes
-                // immediate startup crashes (DevToolsActivePort errors).
-                //
-                // Selenium 4.6+ includes Selenium Manager, which will resolve/download a matching
-                // driver automatically when using the plain ChromeDriver constructor.
+                // Demo requirement: force headless Chrome with specific ChromeOptions.
+                // Selenium Manager will resolve/download a matching driver automatically.
                 var chromeOptions = new ChromeOptions();
-
-                // Container-safe / CI-safe flags.
-                chromeOptions.AddArgument("--remote-allow-origins=*");
+                chromeOptions.AddArgument("--headless=new");
                 chromeOptions.AddArgument("--no-sandbox");
                 chromeOptions.AddArgument("--disable-dev-shm-usage");
                 chromeOptions.AddArgument("--disable-gpu");
@@ -63,11 +58,10 @@ public static class DriverFactory
                     Console.WriteLine($"[DriverFactory] Using Chrome binary: {TestConfig.ChromeBinary}");
                 }
 
-                // If no display is available, force headless regardless of config.
-                var shouldHeadless = headless || string.IsNullOrWhiteSpace(Environment.GetEnvironmentVariable("DISPLAY"));
-                if (shouldHeadless) chromeOptions.AddArgument("--headless=new");
-
                 _driver = new ChromeDriver(chromeOptions);
+
+                Console.WriteLine("[DriverFactory] Browser launched: chrome (headless=true)");
+                Console.WriteLine("[DriverFactory] ChromeOptions: --headless=new --no-sandbox --disable-dev-shm-usage --disable-gpu --window-size=1920,1080");
                 break;
 
             default:
@@ -78,7 +72,7 @@ public static class DriverFactory
         _driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(45);
 
         // Maximize is unreliable in headless/container runs; prefer explicit window-size.
-        if (!headless)
+        if (browser != "chrome" && !headless)
         {
             _driver.Manage().Window.Maximize();
         }

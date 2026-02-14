@@ -1,6 +1,7 @@
 package com.orangehrm.support;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeOptions;
@@ -15,7 +16,9 @@ import java.util.List;
  * PUBLIC_INTERFACE
  * Creates and manages local WebDriver instances for Chrome/Firefox/Edge.
  *
- * No Selenium Grid is used; drivers run locally.
+ * Demo stabilization rules:
+ *  - Chrome is always forced headless for container/CI safety.
+ *  - ChromeOptions are set exactly as requested for the demo.
  */
 public final class DriverFactory {
 
@@ -42,8 +45,8 @@ public final class DriverFactory {
 
         String browser = TestConfig.browser().toLowerCase();
 
-        // In many CI/container environments DISPLAY/WAYLAND_DISPLAY are absent, so headed mode will fail.
-        boolean headless = TestConfig.headless() || isNoDisplayAvailable();
+        // For non-Chrome browsers we keep the original "headless if configured or no display" behavior.
+        boolean headlessForNonChrome = TestConfig.headless() || isNoDisplayAvailable();
 
         WebDriver driver;
 
@@ -51,29 +54,29 @@ public final class DriverFactory {
             case "firefox" -> {
                 WebDriverManager.firefoxdriver().setup();
                 FirefoxOptions options = new FirefoxOptions();
-                if (headless) {
+                if (headlessForNonChrome) {
                     options.addArguments("-headless");
                 }
                 driver = new org.openqa.selenium.firefox.FirefoxDriver(options);
+                System.out.println("[DriverFactory] Browser launched: firefox (headless=" + headlessForNonChrome + ")");
             }
             case "edge" -> {
                 WebDriverManager.edgedriver().setup();
                 EdgeOptions options = new EdgeOptions();
-                if (headless) {
+                if (headlessForNonChrome) {
                     options.addArguments("--headless=new");
                 }
                 driver = new org.openqa.selenium.edge.EdgeDriver(options);
+                System.out.println("[DriverFactory] Browser launched: edge (headless=" + headlessForNonChrome + ")");
             }
             case "chrome" -> {
+                // Demo requirement: force headless Chrome with specific ChromeOptions.
                 ChromeOptions options = new ChromeOptions();
-
-                // Container/headless stabilization flags (requested).
-                options.addArguments("--remote-allow-origins=*");
+                options.addArguments("--headless=new");
                 options.addArguments("--no-sandbox");
                 options.addArguments("--disable-dev-shm-usage");
-                if (headless) {
-                    options.addArguments("--headless=new");
-                }
+                options.addArguments("--disable-gpu");
+                options.addArguments("--window-size=1920,1080");
 
                 // Ensure WebDriverManager resolves a ChromeDriver matching the Chrome binary in this environment.
                 WebDriverManager wdm = WebDriverManager.chromedriver();
@@ -91,15 +94,19 @@ public final class DriverFactory {
                             : chromeBinary + " --version";
                     wdm.browserVersionDetectionCommand(versionCommand);
 
-                    // Small diagnostic to help when containers have non-standard Chrome paths.
                     System.out.println("[DriverFactory] Using Chrome binary: " + chromeBinary);
                 } else {
-                    // If we can't find a binary, let Selenium/WebDriverManager fall back to defaults.
                     System.out.println("[DriverFactory] No explicit Chrome binary configured/discovered; using system default.");
                 }
 
                 wdm.setup();
                 driver = new org.openqa.selenium.chrome.ChromeDriver(options);
+
+                // Keep an explicit window size at runtime as well (some environments ignore the arg).
+                driver.manage().window().setSize(new Dimension(1920, 1080));
+
+                System.out.println("[DriverFactory] Browser launched: chrome (headless=true)");
+                System.out.println("[DriverFactory] ChromeOptions: --headless=new --no-sandbox --disable-dev-shm-usage --disable-gpu --window-size=1920,1080");
             }
             default -> throw new IllegalArgumentException("Unsupported browser: " + browser + " (use chrome|firefox|edge)");
         }
@@ -108,7 +115,11 @@ public final class DriverFactory {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(45));
         driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(30));
-        driver.manage().window().maximize();
+
+        // Maximize can be flaky in headless/container runs; only do it when likely safe.
+        if (!"chrome".equals(browser) && !headlessForNonChrome) {
+            driver.manage().window().maximize();
+        }
 
         TL_DRIVER.set(driver);
     }

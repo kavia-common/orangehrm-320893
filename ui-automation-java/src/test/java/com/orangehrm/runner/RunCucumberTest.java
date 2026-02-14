@@ -12,18 +12,17 @@ import static io.cucumber.junit.platform.engine.Constants.PLUGIN_PROPERTY_NAME;
  * PUBLIC_INTERFACE
  * JUnit Platform entrypoint for executing Cucumber features.
  *
- * Usage:
- *  - mvn test
- *  - mvn test -Dbrowser=firefox
- *  - mvn test -Dcucumber.filter.tags="@smoke"
+ * Demo mode:
+ *  - Executes ONLY the demo login scenario.
+ *  - Outputs console logs + raw JSON results (no Allure, no HTML report).
  */
 @Suite
 @IncludeEngines("cucumber")
-@SelectClasspathResource("features")
+@SelectClasspathResource("features/demo_login.feature")
 @ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "com.orangehrm.steps")
 @ConfigurationParameter(
         key = PLUGIN_PROPERTY_NAME,
-        value = "pretty, summary, html:target/cucumber-report.html, json:target/cucumber-report.json, io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"
+        value = "pretty, summary, json:target/cucumber-report.json"
 )
 public class RunCucumberTest {
 }

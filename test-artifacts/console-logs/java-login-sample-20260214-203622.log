@@ -1,0 +1,105 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------< com.orangehrm:orangehrm-ui-automation >----------------
+[INFO] Building OrangeHRM UI Automation (Java+Cucumber) 1.0.0
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ orangehrm-ui-automation ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/kavia/workspace/code-generation/orangehrm-320893/ui-automation-java/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ orangehrm-ui-automation ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ orangehrm-ui-automation ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ orangehrm-ui-automation ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.2.5:test (default-test) @ orangehrm-ui-automation ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.orangehrm.runner.RunCucumberTest
+
+@regression @login @smoke
+Scenario Outline: Login - positive/negative/boundary validation (L01)                        # features/orangehrm_regression.feature:13
+[DriverFactory] Using Chrome binary: /usr/bin/google-chrome
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 145.0.7632.76 (resolved driver for Chrome 145)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/kavia/.cache/selenium/chromedriver/linux64/145.0.7632.76/chromedriver
+Feb 14, 2026 8:40:09 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 145
+Feb 14, 2026 8:40:09 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 145.0.7632.75. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.20.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+  Given the user is on the OrangeHRM login page                                              # com.orangehrm.steps.CommonSteps.openLogin()
+  When the user logs in with username "__ADMIN_USERNAME__" and password "__ADMIN_PASSWORD__" # com.orangehrm.steps.CommonSteps.loginWith(java.lang.String,java.lang.String)
+  Then login should succeed and Dashboard should be visible                                  # com.orangehrm.steps.CommonSteps.dashboardVisible()
+      org.opentest4j.AssertionFailedError: Expected Dashboard to be visible after login ==> expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:214)
+	at com.orangehrm.steps.CommonSteps.dashboardVisible(CommonSteps.java:44)
+	at ✽.login should succeed and Dashboard should be visible(classpath:features/orangehrm_regression.feature:10)
+
+
+    Embedding failure-screenshot [image/png 2121 bytes]
+
+
+Failed scenarios:
+classpath:features/orangehrm_regression.feature:13 # Login - positive/negative/boundary validation (L01)
+
+1 Scenarios (1 failed)
+3 Steps (1 failed, 2 passed)
+0m4.791s
+
+
+org.opentest4j.AssertionFailedError: Expected Dashboard to be visible after login ==> expected: <true> but was: <false>
+	at com.orangehrm.steps.CommonSteps.dashboardVisible(CommonSteps.java:44)
+	at ✽.login should succeed and Dashboard should be visible(classpath:features/orangehrm_regression.feature:10)
+
+
+[ERROR] Tests run: 160, Failures: 1, Errors: 0, Skipped: 159, Time elapsed: 5.193 s <<< FAILURE! -- in com.orangehrm.runner.RunCucumberTest
+[ERROR] Examples.Example #1.1 -- Time elapsed: 4.672 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Expected Dashboard to be visible after login ==> expected: <true> but was: <false>
+	at com.orangehrm.steps.CommonSteps.dashboardVisible(CommonSteps.java:44)
+	at ✽.login should succeed and Dashboard should be visible(classpath:features/orangehrm_regression.feature:10)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR] Examples.Example #1.1
+[ERROR]   Run 1: Expected Dashboard to be visible after login ==> expected: <true> but was: <false>
+[INFO]   Run 2: PASS
+[INFO]   Run 3: PASS
+[INFO]   Run 4: PASS
+[INFO]   Run 5: PASS
+[INFO]   Run 6: PASS
+[INFO]   Run 7: PASS
+[INFO] 
+[INFO] 
+[ERROR] Tests run: 40, Failures: 1, Errors: 0, Skipped: 39
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  6.967 s
+[INFO] Finished at: 2026-02-14T20:40:12Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.2.5:test (default-test) on project orangehrm-ui-automation: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /home/kavia/workspace/code-generation/orangehrm-320893/ui-automation-java/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

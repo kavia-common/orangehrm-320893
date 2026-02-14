@@ -4,38 +4,25 @@ import com.orangehrm.support.DriverFactory;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
-import io.qameta.allure.Allure;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
-
-import java.io.ByteArrayInputStream;
 
 /**
  * Cucumber hooks to manage WebDriver lifecycle.
+ *
+ * Demo stabilization:
+ *  - No Allure integration (console logs + raw results only).
  */
 public class Hooks {
 
     @Before
-    public void beforeScenario() {
+    public void beforeScenario(Scenario scenario) {
+        System.out.println("[Java][Hooks] Starting scenario: " + scenario.getName());
         DriverFactory.createDriver();
     }
 
     @After
     public void afterScenario(Scenario scenario) {
         try {
-            if (scenario.isFailed()) {
-                WebDriver driver = DriverFactory.getDriver();
-                if (driver instanceof TakesScreenshot ts) {
-                    byte[] png = ts.getScreenshotAs(OutputType.BYTES);
-
-                    // Attach to Cucumber report output
-                    scenario.attach(png, "image/png", "failure-screenshot");
-
-                    // Attach to Allure results (visible in Allure report)
-                    Allure.addAttachment("failure-screenshot", "image/png", new ByteArrayInputStream(png), ".png");
-                }
-            }
+            System.out.println("[Java][Hooks] Finished scenario: " + scenario.getName() + " | status=" + scenario.getStatus());
         } finally {
             DriverFactory.quitDriver();
         }

@@ -5,11 +5,6 @@
       "assembly": "OrangeHrm.UiTests"
     }
   ],
-  "plugins": [
-    {
-      "name": "Allure.Reqnroll"
-    }
-  ],
   "runtime": {
     "stopAtFirstError": false
   }

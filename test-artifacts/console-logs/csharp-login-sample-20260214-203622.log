@@ -1,0 +1,51 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  OrangeHrm.UiTests -> /home/kavia/workspace/code-generation/orangehrm-320893/ui-automation-csharp/OrangeHrm.UiTests/bin/Release/net8.0/OrangeHrm.UiTests.dll
+Test run for /home/kavia/workspace/code-generation/orangehrm-320893/ui-automation-csharp/OrangeHrm.UiTests/bin/Release/net8.0/OrangeHrm.UiTests.dll (.NETCoreApp,Version=v8.0)
+Microsoft (R) Test Execution Command Line Tool Version 17.8.0 (x64)
+Copyright (c) Microsoft Corporation.  All rights reserved.
+
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+Starting ChromeDriver 145.0.7632.76 (ee36f024f43a5615aa1aea2186a06e5cabc45bb7-refs/branch-heads/7632_45@{#15}) on port 33807
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully on port 33807.
+Given the user is on the OrangeHRM login page
+-> done: CommonSteps.GivenUserIsOnLoginPage() (1.3s)
+When the user logs in with username "__ADMIN_USERNAME__" and password "__ADMIN_PASSWORD__"
+-> done: CommonSteps.WhenUserLogsInWith("__ADMIN_USERNAME__", "__ADMIN_PASSWORD__") (0.8s)
+Then login should succeed and Dashboard should be visible
+-> error:   Expected Dashboard to load.
+  Expected: True
+  But was:  False
+ (0.8s)
+
+  Failed Login_PositiveNegativeBoundaryValidationCaseId("L01","__ADMIN_USERNAME__","__ADMIN_PASSWORD__","login should succeed and Dashboard should be visible","0",null) [3 s]
+  Error Message:
+     Expected Dashboard to load.
+  Expected: True
+  But was:  False
+
+  Stack Trace:
+     at OrangeHrm.UiTests.Steps.CommonSteps.ThenDashboardShouldBeVisible() in /home/kavia/workspace/code-generation/orangehrm-320893/ui-automation-csharp/OrangeHrm.UiTests/Steps/CommonSteps.cs:line 42
+   at InvokeStub_Action`1.Invoke(Object, Span`1)
+
+1)    at OrangeHrm.UiTests.Steps.CommonSteps.ThenDashboardShouldBeVisible() in /home/kavia/workspace/code-generation/orangehrm-320893/ui-automation-csharp/OrangeHrm.UiTests/Steps/CommonSteps.cs:line 42
+   at InvokeStub_Action`1.Invoke(Object, Span`1)
+
+
+  Standard Output Messages:
+ Given the user is on the OrangeHRM login page
+ -> done: CommonSteps.GivenUserIsOnLoginPage() (1.3s)
+ When the user logs in with username "__ADMIN_USERNAME__" and password "__ADMIN_PASSWORD__"
+ -> done: CommonSteps.WhenUserLogsInWith("__ADMIN_USERNAME__", "__ADMIN_PASSWORD__") (0.8s)
+ Then login should succeed and Dashboard should be visible
+ -> error:   Expected Dashboard to load.
+   Expected: True
+   But was:  False
+  (0.8s)
+
+
+
+Failed!  - Failed:     1, Passed:     0, Skipped:     0, Total:     1, Duration: 3 s - OrangeHrm.UiTests.dll (net8.0)
