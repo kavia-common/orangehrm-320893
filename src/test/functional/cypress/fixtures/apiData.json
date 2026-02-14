@@ -1,0 +1,24 @@
+{
+  "apiTests": [
+    {
+      "testCaseId": "API_001",
+      "endpoint": "/api/login",
+      "method": "POST",
+      "payload": {
+        "username": "Admin",
+        "password": "admin123"
+      },
+      "expectedStatusCode": 200
+    },
+    {
+      "testCaseId": "API_002",
+      "endpoint": "/api/employee",
+      "method": "POST",
+      "payload": {
+        "firstName": "Test",
+        "lastName": "User"
+      },
+      "expectedStatusCode": 201
+    }
+  ]
+}

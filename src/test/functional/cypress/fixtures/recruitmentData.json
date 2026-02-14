@@ -1,0 +1,12 @@
+{
+  "recruitmentTests": [
+    {
+      "testCaseId": "REC_001",
+      "vacancyName": "QA Engineer",
+      "candidateFirstName": "Michael",
+      "candidateLastName": "Brown",
+      "email": "michael@test.com",
+      "status": "Scheduled"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "loginTests": [
+    {
+      "testCaseId": "LOGIN_001",
+      "description": "Valid login",
+      "username": "Admin",
+      "password": "admin123",
+      "expectedResult": "success"
+    },
+    {
+      "testCaseId": "LOGIN_002",
+      "description": "Invalid password",
+      "username": "Admin",
+      "password": "wrongPass",
+      "expectedResult": "error"
+    },
+    {
+      "testCaseId": "LOGIN_003",
+      "description": "Empty credentials",
+      "username": "",
+      "password": "",
+      "expectedResult": "validation_error"
+    }
+  ]
+}

@@ -16,6 +16,26 @@
  */
 
 import {OXD_INPUT_ELEMENTS, OXD_ELEMENTS, OXD_TOASTS} from './oxd';
+import {ddtLoad} from './dataProvider';
+
+// ----------------------------
+// Data-driven testing helpers
+// ----------------------------
+
+Cypress.Commands.add('ddtLoad', (params) => {
+  return ddtLoad(params);
+});
+
+/**
+ * Loads dataset and iterates cases, executing the provided callback for each case.
+ * Note: Cypress requires test definitions to be synchronous; prefer using this
+ * helper inside an `it()` to run case-by-case assertions.
+ */
+Cypress.Commands.add('ddt', (params, fn) => {
+  return ddtLoad(params).then(({cases}) => {
+    cases.forEach((testCase) => fn(testCase));
+  });
+});
 
 Cypress.Commands.add('login', ({username, password}) => {
   cy.visit('/auth/login');

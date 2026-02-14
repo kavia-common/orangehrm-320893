@@ -1,0 +1,19 @@
+
+{
+  "employeeTests": [
+    {
+      "testCaseId": "PIM_001",
+      "firstName": "John",
+      "lastName": "Doe",
+      "employeeId": "EMP1001",
+      "action": "add"
+    },
+    {
+      "testCaseId": "PIM_002",
+      "firstName": "Alice",
+      "lastName": "Smith",
+      "employeeId": "EMP1002",
+      "action": "search"
+    }
+  ]
+}

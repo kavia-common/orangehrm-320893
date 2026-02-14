@@ -1,0 +1,10 @@
+{
+  "adminTests": [
+    {
+      "testCaseId": "ADMIN_001",
+      "username": "testUser1",
+      "role": "ESS",
+      "status": "Enabled"
+    }
+  ]
+}

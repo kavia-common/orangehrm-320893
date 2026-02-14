@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "OrangeHRM Functional Test Data (JSON) Schema",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "loginTests": { "$ref": "#/$defs/testCaseArray" },
+    "apiTests": { "$ref": "#/$defs/testCaseArray" },
+    "adminTests": { "$ref": "#/$defs/testCaseArray" },
+    "dashboardTests": { "$ref": "#/$defs/testCaseArray" },
+    "timeTests": { "$ref": "#/$defs/testCaseArray" },
+    "recruitmentTests": { "$ref": "#/$defs/testCaseArray" },
+    "leaveTests": { "$ref": "#/$defs/testCaseArray" },
+    "employeeTests": { "$ref": "#/$defs/testCaseArray" }
+  },
+  "$defs": {
+    "testCaseArray": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "testCaseId": { "type": "string", "minLength": 1 },
+          "description": { "type": "string" }
+        },
+        "required": ["testCaseId"]
+      }
+    }
+  }
+}

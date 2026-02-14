@@ -15,6 +15,12 @@
  * If not, see <https://www.gnu.org/licenses/>.
  */
 
+/**
+ * Cypress support entrypoint.
+ *
+ * Loads custom commands (including data-driven testing helpers).
+ */
+
 // Import commands.js using ES2015 syntax:
 import './commands';
 
