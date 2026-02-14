@@ -1,0 +1,37 @@
+[ERROR] COMPILATION ERROR : 
+[ERROR] /home/kavia/workspace/code-generation/orangehrm-320893/ui-automation-java/src/test/java/com/orangehrm/runner/RunCucumberTest.java:[3,36] package org.junit.platform.suite.api does not exist
+[ERROR] /home/kavia/workspace/code-generation/orangehrm-320893/ui-automation-java/src/test/java/com/orangehrm/runner/RunCucumberTest.java:[4,36] package org.junit.platform.suite.api does not exist
+[ERROR] /home/kavia/workspace/code-generation/orangehrm-320893/ui-automation-java/src/test/java/com/orangehrm/runner/RunCucumberTest.java:[5,36] package org.junit.platform.suite.api does not exist
+[ERROR] /home/kavia/workspace/code-generation/orangehrm-320893/ui-automation-java/src/test/java/com/orangehrm/runner/RunCucumberTest.java:[6,36] package org.junit.platform.suite.api does not exist
+[ERROR] /home/kavia/workspace/code-generation/orangehrm-320893/ui-automation-java/src/test/java/com/orangehrm/runner/RunCucumberTest.java:[20,2] cannot find symbol
+  symbol: class Suite
+[ERROR] /home/kavia/workspace/code-generation/orangehrm-320893/ui-automation-java/src/test/java/com/orangehrm/runner/RunCucumberTest.java:[21,2] cannot find symbol
+  symbol: class IncludeEngines
+[ERROR] /home/kavia/workspace/code-generation/orangehrm-320893/ui-automation-java/src/test/java/com/orangehrm/runner/RunCucumberTest.java:[22,2] cannot find symbol
+  symbol: class SelectClasspathResource
+[ERROR] /home/kavia/workspace/code-generation/orangehrm-320893/ui-automation-java/src/test/java/com/orangehrm/runner/RunCucumberTest.java:[23,2] cannot find symbol
+  symbol: class ConfigurationParameter
+[ERROR] /home/kavia/workspace/code-generation/orangehrm-320893/ui-automation-java/src/test/java/com/orangehrm/runner/RunCucumberTest.java:[24,2] cannot find symbol
+  symbol: class ConfigurationParameter
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:testCompile (default-testCompile) on project orangehrm-ui-automation: Compilation failure: Compilation failure: 
+[ERROR] /home/kavia/workspace/code-generation/orangehrm-320893/ui-automation-java/src/test/java/com/orangehrm/runner/RunCucumberTest.java:[3,36] package org.junit.platform.suite.api does not exist
+[ERROR] /home/kavia/workspace/code-generation/orangehrm-320893/ui-automation-java/src/test/java/com/orangehrm/runner/RunCucumberTest.java:[4,36] package org.junit.platform.suite.api does not exist
+[ERROR] /home/kavia/workspace/code-generation/orangehrm-320893/ui-automation-java/src/test/java/com/orangehrm/runner/RunCucumberTest.java:[5,36] package org.junit.platform.suite.api does not exist
+[ERROR] /home/kavia/workspace/code-generation/orangehrm-320893/ui-automation-java/src/test/java/com/orangehrm/runner/RunCucumberTest.java:[6,36] package org.junit.platform.suite.api does not exist
+[ERROR] /home/kavia/workspace/code-generation/orangehrm-320893/ui-automation-java/src/test/java/com/orangehrm/runner/RunCucumberTest.java:[20,2] cannot find symbol
+[ERROR]   symbol: class Suite
+[ERROR] /home/kavia/workspace/code-generation/orangehrm-320893/ui-automation-java/src/test/java/com/orangehrm/runner/RunCucumberTest.java:[21,2] cannot find symbol
+[ERROR]   symbol: class IncludeEngines
+[ERROR] /home/kavia/workspace/code-generation/orangehrm-320893/ui-automation-java/src/test/java/com/orangehrm/runner/RunCucumberTest.java:[22,2] cannot find symbol
+[ERROR]   symbol: class SelectClasspathResource
+[ERROR] /home/kavia/workspace/code-generation/orangehrm-320893/ui-automation-java/src/test/java/com/orangehrm/runner/RunCucumberTest.java:[23,2] cannot find symbol
+[ERROR]   symbol: class ConfigurationParameter
+[ERROR] /home/kavia/workspace/code-generation/orangehrm-320893/ui-automation-java/src/test/java/com/orangehrm/runner/RunCucumberTest.java:[24,2] cannot find symbol
+[ERROR]   symbol: class ConfigurationParameter
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

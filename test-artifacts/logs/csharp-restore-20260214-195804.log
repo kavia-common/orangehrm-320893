@@ -1,0 +1,6 @@
+  Determining projects to restore...
+/home/kavia/workspace/code-generation/orangehrm-320893/ui-automation-csharp/OrangeHrm.UiTests/OrangeHrm.UiTests.csproj : warning NU1603: OrangeHrm.UiTests depends on Allure.Commons (>= 2.14.1) but Allure.Commons 2.14.1 was not found. An approximate best match of Allure.Commons 3.0.0.10 was resolved.
+/home/kavia/workspace/code-generation/orangehrm-320893/ui-automation-csharp/OrangeHrm.UiTests/OrangeHrm.UiTests.csproj : error NU1605: Warning As Error: Detected package downgrade: Reqnroll from 3.0.3 to 2.0.0. Reference the package directly from the project to select a different version. 
+/home/kavia/workspace/code-generation/orangehrm-320893/ui-automation-csharp/OrangeHrm.UiTests/OrangeHrm.UiTests.csproj : error NU1605:  OrangeHrm.UiTests -> Allure.Reqnroll 2.14.1 -> Reqnroll (>= 3.0.3) 
+/home/kavia/workspace/code-generation/orangehrm-320893/ui-automation-csharp/OrangeHrm.UiTests/OrangeHrm.UiTests.csproj : error NU1605:  OrangeHrm.UiTests -> Reqnroll (>= 2.0.0)
+  Failed to restore /home/kavia/workspace/code-generation/orangehrm-320893/ui-automation-csharp/OrangeHrm.UiTests/OrangeHrm.UiTests.csproj (in 1.45 sec).

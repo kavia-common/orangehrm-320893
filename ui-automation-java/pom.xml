@@ -62,6 +62,14 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- JUnit Platform Suite API (required for @Suite, @SelectClasspathResource, etc.) -->
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-suite-api</artifactId>
+            <version>1.10.2</version>
+            <scope>test</scope>
+        </dependency>
+
         <!-- dotenv for credentials placeholders -->
         <dependency>
             <groupId>io.github.cdimascio</groupId>
