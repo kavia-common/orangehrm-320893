@@ -37,4 +37,6 @@ mvn -q test -Dcucumber.filter.tags="@login or @dashboard"
 ## Notes
 - This suite is designed for the public OrangeHRM demo, which can be rate-limited and occasionally flaky.
 - Tests use explicit waits and avoid brittle sleeps, but UI responsiveness may vary.
+- For containerized execution (CI), Chrome is started with additional stability flags: `--no-sandbox --disable-dev-shm-usage --remote-allow-origins=*` and `--headless=new` when `HEADLESS=true`.
+- If Chrome is installed in a non-standard location, set `CHROME_BINARY` in `.env` to the full path (e.g., `/usr/bin/google-chrome`) so WebDriverManager can download a matching ChromeDriver.
 - The suite includes 150+ regression scenarios as scenario outlines + example matrices (tagged by module).

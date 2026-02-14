@@ -7,7 +7,10 @@ import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.time.Duration;
+import java.util.List;
 
 /**
  * PUBLIC_INTERFACE
@@ -61,12 +64,33 @@ public final class DriverFactory {
                 driver = new org.openqa.selenium.edge.EdgeDriver(options);
             }
             case "chrome" -> {
-                WebDriverManager.chromedriver().setup();
                 ChromeOptions options = new ChromeOptions();
+
+                // Container/headless stabilization flags (requested).
                 options.addArguments("--remote-allow-origins=*");
+                options.addArguments("--no-sandbox");
+                options.addArguments("--disable-dev-shm-usage");
                 if (headless) {
                     options.addArguments("--headless=new");
                 }
+
+                // Ensure WebDriverManager resolves a ChromeDriver matching the Chrome binary in this environment.
+                WebDriverManager wdm = WebDriverManager.chromedriver();
+
+                String chromeBinary = resolveChromeBinaryPath();
+                if (chromeBinary != null) {
+                    // Ensure both Selenium and WebDriverManager point at the same browser binary.
+                    options.setBinary(chromeBinary);
+                    wdm.browserPath(chromeBinary);
+
+                    // Small diagnostic to help when containers have non-standard Chrome paths.
+                    System.out.println("[DriverFactory] Using Chrome binary: " + chromeBinary);
+                } else {
+                    // If we can't find a binary, let Selenium/WebDriverManager fall back to defaults.
+                    System.out.println("[DriverFactory] No explicit Chrome binary configured/discovered; using system default.");
+                }
+
+                wdm.setup();
                 driver = new org.openqa.selenium.chrome.ChromeDriver(options);
             }
             default -> throw new IllegalArgumentException("Unsupported browser: " + browser + " (use chrome|firefox|edge)");
@@ -79,6 +103,43 @@ public final class DriverFactory {
         driver.manage().window().maximize();
 
         TL_DRIVER.set(driver);
+    }
+
+    private static String resolveChromeBinaryPath() {
+        String configured = TestConfig.chromeBinary();
+        if (configured != null && !configured.isBlank()) {
+            return validateExecutable(configured.trim());
+        }
+
+        // Common Chrome/Chromium paths in Linux and container images.
+        List<String> candidates = List.of(
+                "/usr/bin/google-chrome",
+                "/usr/bin/google-chrome-stable",
+                "/opt/google/chrome/google-chrome",
+                "/usr/bin/chromium",
+                "/usr/bin/chromium-browser"
+        );
+
+        for (String candidate : candidates) {
+            String ok = validateExecutable(candidate);
+            if (ok != null) {
+                return ok;
+            }
+        }
+
+        return null;
+    }
+
+    private static String validateExecutable(String path) {
+        try {
+            Path p = Path.of(path);
+            if (Files.exists(p) && Files.isRegularFile(p) && Files.isExecutable(p)) {
+                return p.toAbsolutePath().toString();
+            }
+        } catch (Exception ignored) {
+            // best-effort only; fall back to defaults if anything is odd in the environment
+        }
+        return null;
     }
 
     // PUBLIC_INTERFACE

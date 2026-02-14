@@ -52,6 +52,27 @@ public final class TestConfig {
     }
 
     // PUBLIC_INTERFACE
+    public static String chromeBinary() {
+        /*
+         * Optional: explicit Chrome/Chromium binary path (useful in containers).
+         * Precedence is still handled by get():
+         *  - System property
+         *  - .env
+         *  - OS environment variables
+         */
+        String val = get("CHROME_BINARY", "");
+        if (val == null || val.isBlank()) {
+            // Common alternative name used by some environments/images.
+            val = get("CHROME_BIN", "");
+        }
+        if (val == null || val.isBlank()) {
+            // Convenience JVM property name.
+            val = get("chromeBinary", "");
+        }
+        return val == null ? "" : val.trim();
+    }
+
+    // PUBLIC_INTERFACE
     public static String adminUsername() {
         return get("ADMIN_USERNAME", "__ADMIN_USERNAME__");
     }
