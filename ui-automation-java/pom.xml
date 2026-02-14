@@ -78,6 +78,17 @@
             <scope>test</scope>
         </dependency>
 
+        <!--
+          JUnit Platform Suite Engine (required at runtime for @Suite classes to be discovered/executed).
+          Without this, Maven Surefire + JUnit Platform reports "Tests run: 0" even though the suite class compiles.
+        -->
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-suite-engine</artifactId>
+            <version>1.10.2</version>
+            <scope>test</scope>
+        </dependency>
+
         <!-- dotenv for credentials placeholders -->
         <dependency>
             <groupId>io.github.cdimascio</groupId>
@@ -113,8 +124,13 @@
                     <systemPropertyVariables>
                         <!-- Default browser if not provided -->
                         <browser>${browser}</browser>
-                        <!-- Run tags: e.g. -Dcucumber.filter.tags="@smoke and not @wip" -->
-                        <cucumber.filter.tags>${cucumber.filter.tags}</cucumber.filter.tags>
+                        <!--
+                          Run tags (default to login so CI exercises at least the Login scenarios).
+                          Override as needed:
+                            mvn test -Dcucumber.filter.tags="@regression"
+                            mvn test -Dcucumber.filter.tags="@smoke and not @wip"
+                        -->
+                        <cucumber.filter.tags>${cucumber.filter.tags:-@login}</cucumber.filter.tags>
 
                         <!-- Allure results output directory -->
                         <allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>
