@@ -3,6 +3,11 @@
   "bindingAssemblies": [
     "OrangeHrm.UiTests"
   ],
+  "plugins": [
+    {
+      "name": "Allure.ReqnrollPlugin"
+    }
+  ],
   "runtime": {
     "stopAtFirstError": false
   }

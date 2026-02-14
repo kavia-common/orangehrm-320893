@@ -17,6 +17,11 @@
     <PackageReference Include="Selenium.Support" Version="4.20.0" />
     <PackageReference Include="WebDriverManager" Version="2.16.2" />
     <PackageReference Include="DotNetEnv" Version="3.0.0" />
+
+    <!-- Allure reporting -->
+    <PackageReference Include="Allure.NUnit" Version="2.12.1" />
+    <PackageReference Include="Allure.ReqnrollPlugin" Version="2.12.1" />
+    <PackageReference Include="Allure.Commons" Version="2.12.1" />
   </ItemGroup>
 
   <ItemGroup>
