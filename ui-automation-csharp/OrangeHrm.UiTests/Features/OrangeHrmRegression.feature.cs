@@ -18,18 +18,18 @@ namespace OrangeHrm.UiTests.Features
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Reqnroll", "3.0.0.0")]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [global::NUnit.Framework.TestFixtureAttribute()]
-    [global::NUnit.Framework.DescriptionAttribute("OrangeHRM regression suite (150+ scenarios)")]
+    [global::NUnit.Framework.DescriptionAttribute("Demo - Login (headless)")]
     [global::NUnit.Framework.FixtureLifeCycleAttribute(global::NUnit.Framework.LifeCycle.InstancePerTestCase)]
-    [global::NUnit.Framework.CategoryAttribute("regression")]
-    public partial class OrangeHRMRegressionSuite150ScenariosFeature
+    [global::NUnit.Framework.CategoryAttribute("demo")]
+    public partial class Demo_LoginHeadlessFeature
     {
         
         private global::Reqnroll.ITestRunner testRunner;
         
         private static string[] featureTags = new string[] {
-                "regression"};
+                "demo"};
         
-        private static global::Reqnroll.FeatureInfo featureInfo = new global::Reqnroll.FeatureInfo(new global::System.Globalization.CultureInfo("en-US"), "Features", "OrangeHRM regression suite (150+ scenarios)", null, global::Reqnroll.ProgrammingLanguage.CSharp, featureTags, InitializeCucumberMessages());
+        private static global::Reqnroll.FeatureInfo featureInfo = new global::Reqnroll.FeatureInfo(new global::System.Globalization.CultureInfo("en-US"), "Features", "Demo - Login (headless)", null, global::Reqnroll.ProgrammingLanguage.CSharp, featureTags, InitializeCucumberMessages());
         
 #line 1 "OrangeHrmRegression.feature"
 #line hidden
@@ -105,502 +105,38 @@ namespace OrangeHrm.UiTests.Features
             await testRunner.CollectScenarioErrorsAsync();
         }
         
-        public virtual async global::System.Threading.Tasks.Task FeatureBackgroundAsync()
+        private static global::Reqnroll.Formatters.RuntimeSupport.FeatureLevelCucumberMessages InitializeCucumberMessages()
         {
+            return new global::Reqnroll.Formatters.RuntimeSupport.FeatureLevelCucumberMessages("Features/OrangeHrmRegression.feature", 3);
+        }
+        
+        [global::NUnit.Framework.TestAttribute()]
+        [global::NUnit.Framework.DescriptionAttribute("Admin can log in successfully")]
+        public async global::System.Threading.Tasks.Task AdminCanLogInSuccessfully()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
+            string pickleIndex = "0";
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Admin can log in successfully", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            string[] tagsOfRule = ((string[])(null));
+            global::Reqnroll.RuleInfo ruleInfo = null;
 #line 4
-  #line hidden
+  this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                await testRunner.SkipScenarioAsync();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
 #line 5
     await testRunner.GivenAsync("the user is on the OrangeHRM login page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-        }
-        
-        private static global::Reqnroll.Formatters.RuntimeSupport.FeatureLevelCucumberMessages InitializeCucumberMessages()
-        {
-            return new global::Reqnroll.Formatters.RuntimeSupport.FeatureLevelCucumberMessages("Features/OrangeHrmRegression.feature", 162);
-        }
-        
-        [global::NUnit.Framework.TestAttribute()]
-        [global::NUnit.Framework.DescriptionAttribute("Login - positive/negative/boundary validation (<caseId>)")]
-        [global::NUnit.Framework.CategoryAttribute("login")]
-        [global::NUnit.Framework.CategoryAttribute("smoke")]
-        [global::NUnit.Framework.TestCaseAttribute("L01", "__ADMIN_USERNAME__", "__ADMIN_PASSWORD__", "login should succeed and Dashboard should be visible", "0", null)]
-        [global::NUnit.Framework.TestCaseAttribute("L02", "__ESS_USERNAME__", "__ESS_PASSWORD__", "login should succeed and Dashboard should be visible", "1", null)]
-        [global::NUnit.Framework.TestCaseAttribute("L03", "__ADMIN_USERNAME__", "wrongPassword", "an invalid credentials message should be shown", "2", null)]
-        [global::NUnit.Framework.TestCaseAttribute("L04", "wrongUser", "__ADMIN_PASSWORD__", "an invalid credentials message should be shown", "3", null)]
-        [global::NUnit.Framework.TestCaseAttribute("L05", "wrongUser", "wrongPassword", "an invalid credentials message should be shown", "4", null)]
-        [global::NUnit.Framework.TestCaseAttribute("L06", "", "__ADMIN_PASSWORD__", "required field validation should be shown on the login form", "5", null)]
-        [global::NUnit.Framework.TestCaseAttribute("L07", "__ADMIN_USERNAME__", "", "required field validation should be shown on the login form", "6", null)]
-        [global::NUnit.Framework.TestCaseAttribute("L08", "", "", "required field validation should be shown on the login form", "7", null)]
-        [global::NUnit.Framework.TestCaseAttribute("L09", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb", "an invalid credentials message should be shown", "8", null)]
-        [global::NUnit.Framework.TestCaseAttribute("L10", "admin\' OR \'1\'=\'1", "pass\' OR \'1\'=\'1", "an invalid credentials message should be shown", "9", null)]
-        public async global::System.Threading.Tasks.Task Login_PositiveNegativeBoundaryValidationCaseId(string caseId, string username, string password, string expectedResult, string @__pickleIndex, string[] exampleTags)
-        {
-            string[] @__tags = new string[] {
-                    "login",
-                    "smoke"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
-            global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("caseId", caseId);
-            argumentsOfScenario.Add("username", username);
-            argumentsOfScenario.Add("password", password);
-            argumentsOfScenario.Add("expectedResult", expectedResult);
-            string pickleIndex = @__pickleIndex;
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Login - positive/negative/boundary validation (<caseId>)", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
-            string[] tagsOfRule = ((string[])(null));
-            global::Reqnroll.RuleInfo ruleInfo = null;
-#line 8
-  this.ScenarioInitialize(scenarioInfo, ruleInfo);
-#line hidden
-            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
-            {
-                await testRunner.SkipScenarioAsync();
-            }
-            else
-            {
-                await this.ScenarioStartAsync();
-#line 4
-  await this.FeatureBackgroundAsync();
-#line hidden
-#line 9
-    await testRunner.WhenAsync(string.Format("the user logs in with username \"{0}\" and password \"{1}\"", username, password), ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
-#line hidden
-#line 10
-    await testRunner.ThenAsync(string.Format("{0}", expectedResult), ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
-#line hidden
-            }
-            await this.ScenarioCleanupAsync();
-        }
-        
-        [global::NUnit.Framework.TestAttribute()]
-        [global::NUnit.Framework.DescriptionAttribute("Dashboard - access and widget presence validations (<caseId>)")]
-        [global::NUnit.Framework.CategoryAttribute("dashboard")]
-        [global::NUnit.Framework.TestCaseAttribute("D01", "10", null)]
-        [global::NUnit.Framework.TestCaseAttribute("D02", "11", null)]
-        [global::NUnit.Framework.TestCaseAttribute("D03", "12", null)]
-        [global::NUnit.Framework.TestCaseAttribute("D04", "13", null)]
-        [global::NUnit.Framework.TestCaseAttribute("D05", "14", null)]
-        [global::NUnit.Framework.TestCaseAttribute("D06", "15", null)]
-        [global::NUnit.Framework.TestCaseAttribute("D07", "16", null)]
-        [global::NUnit.Framework.TestCaseAttribute("D08", "17", null)]
-        [global::NUnit.Framework.TestCaseAttribute("D09", "18", null)]
-        [global::NUnit.Framework.TestCaseAttribute("D10", "19", null)]
-        [global::NUnit.Framework.TestCaseAttribute("D11", "20", null)]
-        [global::NUnit.Framework.TestCaseAttribute("D12", "21", null)]
-        [global::NUnit.Framework.TestCaseAttribute("D13", "22", null)]
-        [global::NUnit.Framework.TestCaseAttribute("D14", "23", null)]
-        [global::NUnit.Framework.TestCaseAttribute("D15", "24", null)]
-        [global::NUnit.Framework.TestCaseAttribute("D16", "25", null)]
-        [global::NUnit.Framework.TestCaseAttribute("D17", "26", null)]
-        [global::NUnit.Framework.TestCaseAttribute("D18", "27", null)]
-        [global::NUnit.Framework.TestCaseAttribute("D19", "28", null)]
-        [global::NUnit.Framework.TestCaseAttribute("D20", "29", null)]
-        public async global::System.Threading.Tasks.Task Dashboard_AccessAndWidgetPresenceValidationsCaseId(string caseId, string @__pickleIndex, string[] exampleTags)
-        {
-            string[] @__tags = new string[] {
-                    "dashboard"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
-            global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("caseId", caseId);
-            string pickleIndex = @__pickleIndex;
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Dashboard - access and widget presence validations (<caseId>)", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
-            string[] tagsOfRule = ((string[])(null));
-            global::Reqnroll.RuleInfo ruleInfo = null;
-#line 25
-  this.ScenarioInitialize(scenarioInfo, ruleInfo);
-#line hidden
-            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
-            {
-                await testRunner.SkipScenarioAsync();
-            }
-            else
-            {
-                await this.ScenarioStartAsync();
-#line 4
-  await this.FeatureBackgroundAsync();
-#line hidden
-#line 26
+#line 6
     await testRunner.WhenAsync("the user logs in as Admin", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 27
-    await testRunner.ThenAsync("login should succeed and Dashboard should be visible", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
-#line hidden
-#line 28
-    await testRunner.WhenAsync("the user opens the Dashboard module", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
-#line hidden
-#line 29
-    await testRunner.ThenAsync("the Dashboard module should be accessible", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
-#line hidden
-            }
-            await this.ScenarioCleanupAsync();
-        }
-        
-        [global::NUnit.Framework.TestAttribute()]
-        [global::NUnit.Framework.DescriptionAttribute("PIM - navigation regression checks (<caseId>)")]
-        [global::NUnit.Framework.CategoryAttribute("pim")]
-        [global::NUnit.Framework.TestCaseAttribute("PIM01", "30", null)]
-        [global::NUnit.Framework.TestCaseAttribute("PIM02", "31", null)]
-        [global::NUnit.Framework.TestCaseAttribute("PIM03", "32", null)]
-        [global::NUnit.Framework.TestCaseAttribute("PIM04", "33", null)]
-        [global::NUnit.Framework.TestCaseAttribute("PIM05", "34", null)]
-        [global::NUnit.Framework.TestCaseAttribute("PIM06", "35", null)]
-        [global::NUnit.Framework.TestCaseAttribute("PIM07", "36", null)]
-        [global::NUnit.Framework.TestCaseAttribute("PIM08", "37", null)]
-        [global::NUnit.Framework.TestCaseAttribute("PIM09", "38", null)]
-        [global::NUnit.Framework.TestCaseAttribute("PIM10", "39", null)]
-        [global::NUnit.Framework.TestCaseAttribute("PIM11", "40", null)]
-        [global::NUnit.Framework.TestCaseAttribute("PIM12", "41", null)]
-        [global::NUnit.Framework.TestCaseAttribute("PIM13", "42", null)]
-        [global::NUnit.Framework.TestCaseAttribute("PIM14", "43", null)]
-        [global::NUnit.Framework.TestCaseAttribute("PIM15", "44", null)]
-        [global::NUnit.Framework.TestCaseAttribute("PIM16", "45", null)]
-        [global::NUnit.Framework.TestCaseAttribute("PIM17", "46", null)]
-        [global::NUnit.Framework.TestCaseAttribute("PIM18", "47", null)]
-        [global::NUnit.Framework.TestCaseAttribute("PIM19", "48", null)]
-        [global::NUnit.Framework.TestCaseAttribute("PIM20", "49", null)]
-        [global::NUnit.Framework.TestCaseAttribute("PIM21", "50", null)]
-        [global::NUnit.Framework.TestCaseAttribute("PIM22", "51", null)]
-        [global::NUnit.Framework.TestCaseAttribute("PIM23", "52", null)]
-        [global::NUnit.Framework.TestCaseAttribute("PIM24", "53", null)]
-        [global::NUnit.Framework.TestCaseAttribute("PIM25", "54", null)]
-        public async global::System.Threading.Tasks.Task PIM_NavigationRegressionChecksCaseId(string caseId, string @__pickleIndex, string[] exampleTags)
-        {
-            string[] @__tags = new string[] {
-                    "pim"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
-            global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("caseId", caseId);
-            string pickleIndex = @__pickleIndex;
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("PIM - navigation regression checks (<caseId>)", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
-            string[] tagsOfRule = ((string[])(null));
-            global::Reqnroll.RuleInfo ruleInfo = null;
-#line 54
-  this.ScenarioInitialize(scenarioInfo, ruleInfo);
-#line hidden
-            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
-            {
-                await testRunner.SkipScenarioAsync();
-            }
-            else
-            {
-                await this.ScenarioStartAsync();
-#line 4
-  await this.FeatureBackgroundAsync();
-#line hidden
-#line 55
-    await testRunner.WhenAsync("the user logs in as Admin", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
-#line hidden
-#line 56
-    await testRunner.ThenAsync("login should succeed and Dashboard should be visible", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
-#line hidden
-#line 57
-    await testRunner.WhenAsync("the user opens the PIM module", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
-#line hidden
-#line 58
-    await testRunner.ThenAsync("login should succeed and Dashboard should be visible", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
-#line hidden
-            }
-            await this.ScenarioCleanupAsync();
-        }
-        
-        [global::NUnit.Framework.TestAttribute()]
-        [global::NUnit.Framework.DescriptionAttribute("Leave - navigation regression checks (<caseId>)")]
-        [global::NUnit.Framework.CategoryAttribute("leave")]
-        [global::NUnit.Framework.TestCaseAttribute("LV01", "55", null)]
-        [global::NUnit.Framework.TestCaseAttribute("LV02", "56", null)]
-        [global::NUnit.Framework.TestCaseAttribute("LV03", "57", null)]
-        [global::NUnit.Framework.TestCaseAttribute("LV04", "58", null)]
-        [global::NUnit.Framework.TestCaseAttribute("LV05", "59", null)]
-        [global::NUnit.Framework.TestCaseAttribute("LV06", "60", null)]
-        [global::NUnit.Framework.TestCaseAttribute("LV07", "61", null)]
-        [global::NUnit.Framework.TestCaseAttribute("LV08", "62", null)]
-        [global::NUnit.Framework.TestCaseAttribute("LV09", "63", null)]
-        [global::NUnit.Framework.TestCaseAttribute("LV10", "64", null)]
-        [global::NUnit.Framework.TestCaseAttribute("LV11", "65", null)]
-        [global::NUnit.Framework.TestCaseAttribute("LV12", "66", null)]
-        [global::NUnit.Framework.TestCaseAttribute("LV13", "67", null)]
-        [global::NUnit.Framework.TestCaseAttribute("LV14", "68", null)]
-        [global::NUnit.Framework.TestCaseAttribute("LV15", "69", null)]
-        [global::NUnit.Framework.TestCaseAttribute("LV16", "70", null)]
-        [global::NUnit.Framework.TestCaseAttribute("LV17", "71", null)]
-        [global::NUnit.Framework.TestCaseAttribute("LV18", "72", null)]
-        [global::NUnit.Framework.TestCaseAttribute("LV19", "73", null)]
-        [global::NUnit.Framework.TestCaseAttribute("LV20", "74", null)]
-        [global::NUnit.Framework.TestCaseAttribute("LV21", "75", null)]
-        [global::NUnit.Framework.TestCaseAttribute("LV22", "76", null)]
-        [global::NUnit.Framework.TestCaseAttribute("LV23", "77", null)]
-        [global::NUnit.Framework.TestCaseAttribute("LV24", "78", null)]
-        [global::NUnit.Framework.TestCaseAttribute("LV25", "79", null)]
-        public async global::System.Threading.Tasks.Task Leave_NavigationRegressionChecksCaseId(string caseId, string @__pickleIndex, string[] exampleTags)
-        {
-            string[] @__tags = new string[] {
-                    "leave"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
-            global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("caseId", caseId);
-            string pickleIndex = @__pickleIndex;
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Leave - navigation regression checks (<caseId>)", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
-            string[] tagsOfRule = ((string[])(null));
-            global::Reqnroll.RuleInfo ruleInfo = null;
-#line 88
-  this.ScenarioInitialize(scenarioInfo, ruleInfo);
-#line hidden
-            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
-            {
-                await testRunner.SkipScenarioAsync();
-            }
-            else
-            {
-                await this.ScenarioStartAsync();
-#line 4
-  await this.FeatureBackgroundAsync();
-#line hidden
-#line 89
-    await testRunner.WhenAsync("the user logs in as Admin", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
-#line hidden
-#line 90
-    await testRunner.ThenAsync("login should succeed and Dashboard should be visible", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
-#line hidden
-#line 91
-    await testRunner.WhenAsync("the user opens the Leave module", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
-#line hidden
-#line 92
-    await testRunner.ThenAsync("login should succeed and Dashboard should be visible", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
-#line hidden
-            }
-            await this.ScenarioCleanupAsync();
-        }
-        
-        [global::NUnit.Framework.TestAttribute()]
-        [global::NUnit.Framework.DescriptionAttribute("Recruitment - navigation regression checks (<caseId>)")]
-        [global::NUnit.Framework.CategoryAttribute("recruitment")]
-        [global::NUnit.Framework.TestCaseAttribute("REC01", "80", null)]
-        [global::NUnit.Framework.TestCaseAttribute("REC02", "81", null)]
-        [global::NUnit.Framework.TestCaseAttribute("REC03", "82", null)]
-        [global::NUnit.Framework.TestCaseAttribute("REC04", "83", null)]
-        [global::NUnit.Framework.TestCaseAttribute("REC05", "84", null)]
-        [global::NUnit.Framework.TestCaseAttribute("REC06", "85", null)]
-        [global::NUnit.Framework.TestCaseAttribute("REC07", "86", null)]
-        [global::NUnit.Framework.TestCaseAttribute("REC08", "87", null)]
-        [global::NUnit.Framework.TestCaseAttribute("REC09", "88", null)]
-        [global::NUnit.Framework.TestCaseAttribute("REC10", "89", null)]
-        [global::NUnit.Framework.TestCaseAttribute("REC11", "90", null)]
-        [global::NUnit.Framework.TestCaseAttribute("REC12", "91", null)]
-        [global::NUnit.Framework.TestCaseAttribute("REC13", "92", null)]
-        [global::NUnit.Framework.TestCaseAttribute("REC14", "93", null)]
-        [global::NUnit.Framework.TestCaseAttribute("REC15", "94", null)]
-        [global::NUnit.Framework.TestCaseAttribute("REC16", "95", null)]
-        [global::NUnit.Framework.TestCaseAttribute("REC17", "96", null)]
-        [global::NUnit.Framework.TestCaseAttribute("REC18", "97", null)]
-        [global::NUnit.Framework.TestCaseAttribute("REC19", "98", null)]
-        [global::NUnit.Framework.TestCaseAttribute("REC20", "99", null)]
-        public async global::System.Threading.Tasks.Task Recruitment_NavigationRegressionChecksCaseId(string caseId, string @__pickleIndex, string[] exampleTags)
-        {
-            string[] @__tags = new string[] {
-                    "recruitment"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
-            global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("caseId", caseId);
-            string pickleIndex = @__pickleIndex;
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Recruitment - navigation regression checks (<caseId>)", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
-            string[] tagsOfRule = ((string[])(null));
-            global::Reqnroll.RuleInfo ruleInfo = null;
-#line 122
-  this.ScenarioInitialize(scenarioInfo, ruleInfo);
-#line hidden
-            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
-            {
-                await testRunner.SkipScenarioAsync();
-            }
-            else
-            {
-                await this.ScenarioStartAsync();
-#line 4
-  await this.FeatureBackgroundAsync();
-#line hidden
-#line 123
-    await testRunner.WhenAsync("the user logs in as Admin", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
-#line hidden
-#line 124
-    await testRunner.ThenAsync("login should succeed and Dashboard should be visible", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
-#line hidden
-#line 125
-    await testRunner.WhenAsync("the user opens the Recruitment module", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
-#line hidden
-#line 126
-    await testRunner.ThenAsync("login should succeed and Dashboard should be visible", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
-#line hidden
-            }
-            await this.ScenarioCleanupAsync();
-        }
-        
-        [global::NUnit.Framework.TestAttribute()]
-        [global::NUnit.Framework.DescriptionAttribute("Time - navigation regression checks (<caseId>)")]
-        [global::NUnit.Framework.CategoryAttribute("time")]
-        [global::NUnit.Framework.TestCaseAttribute("T01", "100", null)]
-        [global::NUnit.Framework.TestCaseAttribute("T02", "101", null)]
-        [global::NUnit.Framework.TestCaseAttribute("T03", "102", null)]
-        [global::NUnit.Framework.TestCaseAttribute("T04", "103", null)]
-        [global::NUnit.Framework.TestCaseAttribute("T05", "104", null)]
-        [global::NUnit.Framework.TestCaseAttribute("T06", "105", null)]
-        [global::NUnit.Framework.TestCaseAttribute("T07", "106", null)]
-        [global::NUnit.Framework.TestCaseAttribute("T08", "107", null)]
-        [global::NUnit.Framework.TestCaseAttribute("T09", "108", null)]
-        [global::NUnit.Framework.TestCaseAttribute("T10", "109", null)]
-        [global::NUnit.Framework.TestCaseAttribute("T11", "110", null)]
-        [global::NUnit.Framework.TestCaseAttribute("T12", "111", null)]
-        [global::NUnit.Framework.TestCaseAttribute("T13", "112", null)]
-        [global::NUnit.Framework.TestCaseAttribute("T14", "113", null)]
-        [global::NUnit.Framework.TestCaseAttribute("T15", "114", null)]
-        [global::NUnit.Framework.TestCaseAttribute("T16", "115", null)]
-        [global::NUnit.Framework.TestCaseAttribute("T17", "116", null)]
-        [global::NUnit.Framework.TestCaseAttribute("T18", "117", null)]
-        [global::NUnit.Framework.TestCaseAttribute("T19", "118", null)]
-        [global::NUnit.Framework.TestCaseAttribute("T20", "119", null)]
-        public async global::System.Threading.Tasks.Task Time_NavigationRegressionChecksCaseId(string caseId, string @__pickleIndex, string[] exampleTags)
-        {
-            string[] @__tags = new string[] {
-                    "time"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
-            global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("caseId", caseId);
-            string pickleIndex = @__pickleIndex;
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Time - navigation regression checks (<caseId>)", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
-            string[] tagsOfRule = ((string[])(null));
-            global::Reqnroll.RuleInfo ruleInfo = null;
-#line 151
-  this.ScenarioInitialize(scenarioInfo, ruleInfo);
-#line hidden
-            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
-            {
-                await testRunner.SkipScenarioAsync();
-            }
-            else
-            {
-                await this.ScenarioStartAsync();
-#line 4
-  await this.FeatureBackgroundAsync();
-#line hidden
-#line 152
-    await testRunner.WhenAsync("the user logs in as Admin", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
-#line hidden
-#line 153
-    await testRunner.ThenAsync("login should succeed and Dashboard should be visible", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
-#line hidden
-#line 154
-    await testRunner.WhenAsync("the user opens the Time module", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
-#line hidden
-#line 155
-    await testRunner.ThenAsync("login should succeed and Dashboard should be visible", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
-#line hidden
-            }
-            await this.ScenarioCleanupAsync();
-        }
-        
-        [global::NUnit.Framework.TestAttribute()]
-        [global::NUnit.Framework.DescriptionAttribute("Admin - navigation regression checks (<caseId>)")]
-        [global::NUnit.Framework.CategoryAttribute("admin")]
-        [global::NUnit.Framework.TestCaseAttribute("A01", "120", null)]
-        [global::NUnit.Framework.TestCaseAttribute("A02", "121", null)]
-        [global::NUnit.Framework.TestCaseAttribute("A03", "122", null)]
-        [global::NUnit.Framework.TestCaseAttribute("A04", "123", null)]
-        [global::NUnit.Framework.TestCaseAttribute("A05", "124", null)]
-        [global::NUnit.Framework.TestCaseAttribute("A06", "125", null)]
-        [global::NUnit.Framework.TestCaseAttribute("A07", "126", null)]
-        [global::NUnit.Framework.TestCaseAttribute("A08", "127", null)]
-        [global::NUnit.Framework.TestCaseAttribute("A09", "128", null)]
-        [global::NUnit.Framework.TestCaseAttribute("A10", "129", null)]
-        [global::NUnit.Framework.TestCaseAttribute("A11", "130", null)]
-        [global::NUnit.Framework.TestCaseAttribute("A12", "131", null)]
-        [global::NUnit.Framework.TestCaseAttribute("A13", "132", null)]
-        [global::NUnit.Framework.TestCaseAttribute("A14", "133", null)]
-        [global::NUnit.Framework.TestCaseAttribute("A15", "134", null)]
-        [global::NUnit.Framework.TestCaseAttribute("A16", "135", null)]
-        [global::NUnit.Framework.TestCaseAttribute("A17", "136", null)]
-        [global::NUnit.Framework.TestCaseAttribute("A18", "137", null)]
-        [global::NUnit.Framework.TestCaseAttribute("A19", "138", null)]
-        [global::NUnit.Framework.TestCaseAttribute("A20", "139", null)]
-        [global::NUnit.Framework.TestCaseAttribute("A21", "140", null)]
-        [global::NUnit.Framework.TestCaseAttribute("A22", "141", null)]
-        [global::NUnit.Framework.TestCaseAttribute("A23", "142", null)]
-        [global::NUnit.Framework.TestCaseAttribute("A24", "143", null)]
-        [global::NUnit.Framework.TestCaseAttribute("A25", "144", null)]
-        [global::NUnit.Framework.TestCaseAttribute("A26", "145", null)]
-        [global::NUnit.Framework.TestCaseAttribute("A27", "146", null)]
-        [global::NUnit.Framework.TestCaseAttribute("A28", "147", null)]
-        [global::NUnit.Framework.TestCaseAttribute("A29", "148", null)]
-        [global::NUnit.Framework.TestCaseAttribute("A30", "149", null)]
-        [global::NUnit.Framework.TestCaseAttribute("A31", "150", null)]
-        [global::NUnit.Framework.TestCaseAttribute("A32", "151", null)]
-        [global::NUnit.Framework.TestCaseAttribute("A33", "152", null)]
-        [global::NUnit.Framework.TestCaseAttribute("A34", "153", null)]
-        [global::NUnit.Framework.TestCaseAttribute("A35", "154", null)]
-        [global::NUnit.Framework.TestCaseAttribute("A36", "155", null)]
-        [global::NUnit.Framework.TestCaseAttribute("A37", "156", null)]
-        [global::NUnit.Framework.TestCaseAttribute("A38", "157", null)]
-        [global::NUnit.Framework.TestCaseAttribute("A39", "158", null)]
-        [global::NUnit.Framework.TestCaseAttribute("A40", "159", null)]
-        public async global::System.Threading.Tasks.Task Admin_NavigationRegressionChecksCaseId(string caseId, string @__pickleIndex, string[] exampleTags)
-        {
-            string[] @__tags = new string[] {
-                    "admin"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
-            global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("caseId", caseId);
-            string pickleIndex = @__pickleIndex;
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Admin - navigation regression checks (<caseId>)", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
-            string[] tagsOfRule = ((string[])(null));
-            global::Reqnroll.RuleInfo ruleInfo = null;
-#line 180
-  this.ScenarioInitialize(scenarioInfo, ruleInfo);
-#line hidden
-            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
-            {
-                await testRunner.SkipScenarioAsync();
-            }
-            else
-            {
-                await this.ScenarioStartAsync();
-#line 4
-  await this.FeatureBackgroundAsync();
-#line hidden
-#line 181
-    await testRunner.WhenAsync("the user logs in as Admin", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
-#line hidden
-#line 182
-    await testRunner.ThenAsync("login should succeed and Dashboard should be visible", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
-#line hidden
-#line 183
-    await testRunner.WhenAsync("the user opens the Admin module", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
-#line hidden
-#line 184
+#line 7
     await testRunner.ThenAsync("login should succeed and Dashboard should be visible", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }

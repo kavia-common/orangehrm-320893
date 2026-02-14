@@ -1,0 +1,63 @@
+
+@demo
+Scenario: Admin can log in successfully                     [90m# features/demo_login.feature:4[0m
+[Java][Hooks] Starting scenario: Admin can log in successfully
+[DriverFactory] Using Chrome binary: /usr/bin/google-chrome
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 145.0.7632.76 (resolved driver for Chrome 145)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/kavia/.cache/selenium/chromedriver/linux64/145.0.7632.76/chromedriver
+Feb 14, 2026 8:48:48 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 145
+Feb 14, 2026 8:48:48 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 145.0.7632.75. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.20.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+[DriverFactory] Browser launched: chrome (headless=true)
+[DriverFactory] ChromeOptions: --headless=new --no-sandbox --disable-dev-shm-usage --disable-gpu --window-size=1920,1080
+  [32mGiven [0m[32mthe user is on the OrangeHRM login page[0m             [90m# com.orangehrm.steps.CommonSteps.openLogin()[0m
+  [32mWhen [0m[32mthe user logs in as Admin[0m                            [90m# com.orangehrm.steps.CommonSteps.loginAsAdmin()[0m
+  [31mThen [0m[31mlogin should succeed and Dashboard should be visible[0m [90m# com.orangehrm.steps.CommonSteps.dashboardVisible()[0m
+      [31morg.opentest4j.AssertionFailedError: Expected Dashboard to be visible after login ==> expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:214)
+	at com.orangehrm.steps.CommonSteps.dashboardVisible(CommonSteps.java:44)
+	at ✽.login should succeed and Dashboard should be visible(classpath:features/demo_login.feature:7)
+[0m
+[Java][Hooks] Finished scenario: Admin can log in successfully | status=FAILED
+
+[31mFailed scenarios:[0m
+classpath:features/demo_login.feature:4 # Admin can log in successfully
+
+1 Scenarios ([31m1 failed[0m)
+3 Steps ([31m1 failed[0m, [32m2 passed[0m)
+0m24.348s
+
+
+org.opentest4j.AssertionFailedError: Expected Dashboard to be visible after login ==> expected: <true> but was: <false>
+	at com.orangehrm.steps.CommonSteps.dashboardVisible(CommonSteps.java:44)
+	at ✽.login should succeed and Dashboard should be visible(classpath:features/demo_login.feature:7)
+
+
+[[1;31mERROR[m] [1;31mTests [0;1mrun: [0;1m1[m, [1;31mFailures: [0;1;31m1[m, Errors: 0, Skipped: 0, Time elapsed: 24.55 s[1;31m <<< FAILURE![m -- in com.orangehrm.runner.[1mRunCucumberTest[m
+[[1;31mERROR[m] Demo - Login (headless).Admin can log in successfully -- Time elapsed: 24.31 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Expected Dashboard to be visible after login ==> expected: <true> but was: <false>
+	at com.orangehrm.steps.CommonSteps.dashboardVisible(CommonSteps.java:44)
+	at ✽.login should succeed and Dashboard should be visible(classpath:features/demo_login.feature:7)
+
+[[1;31mERROR[m] [1;31mFailures: [m
+[[1;31mERROR[m] [1;31m  Expected Dashboard to be visible after login ==> expected: <true> but was: <false>[m
+[[1;31mERROR[m] [1;31mTests run: 1, Failures: 1, Errors: 0, Skipped: 0[m
+[[1;31mERROR[m] Failed to execute goal [32morg.apache.maven.plugins:maven-surefire-plugin:3.2.5:test[m [1m(default-test)[m on project [36morangehrm-ui-automation[m: [1;31mThere are test failures.[m
+[[1;31mERROR[m] [1;31m[m
+[[1;31mERROR[m] [1;31mPlease refer to /home/kavia/workspace/code-generation/orangehrm-320893/ui-automation-java/target/surefire-reports for the individual test results.[m
+[[1;31mERROR[m] [1;31mPlease refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.[m
+[[1;31mERROR[m] -> [1m[Help 1][m
+[[1;31mERROR[m] 
+[[1;31mERROR[m] To see the full stack trace of the errors, re-run Maven with the [1m-e[m switch.
+[[1;31mERROR[m] Re-run Maven using the [1m-X[m switch to enable full debug logging.
+[[1;31mERROR[m] 
+[[1;31mERROR[m] For more information about the errors and possible solutions, please read the following articles:
+[[1;31mERROR[m] [1m[Help 1][m http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+real=28.308
+user=21.755
+sys=2.039

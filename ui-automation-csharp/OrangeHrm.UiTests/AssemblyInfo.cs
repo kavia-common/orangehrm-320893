@@ -1,4 +1,4 @@
 using NUnit.Framework;
 
-[assembly: LevelOfParallelization(1)]
+// Force non-parallel execution for demo stability.
 [assembly: Parallelizable(ParallelScope.None)]
