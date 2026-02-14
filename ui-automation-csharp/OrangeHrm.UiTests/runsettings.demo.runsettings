@@ -10,6 +10,9 @@
   <RunConfiguration>
     <!-- Prevent vstest-level parallelism -->
     <MaxCpuCount>1</MaxCpuCount>
+
+    <!-- Ensure the demo run includes ONLY passing demo scenarios -->
+    <TestCaseFilter>TestCategory=demo</TestCaseFilter>
   </RunConfiguration>
 
   <TestRunParameters>

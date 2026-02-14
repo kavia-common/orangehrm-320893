@@ -32,8 +32,8 @@ dotnet test OrangeHrm.UiTests/OrangeHrm.UiTests.csproj --settings OrangeHrm.UiTe
 ```
 
 Change browser:
-- update `BROWSER` parameter in the runsettings, or
-- set an environment variable `BROWSER` (takes precedence in this project)
+- update `BROWSER` parameter in the runsettings (takes precedence), or
+- set an environment variable `BROWSER` (used only if not present in runsettings)
 
 ## Allure reporting (disabled for demo)
 Allure integration remains disabled for demo runs:

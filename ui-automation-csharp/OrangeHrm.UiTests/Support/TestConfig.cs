@@ -22,13 +22,15 @@ public static class TestConfig
 
     private static string Get(string key, string defaultValue)
     {
-        // 1) environment variable
-        var env = Environment.GetEnvironmentVariable(key);
-        if (!string.IsNullOrWhiteSpace(env)) return env.Trim();
-
-        // 2) runsettings parameter (NUnit will expose via TestContext.Parameters)
+        // 1) runsettings parameter (NUnit will expose via TestContext.Parameters)
+        //    Demo stability requirement: when a .runsettings file is provided, it must win over
+        //    any ambient environment variables.
         var param = TestContext.Parameters.Get(key);
         if (!string.IsNullOrWhiteSpace(param)) return param.Trim();
+
+        // 2) environment variable (including values loaded from optional .env)
+        var env = Environment.GetEnvironmentVariable(key);
+        if (!string.IsNullOrWhiteSpace(env)) return env.Trim();
 
         return defaultValue;
     }
