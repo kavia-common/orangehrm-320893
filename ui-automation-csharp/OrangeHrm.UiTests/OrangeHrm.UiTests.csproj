@@ -27,6 +27,9 @@
     <None Update="runsettings.local.runsettings">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="runsettings.demo.runsettings">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

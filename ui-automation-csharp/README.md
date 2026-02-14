@@ -15,9 +15,18 @@ Edit `OrangeHrm.UiTests/runsettings.local.runsettings` and set:
 - BROWSER: `chrome|firefox|edge`
 - HEADLESS: `true|false`
 
-## Run
-From `ui-automation-csharp/`:
+## Run (demo)
+From `ui-automation-csharp/` (single stable demo run; only passing demo scenarios are included in this project):
 
+```bash
+dotnet test OrangeHrm.UiTests/OrangeHrm.UiTests.csproj --settings OrangeHrm.UiTests/runsettings.demo.runsettings
+```
+
+Notes:
+- Demo credentials are provided via the runsettings file (Admin / admin123).
+- Parallel execution is disabled for stability (NUnit assembly attributes + MaxCpuCount=1 in demo runsettings).
+
+## Run (local)
 ```bash
 dotnet test OrangeHrm.UiTests/OrangeHrm.UiTests.csproj --settings OrangeHrm.UiTests/runsettings.local.runsettings
 ```
@@ -26,23 +35,10 @@ Change browser:
 - update `BROWSER` parameter in the runsettings, or
 - set an environment variable `BROWSER` (takes precedence in this project)
 
-## Allure reporting
-This project is configured to output Allure results during `dotnet test`.
-
-- Allure results folder: `ui-automation-csharp/OrangeHrm.UiTests/bin/<Configuration>/net8.0/allure-results`
-  - Example (Debug): `OrangeHrm.UiTests/bin/Debug/net8.0/allure-results`
-
-To generate an HTML report locally you need the Allure CLI installed.
-
-Generate report (from `ui-automation-csharp/`):
-```bash
-allure generate OrangeHrm.UiTests/bin/Debug/net8.0/allure-results -o OrangeHrm.UiTests/bin/Debug/net8.0/allure-report --clean
-```
-
-Open report:
-```bash
-allure open OrangeHrm.UiTests/bin/Debug/net8.0/allure-report
-```
+## Allure reporting (disabled for demo)
+Allure integration remains disabled for demo runs:
+- No Allure hooks are enabled in code
+- No Allure HTML generation step is expected (console logs + raw test results only)
 
 ## Notes
 Demo environment can be unstable; tests prioritize navigation and critical validations.

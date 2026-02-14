@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RunSettings>
+  <!--
+    Demo runsettings:
+    - Uses the stable OrangeHRM public demo environment
+    - Uses stable demo credentials
+    - Forces non-parallel execution via MaxCpuCount=1 (in addition to NUnit assembly attributes)
+    - Allure remains disabled (no Allure packages/hooks are enabled in this project)
+  -->
+  <RunConfiguration>
+    <!-- Prevent vstest-level parallelism -->
+    <MaxCpuCount>1</MaxCpuCount>
+  </RunConfiguration>
+
+  <TestRunParameters>
+    <Parameter name="BASE_URL" value="https://opensource-demo.orangehrmlive.com" />
+    <Parameter name="BROWSER" value="chrome" />
+    <Parameter name="HEADLESS" value="true" />
+
+    <!-- Stable demo credentials -->
+    <Parameter name="ADMIN_USERNAME" value="Admin" />
+    <Parameter name="ADMIN_PASSWORD" value="admin123" />
+
+    <!-- Optional: left blank for demo run -->
+    <Parameter name="ESS_USERNAME" value="" />
+    <Parameter name="ESS_PASSWORD" value="" />
+  </TestRunParameters>
+</RunSettings>

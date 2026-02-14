@@ -3,7 +3,7 @@
   <TestRunParameters>
     <Parameter name="BASE_URL" value="https://opensource-demo.orangehrmlive.com" />
     <Parameter name="BROWSER" value="chrome" />
-    <Parameter name="HEADLESS" value="false" />
+    <Parameter name="HEADLESS" value="true" />
 
     <!-- Credentials for this execution run -->
     <Parameter name="ADMIN_USERNAME" value="Admin" />
