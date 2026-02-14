@@ -19,6 +19,10 @@
         <slf4j.version>2.0.12</slf4j.version>
         <dotenv.version>3.0.0</dotenv.version>
         <webdrivermanager.version>5.8.0</webdrivermanager.version>
+
+        <!-- Allure -->
+        <allure.version>2.25.0</allure.version>
+        <allure.maven.version>2.12.0</allure.maven.version>
     </properties>
 
     <dependencies>
@@ -65,6 +69,14 @@
             <version>${dotenv.version}</version>
         </dependency>
 
+        <!-- Allure integration (Cucumber 7 / JUnit Platform) -->
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-cucumber7-jvm</artifactId>
+            <version>${allure.version}</version>
+            <scope>test</scope>
+        </dependency>
+
         <!-- Logging -->
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -87,7 +99,21 @@
                         <browser>${browser}</browser>
                         <!-- Run tags: e.g. -Dcucumber.filter.tags="@smoke and not @wip" -->
                         <cucumber.filter.tags>${cucumber.filter.tags}</cucumber.filter.tags>
+
+                        <!-- Allure results output directory -->
+                        <allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>
                     </systemPropertyVariables>
+                </configuration>
+            </plugin>
+
+            <!-- Allure report generator (HTML) -->
+            <plugin>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>${allure.maven.version}</version>
+                <configuration>
+                    <resultsDirectory>${project.build.directory}/allure-results</resultsDirectory>
+                    <reportDirectory>${project.build.directory}/allure-report</reportDirectory>
                 </configuration>
             </plugin>
         </plugins>

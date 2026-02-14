@@ -19,9 +19,27 @@ public class LoginPage extends BasePage {
     }
 
     public void login(String user, String pass) {
-        type(username, user);
-        type(password, pass);
+        // Allow feature files to keep placeholders while credentials come from env/.env
+        String resolvedUser = resolveCredentialPlaceholder(user);
+        String resolvedPass = resolveCredentialPlaceholder(pass);
+
+        type(username, resolvedUser);
+        type(password, resolvedPass);
         click(loginButton);
+    }
+
+    private String resolveCredentialPlaceholder(String value) {
+        if (value == null) {
+            return "";
+        }
+        String v = value.trim();
+        return switch (v) {
+            case "__ADMIN_USERNAME__" -> TestConfig.adminUsername();
+            case "__ADMIN_PASSWORD__" -> TestConfig.adminPassword();
+            case "__ESS_USERNAME__ -> TestConfig.essUsername();
+            case "__ESS_PASSWORD__" -> TestConfig.essPassword();
+            default -> v;
+        };
     }
 
     public boolean isInvalidCredentialsShown() {

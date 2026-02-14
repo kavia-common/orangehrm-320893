@@ -23,7 +23,7 @@ import static io.cucumber.junit.platform.engine.Constants.PLUGIN_PROPERTY_NAME;
 @ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "com.orangehrm.steps")
 @ConfigurationParameter(
         key = PLUGIN_PROPERTY_NAME,
-        value = "pretty, summary, html:target/cucumber-report.html, json:target/cucumber-report.json"
+        value = "pretty, summary, html:target/cucumber-report.html, json:target/cucumber-report.json, io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"
 )
 public class RunCucumberTest {
 }
