@@ -5,7 +5,7 @@
   ],
   "plugins": [
     {
-      "name": "Allure.ReqnrollPlugin"
+      "name": "Allure.Reqnroll"
     }
   ],
   "runtime": {
