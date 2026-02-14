@@ -1,5 +1,5 @@
 using System;
-using Allure.Commons;
+using Allure.Net.Commons;
 using OpenQA.Selenium;
 using OrangeHrm.UiTests.Support;
 using Reqnroll;
@@ -35,12 +35,6 @@ public sealed class Hooks
                 {
                     var screenshot = takesScreenshot.GetScreenshot();
 
-                    // Allure.Commons 3.x no longer exposes the `AllureApi` helper used in older examples.
-                    // Also, `AllureLifecycle.Instance` can throw if an Allure config is not present.
-                    //
-                    // We therefore:
-                    // 1) try to use the currently active lifecycle if the adapter initialized it
-                    // 2) if that’s unavailable, silently skip the attachment (do not fail teardown)
                     TryAddAllureAttachment(
                         name: "failure-screenshot",
                         type: "image/png",
@@ -64,15 +58,9 @@ public sealed class Hooks
     {
         try
         {
-            // Prefer a lifecycle that is already initialized by the Allure adapters.
-            // If none is available, do not attempt to create one (may require config).
-            var lifecycle = AllureLifecycle.Current;
-            if (lifecycle is null)
-            {
-                return;
-            }
-
-            lifecycle.AddAttachment(name, type, content, fileExtension);
+            // Allure.Net.Commons (2.14.x line) provides the AllureApi helper used by the adapters.
+            // This writes into the raw results directory configured by allureConfig.json.
+            AllureApi.AddAttachment(name, type, content, fileExtension);
         }
         catch
         {
