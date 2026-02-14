@@ -62,6 +62,14 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- JUnit Jupiter Engine (required for JUnit Platform/Surefire to execute @Suite classes) -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit.jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+
         <!-- JUnit Platform Suite API (required for @Suite, @SelectClasspathResource, etc.) -->
         <dependency>
             <groupId>org.junit.platform</groupId>
