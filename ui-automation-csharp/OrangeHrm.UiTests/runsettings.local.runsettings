@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RunSettings>
+  <TestRunParameters>
+    <Parameter name="BASE_URL" value="https://opensource-demo.orangehrmlive.com" />
+    <Parameter name="BROWSER" value="chrome" />
+    <Parameter name="HEADLESS" value="false" />
+
+    <!-- Credentials placeholders -->
+    <Parameter name="ADMIN_USERNAME" value="__ADMIN_USERNAME__" />
+    <Parameter name="ADMIN_PASSWORD" value="__ADMIN_PASSWORD__" />
+    <Parameter name="ESS_USERNAME" value="__ESS_USERNAME__" />
+    <Parameter name="ESS_PASSWORD" value="__ESS_PASSWORD__" />
+  </TestRunParameters>
+</RunSettings>
