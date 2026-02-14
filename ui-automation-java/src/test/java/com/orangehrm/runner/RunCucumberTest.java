@@ -18,7 +18,7 @@ import static io.cucumber.junit.platform.engine.Constants.PLUGIN_PROPERTY_NAME;
  */
 @Suite
 @IncludeEngines("cucumber")
-@SelectClasspathResource("features/demo_login.feature")
+@SelectClasspathResource("features/demo")
 @ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "com.orangehrm.steps")
 @ConfigurationParameter(
         key = PLUGIN_PROPERTY_NAME,

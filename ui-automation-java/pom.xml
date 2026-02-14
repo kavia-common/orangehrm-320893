@@ -20,8 +20,11 @@
         <dotenv.version>3.0.0</dotenv.version>
         <webdrivermanager.version>5.8.0</webdrivermanager.version>
 
-        <!-- Demo default: run only the demo login feature -->
-        <cucumber.filter.tags>@demo</cucumber.filter.tags>
+        <!-- Demo defaults: stable single-run demo suite -->
+        <browser>chrome</browser>
+
+        <!-- Run only stable demo scenarios by default -->
+        <cucumber.filter.tags>@demo and not @wip</cucumber.filter.tags>
     </properties>
 
     <dependencies>
@@ -112,6 +115,12 @@
                 <version>3.2.5</version>
                 <configuration>
                     <useModulePath>false</useModulePath>
+
+                    <!-- Demo: guarantee we run only the single Cucumber demo suite entrypoint -->
+                    <includes>
+                        <include>**/RunCucumberTest.java</include>
+                    </includes>
+
                     <systemPropertyVariables>
                         <!-- Default browser if not provided -->
                         <browser>${browser}</browser>
