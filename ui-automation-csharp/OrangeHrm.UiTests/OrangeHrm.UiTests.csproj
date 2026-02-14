@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="DotNetSeleniumExtras.WaitHelpers" Version="3.11.0" />
     <PackageReference Include="Reqnroll" Version="3.0.3" />
     <PackageReference Include="Reqnroll.NUnit" Version="3.0.3" />
     <PackageReference Include="NUnit" Version="3.14.0" />

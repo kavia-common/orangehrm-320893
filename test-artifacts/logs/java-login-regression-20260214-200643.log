@@ -1,0 +1,6 @@
+Timestamp:20260214-200643
+Allure_CLI:NOT_FOUND
+=== JAVA START 2026-02-14T20:06:43+00:00 ===
+Allure report skipped
+=== JAVA DONE RC= 2026-02-14T20:06:46+00:00 ===
+ARTIFACTS JAVA_LOG=/home/kavia/workspace/code-generation/orangehrm-320893/test-artifacts/logs/java-login-regression-20260214-200643.log JAVA_ALLURE_RESULTS=/home/kavia/workspace/code-generation/orangehrm-320893/test-artifacts/allure/java/login-regression-20260214-200643 JAVA_ALLURE_REPORT=/home/kavia/workspace/code-generation/orangehrm-320893/test-artifacts/reports/java/login-regression-20260214-200643

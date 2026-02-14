@@ -1,0 +1,6 @@
+  Determining projects to restore...
+/home/kavia/workspace/code-generation/orangehrm-320893/ui-automation-csharp/OrangeHrm.UiTests/OrangeHrm.UiTests.csproj : warning NU1603: OrangeHrm.UiTests depends on Allure.Commons (>= 2.14.1) but Allure.Commons 2.14.1 was not found. An approximate best match of Allure.Commons 3.0.0.10 was resolved.
+  All projects are up-to-date for restore.
+/home/kavia/workspace/code-generation/orangehrm-320893/ui-automation-csharp/OrangeHrm.UiTests/OrangeHrm.UiTests.csproj : warning NU1603: OrangeHrm.UiTests depends on Allure.Commons (>= 2.14.1) but Allure.Commons 2.14.1 was not found. An approximate best match of Allure.Commons 3.0.0.10 was resolved.
+/home/kavia/workspace/code-generation/orangehrm-320893/ui-automation-csharp/OrangeHrm.UiTests/Support/TestConfig.cs(12,18): error CS1739: The best overload for 'Load' does not have a parameter named 'ignoreIfMissing' [/home/kavia/workspace/code-generation/orangehrm-320893/ui-automation-csharp/OrangeHrm.UiTests/OrangeHrm.UiTests.csproj]
+/home/kavia/workspace/code-generation/orangehrm-320893/ui-automation-csharp/OrangeHrm.UiTests/Steps/Hooks.cs(36,21): error CS0103: The name 'AllureApi' does not exist in the current context [/home/kavia/workspace/code-generation/orangehrm-320893/ui-automation-csharp/OrangeHrm.UiTests/OrangeHrm.UiTests.csproj]

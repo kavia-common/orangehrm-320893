@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using DotNetEnv;
 using NUnit.Framework;
 
@@ -9,7 +10,14 @@ public static class TestConfig
     static TestConfig()
     {
         // Load .env if present (optional). Do not commit secrets.
-        Env.Load(ignoreIfMissing: true);
+        //
+        // DotNetEnv 3.0.0 does not support `ignoreIfMissing`, so we implement the
+        // optional behavior ourselves by checking file existence first.
+        var envPath = Path.Combine(Directory.GetCurrentDirectory(), ".env");
+        if (File.Exists(envPath))
+        {
+            Env.Load(envPath);
+        }
     }
 
     private static string Get(string key, string defaultValue)
