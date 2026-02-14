@@ -1,7 +1,9 @@
 {
   "$schema": "https://schemas.reqnroll.net/reqnroll-config-latest.json",
   "bindingAssemblies": [
-    "OrangeHrm.UiTests"
+    {
+      "assembly": "OrangeHrm.UiTests"
+    }
   ],
   "plugins": [
     {
