@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using DotNetEnv;
 
 namespace OrangeHrm.ApiTests.Support;
@@ -8,9 +9,17 @@ public static class TestConfig
     static TestConfig()
     {
         // Load .env if present (optional). Do not commit secrets.
+        //
+        // DotNetEnv 3.0.0 does not support `ignoreIfMissing`, so we implement the
+        // optional behavior ourselves by checking file existence first.
+        //
         // NOTE: DotNetEnv loads from current working directory; tests typically run with project output dir.
-        // We still call it so local runs with copied .env.example/.env work.
-        Env.Load(ignoreIfMissing: true);
+        // This still enables local runs with a copied .env.example/.env.
+        var envPath = Path.Combine(Directory.GetCurrentDirectory(), ".env");
+        if (File.Exists(envPath))
+        {
+            Env.Load(envPath);
+        }
     }
 
     private static string Get(string key, string defaultValue)
