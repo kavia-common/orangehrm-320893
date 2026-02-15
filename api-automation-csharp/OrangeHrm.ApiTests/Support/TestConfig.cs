@@ -34,6 +34,21 @@ public static class TestConfig
     public static string BaseUrl => Get("BASE_URL", "https://opensource-demo.orangehrmlive.com");
 
     // PUBLIC_INTERFACE
+    public static bool MockDemoMode
+    {
+        get
+        {
+            // Enabled via env var/flag to mirror the Java suite’s behavior.
+            // Accepts: "1", "true", "yes", "on" (case-insensitive).
+            var raw = Environment.GetEnvironmentVariable("MOCK_DEMO_MODE");
+            if (string.IsNullOrWhiteSpace(raw)) return false;
+
+            var v = raw.Trim().ToLowerInvariant();
+            return v is "1" or "true" or "yes" or "on";
+        }
+    }
+
+    // PUBLIC_INTERFACE
     public static string ApiBasePath => Get("API_BASE_PATH", "/api/v2");
 
     // PUBLIC_INTERFACE
