@@ -1,0 +1,51 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------< com.orangehrm:orangehrm-api-automation >---------------
+[INFO] Building OrangeHRM API Automation (Java + REST Assured) 1.0.0
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ orangehrm-api-automation ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/kavia/workspace/code-generation/orangehrm-320893/api-automation-java/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ orangehrm-api-automation ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ orangehrm-api-automation ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/kavia/workspace/code-generation/orangehrm-320893/api-automation-java/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ orangehrm-api-automation ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 9 source files to /home/kavia/workspace/code-generation/orangehrm-320893/api-automation-java/target/test-classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /home/kavia/workspace/code-generation/orangehrm-320893/api-automation-java/src/test/java/com/orangehrm/api/support/DemoModeFilter.java:[166,17] cannot find symbol
+  symbol:   method setHeaders(io.restassured.http.Headers)
+  location: variable resp of type io.restassured.internal.RestAssuredResponseImpl
+[ERROR] /home/kavia/workspace/code-generation/orangehrm-320893/api-automation-java/src/test/java/com/orangehrm/api/support/DemoModeFilter.java:[177,17] cannot find symbol
+  symbol:   method setHeaders(io.restassured.http.Headers)
+  location: variable resp of type io.restassured.internal.RestAssuredResponseImpl
+[INFO] 2 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.670 s
+[INFO] Finished at: 2026-02-15T18:53:42Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:testCompile (default-testCompile) on project orangehrm-api-automation: Compilation failure: Compilation failure: 
+[ERROR] /home/kavia/workspace/code-generation/orangehrm-320893/api-automation-java/src/test/java/com/orangehrm/api/support/DemoModeFilter.java:[166,17] cannot find symbol
+[ERROR]   symbol:   method setHeaders(io.restassured.http.Headers)
+[ERROR]   location: variable resp of type io.restassured.internal.RestAssuredResponseImpl
+[ERROR] /home/kavia/workspace/code-generation/orangehrm-320893/api-automation-java/src/test/java/com/orangehrm/api/support/DemoModeFilter.java:[177,17] cannot find symbol
+[ERROR]   symbol:   method setHeaders(io.restassured.http.Headers)
+[ERROR]   location: variable resp of type io.restassured.internal.RestAssuredResponseImpl
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

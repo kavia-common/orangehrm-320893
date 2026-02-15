@@ -3,7 +3,7 @@ package com.orangehrm.api.support;
 import io.restassured.filter.Filter;
 import io.restassured.filter.FilterContext;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.restassured.internal.RestAssuredResponseImpl;
+import io.restassured.builder.ResponseBuilder;
 import io.restassured.response.Response;
 import io.restassured.specification.FilterableRequestSpecification;
 import io.restassured.specification.FilterableResponseSpecification;
@@ -157,28 +157,22 @@ final class DemoModeFilter implements Filter {
     private static Response json(int statusCode, Map<String, Object> body) {
         try {
             String json = OBJECT_MAPPER.writeValueAsString(body);
-
-            RestAssuredResponseImpl resp = new RestAssuredResponseImpl();
-            resp.setStatusCode(statusCode);
-
-            // Important: RestAssured parses response bodies via a content-type header driven parser registry.
-            // If we only set contentType but not headers, ContentParser may fail with getParser() NPE.
-            resp.setHeaders(new io.restassured.http.Headers(
-                    new io.restassured.http.Header("Content-Type", "application/json; charset=UTF-8")
-            ));
-
-            // RestAssured 5.4.x uses setContent(byte[]) for internal response impls.
-            resp.setContent(json.getBytes(StandardCharsets.UTF_8));
-            return resp;
+            return buildJsonResponse(statusCode, json.getBytes(StandardCharsets.UTF_8));
         } catch (Exception e) {
             // ultra-safe fallback
-            RestAssuredResponseImpl resp = new RestAssuredResponseImpl();
-            resp.setStatusCode(statusCode);
-            resp.setHeaders(new io.restassured.http.Headers(
-                    new io.restassured.http.Header("Content-Type", "application/json; charset=UTF-8")
-            ));
-            resp.setContent(("{\"message\":\"demo-mode-json-serialization-failed\"}").getBytes(StandardCharsets.UTF_8));
-            return resp;
+            return buildJsonResponse(
+                    statusCode,
+                    ("{\"message\":\"demo-mode-json-serialization-failed\"}").getBytes(StandardCharsets.UTF_8)
+            );
         }
+    }
+
+    private static Response buildJsonResponse(int statusCode, byte[] jsonBytes) {
+        // Use public builder APIs (compatible with RestAssured 5.4.x) rather than internal RestAssuredResponseImpl.
+        ResponseBuilder builder = new ResponseBuilder();
+        builder.setStatusCode(statusCode);
+        builder.setContentType("application/json; charset=UTF-8");
+        builder.setBody(jsonBytes);
+        return builder.build();
     }
 }
