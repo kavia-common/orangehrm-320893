@@ -1,0 +1,81 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------< com.orangehrm:orangehrm-api-automation >---------------
+[INFO] Building OrangeHRM API Automation (Java + REST Assured) 1.0.0
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ orangehrm-api-automation ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/kavia/workspace/code-generation/orangehrm-320893/api-automation-java/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ orangehrm-api-automation ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ orangehrm-api-automation ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/kavia/workspace/code-generation/orangehrm-320893/api-automation-java/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ orangehrm-api-automation ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 9 source files to /home/kavia/workspace/code-generation/orangehrm-320893/api-automation-java/target/test-classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /home/kavia/workspace/code-generation/orangehrm-320893/api-automation-java/src/test/java/com/orangehrm/api/support/DemoModeFilter.java:[37,46] incompatible types: java.lang.String cannot be converted to io.restassured.http.Method
+[ERROR] /home/kavia/workspace/code-generation/orangehrm-320893/api-automation-java/src/test/java/com/orangehrm/api/support/DemoModeFilter.java:[139,60] no suitable method found for given(java.util.Map<java.lang.String,java.lang.Object>)
+    method io.restassured.path.json.JsonPath.given(java.lang.String) is not applicable
+      (argument mismatch; java.util.Map<java.lang.String,java.lang.Object> cannot be converted to java.lang.String)
+    method io.restassured.path.json.JsonPath.given(java.io.InputStream) is not applicable
+      (argument mismatch; java.util.Map<java.lang.String,java.lang.Object> cannot be converted to java.io.InputStream)
+    method io.restassured.path.json.JsonPath.given(java.io.File) is not applicable
+      (argument mismatch; java.util.Map<java.lang.String,java.lang.Object> cannot be converted to java.io.File)
+    method io.restassured.path.json.JsonPath.given(java.io.Reader) is not applicable
+      (argument mismatch; java.util.Map<java.lang.String,java.lang.Object> cannot be converted to java.io.Reader)
+    method io.restassured.path.json.JsonPath.given(java.net.URL) is not applicable
+      (argument mismatch; java.util.Map<java.lang.String,java.lang.Object> cannot be converted to java.net.URL)
+[ERROR] /home/kavia/workspace/code-generation/orangehrm-320893/api-automation-java/src/test/java/com/orangehrm/api/support/DemoModeFilter.java:[143,17] cannot find symbol
+  symbol:   method setBody(byte[])
+  location: variable resp of type io.restassured.internal.RestAssuredResponseImpl
+[ERROR] /home/kavia/workspace/code-generation/orangehrm-320893/api-automation-java/src/test/java/com/orangehrm/api/support/DemoModeFilter.java:[150,17] cannot find symbol
+  symbol:   method setBody(byte[])
+  location: variable resp of type io.restassured.internal.RestAssuredResponseImpl
+[ERROR] /home/kavia/workspace/code-generation/orangehrm-320893/api-automation-java/src/test/java/com/orangehrm/api/support/DemoBackend.java:[53,25] cannot find symbol
+  symbol:   method setValue(java.lang.String)
+  location: class io.restassured.http.Cookie.Builder
+[INFO] 5 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.543 s
+[INFO] Finished at: 2026-02-15T18:48:17Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:testCompile (default-testCompile) on project orangehrm-api-automation: Compilation failure: Compilation failure: 
+[ERROR] /home/kavia/workspace/code-generation/orangehrm-320893/api-automation-java/src/test/java/com/orangehrm/api/support/DemoModeFilter.java:[37,46] incompatible types: java.lang.String cannot be converted to io.restassured.http.Method
+[ERROR] /home/kavia/workspace/code-generation/orangehrm-320893/api-automation-java/src/test/java/com/orangehrm/api/support/DemoModeFilter.java:[139,60] no suitable method found for given(java.util.Map<java.lang.String,java.lang.Object>)
+[ERROR]     method io.restassured.path.json.JsonPath.given(java.lang.String) is not applicable
+[ERROR]       (argument mismatch; java.util.Map<java.lang.String,java.lang.Object> cannot be converted to java.lang.String)
+[ERROR]     method io.restassured.path.json.JsonPath.given(java.io.InputStream) is not applicable
+[ERROR]       (argument mismatch; java.util.Map<java.lang.String,java.lang.Object> cannot be converted to java.io.InputStream)
+[ERROR]     method io.restassured.path.json.JsonPath.given(java.io.File) is not applicable
+[ERROR]       (argument mismatch; java.util.Map<java.lang.String,java.lang.Object> cannot be converted to java.io.File)
+[ERROR]     method io.restassured.path.json.JsonPath.given(java.io.Reader) is not applicable
+[ERROR]       (argument mismatch; java.util.Map<java.lang.String,java.lang.Object> cannot be converted to java.io.Reader)
+[ERROR]     method io.restassured.path.json.JsonPath.given(java.net.URL) is not applicable
+[ERROR]       (argument mismatch; java.util.Map<java.lang.String,java.lang.Object> cannot be converted to java.net.URL)
+[ERROR] /home/kavia/workspace/code-generation/orangehrm-320893/api-automation-java/src/test/java/com/orangehrm/api/support/DemoModeFilter.java:[143,17] cannot find symbol
+[ERROR]   symbol:   method setBody(byte[])
+[ERROR]   location: variable resp of type io.restassured.internal.RestAssuredResponseImpl
+[ERROR] /home/kavia/workspace/code-generation/orangehrm-320893/api-automation-java/src/test/java/com/orangehrm/api/support/DemoModeFilter.java:[150,17] cannot find symbol
+[ERROR]   symbol:   method setBody(byte[])
+[ERROR]   location: variable resp of type io.restassured.internal.RestAssuredResponseImpl
+[ERROR] /home/kavia/workspace/code-generation/orangehrm-320893/api-automation-java/src/test/java/com/orangehrm/api/support/DemoBackend.java:[53,25] cannot find symbol
+[ERROR]   symbol:   method setValue(java.lang.String)
+[ERROR]   location: class io.restassured.http.Cookie.Builder
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

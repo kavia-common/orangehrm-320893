@@ -49,8 +49,10 @@ final class DemoBackend {
         // RestAssured Cookies must be non-empty because existing code validates that.
         // Use stable name/value so logs remain deterministic.
         return new Cookies(
-                new io.restassured.http.Cookie.Builder("orangehrm_session")
-                        .setValue("demo-session-" + (username == null ? "user" : username))
+                new io.restassured.http.Cookie.Builder(
+                        "orangehrm_session",
+                        "demo-session-" + (username == null ? "user" : username)
+                )
                         .setSecured(false)
                         .setHttpOnly(false)
                         .build()

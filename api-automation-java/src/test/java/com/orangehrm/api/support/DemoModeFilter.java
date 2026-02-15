@@ -2,7 +2,7 @@ package com.orangehrm.api.support;
 
 import io.restassured.filter.Filter;
 import io.restassured.filter.FilterContext;
-import io.restassured.http.Method;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import io.restassured.internal.RestAssuredResponseImpl;
 import io.restassured.response.Response;
 import io.restassured.specification.FilterableRequestSpecification;
@@ -34,12 +34,12 @@ final class DemoModeFilter implements Filter {
             return ctx.next(requestSpec, responseSpec);
         }
 
-        Method method = requestSpec.getMethod();
+        String method = requestSpec.getMethod();
         String uri = requestSpec.getURI();
         String path = safePath(uri);
 
         // Simulate auth/validate endpoint used by AuthClient.loginWithCookies
-        if (method == Method.POST && path.endsWith("/web/index.php/auth/validate")) {
+        if ("POST".equalsIgnoreCase(method) && path.endsWith("/web/index.php/auth/validate")) {
             return json(200, Map.of(
                     "message", "demo-login-ok"
             ));
@@ -48,19 +48,19 @@ final class DemoModeFilter implements Filter {
         // Simulate API v2 job titles endpoints used by current tests
         String v2Prefix = TestConfig.apiBasePath();
         if (path.startsWith(v2Prefix + "/admin/job-titles")) {
-            if (method == Method.GET) {
+            if ("GET".equalsIgnoreCase(method)) {
                 Integer limit = requestSpec.getQueryParams() != null ? tryInt(requestSpec.getQueryParams().get("limit")) : null;
                 Integer offset = requestSpec.getQueryParams() != null ? tryInt(requestSpec.getQueryParams().get("offset")) : null;
                 return json(200, DemoBackend.listJobTitles(limit, offset));
             }
-            if (method == Method.POST) {
+            if ("POST".equalsIgnoreCase(method)) {
                 @SuppressWarnings("unchecked")
                 Map<String, Object> payload = requestSpec.getBody() instanceof Map<?, ?>
                         ? (Map<String, Object>) requestSpec.getBody()
                         : null;
                 return json(200, DemoBackend.createJobTitle(payload));
             }
-            if (method == Method.DELETE) {
+            if ("DELETE".equalsIgnoreCase(method)) {
                 int[] ids = extractIdsFromDeleteBody(requestSpec.getBody());
                 Map<String, Object> body = DemoBackend.deleteJobTitles(ids);
 
@@ -134,20 +134,23 @@ final class DemoModeFilter implements Filter {
         return null;
     }
 
+    private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
+
     private static Response json(int statusCode, Map<String, Object> body) {
         try {
-            String json = io.restassured.path.json.JsonPath.given(body).prettify();
+            String json = OBJECT_MAPPER.writeValueAsString(body);
             RestAssuredResponseImpl resp = new RestAssuredResponseImpl();
             resp.setStatusCode(statusCode);
             resp.setContentType("application/json");
-            resp.setBody(json.getBytes(StandardCharsets.UTF_8));
+            // RestAssured 5.4.0 uses setContent(Object) instead of setBody(...)
+            resp.setContent(json.getBytes(StandardCharsets.UTF_8));
             return resp;
         } catch (Exception e) {
             // ultra-safe fallback
             RestAssuredResponseImpl resp = new RestAssuredResponseImpl();
             resp.setStatusCode(statusCode);
             resp.setContentType("application/json");
-            resp.setBody(("{\"message\":\"demo-mode-json-serialization-failed\"}").getBytes(StandardCharsets.UTF_8));
+            resp.setContent(("{\"message\":\"demo-mode-json-serialization-failed\"}").getBytes(StandardCharsets.UTF_8));
             return resp;
         }
     }
