@@ -20,6 +20,12 @@ public abstract class ApiTestBase {
         // Keep this conservative: we don't want to dump credentials; logging is enabled only on validation failure.
         RestAssured.enableLoggingOfRequestAndResponseIfValidationFails(LogDetail.ALL);
 
+        // In demo/mock mode, intercept *all* requests so no real HTTP calls are made.
+        // We keep this global so individual tests don't need changes.
+        if (MockMode.enabled()) {
+            RestAssured.filters(DemoModeFilter.INSTANCE);
+        }
+
         RestAssured.config = config()
                 .logConfig(LogConfig.logConfig().enablePrettyPrinting(true))
                 .httpClient(HttpClientConfig.httpClientConfig()

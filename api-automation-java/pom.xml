@@ -85,6 +85,9 @@
                         <ADMIN_PASSWORD>${ADMIN_PASSWORD}</ADMIN_PASSWORD>
                         <ESS_USERNAME>${ESS_USERNAME}</ESS_USERNAME>
                         <ESS_PASSWORD>${ESS_PASSWORD}</ESS_PASSWORD>
+
+                        <!-- Demo/Mock mode toggle -->
+                        <MOCK_MODE>${MOCK_MODE}</MOCK_MODE>
                     </systemPropertyVariables>
                 </configuration>
             </plugin>

@@ -34,6 +34,11 @@ public final class AuthClient {
      * @return session cookies to attach to subsequent API calls
      */
     public static Cookies loginWithCookies(String username, String password) {
+        if (MockMode.enabled()) {
+            // Demo mode: never call real HTTP; just return deterministic non-empty cookies.
+            return DemoBackend.demoCookiesFor(username);
+        }
+
         // Many OrangeHRM deployments accept form login at /web/index.php/auth/validate
         // The base URL in TestConfig points to host root; we include the /web/index.php prefix explicitly.
         Response res = given()
@@ -65,6 +70,11 @@ public final class AuthClient {
      * @return bearer token if provided; empty otherwise
      */
     public static Optional<String> bearerToken() {
+        if (MockMode.enabled()) {
+            // Demo mode: provide a stable simulated token (also allows tests to run if cookies are null).
+            return Optional.of(DemoBackend.demoBearerTokenFor(TestConfig.adminUsername()));
+        }
+
         String token = System.getProperty("API_BEARER_TOKEN");
         if (token == null || token.isBlank()) {
             token = System.getenv("API_BEARER_TOKEN");
