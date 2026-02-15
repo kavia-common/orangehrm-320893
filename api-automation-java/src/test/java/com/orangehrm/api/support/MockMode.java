@@ -20,6 +20,7 @@ public final class MockMode {
     // PUBLIC_INTERFACE
     public static boolean enabled() {
         /** This is a public function. */
+        // Primary toggles
         String sys = System.getProperty("MOCK_MODE");
         if (sys != null && !sys.isBlank()) {
             return parseBoolean(sys);
@@ -28,6 +29,16 @@ public final class MockMode {
         if (env != null && !env.isBlank()) {
             return parseBoolean(env);
         }
+
+        // Compatibility: some runners use -DtestMode=mock
+        String testMode = System.getProperty("testMode");
+        if (testMode != null && !testMode.isBlank()) {
+            String t = testMode.trim().toLowerCase();
+            if (t.equals("mock") || t.equals("demo") || t.equals("demomode") || t.equals("stub")) {
+                return true;
+            }
+        }
+
         return false;
     }
 

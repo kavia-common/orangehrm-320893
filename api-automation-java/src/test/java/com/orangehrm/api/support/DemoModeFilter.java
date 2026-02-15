@@ -48,6 +48,18 @@ final class DemoModeFilter implements Filter {
         // Simulate API v2 job titles endpoints used by current tests
         String v2Prefix = TestConfig.apiBasePath();
         if (path.startsWith(v2Prefix + "/admin/job-titles")) {
+            boolean hasAuth =
+                    (requestSpec.getHeaders() != null && requestSpec.getHeaders().hasHeaderWithName("Authorization"))
+                            || (requestSpec.getCookies() != null && !requestSpec.getCookies().asList().isEmpty());
+
+            // In demo mode we enforce "protected endpoint" behavior for anon() calls.
+            if (!hasAuth) {
+                return json(401, Map.of(
+                        "error", "Unauthorized",
+                        "message", "Missing auth"
+                ));
+            }
+
             if ("GET".equalsIgnoreCase(method)) {
                 Integer limit = requestSpec.getQueryParams() != null ? tryInt(requestSpec.getQueryParams().get("limit")) : null;
                 Integer offset = requestSpec.getQueryParams() != null ? tryInt(requestSpec.getQueryParams().get("offset")) : null;
@@ -70,6 +82,12 @@ final class DemoModeFilter implements Filter {
                 }
                 return json(200, body);
             }
+
+            return json(405, Map.of(
+                    "error", "Method Not Allowed",
+                    "message", "Unsupported method in demo backend",
+                    "method", method
+            ));
         }
 
         // Default: return 200 OK with empty-ish structure so unknown calls don't fail unexpectedly
@@ -139,17 +157,26 @@ final class DemoModeFilter implements Filter {
     private static Response json(int statusCode, Map<String, Object> body) {
         try {
             String json = OBJECT_MAPPER.writeValueAsString(body);
+
             RestAssuredResponseImpl resp = new RestAssuredResponseImpl();
             resp.setStatusCode(statusCode);
-            resp.setContentType("application/json");
-            // RestAssured 5.4.0 uses setContent(Object) instead of setBody(...)
+
+            // Important: RestAssured parses response bodies via a content-type header driven parser registry.
+            // If we only set contentType but not headers, ContentParser may fail with getParser() NPE.
+            resp.setHeaders(new io.restassured.http.Headers(
+                    new io.restassured.http.Header("Content-Type", "application/json; charset=UTF-8")
+            ));
+
+            // RestAssured 5.4.x uses setContent(byte[]) for internal response impls.
             resp.setContent(json.getBytes(StandardCharsets.UTF_8));
             return resp;
         } catch (Exception e) {
             // ultra-safe fallback
             RestAssuredResponseImpl resp = new RestAssuredResponseImpl();
             resp.setStatusCode(statusCode);
-            resp.setContentType("application/json");
+            resp.setHeaders(new io.restassured.http.Headers(
+                    new io.restassured.http.Header("Content-Type", "application/json; charset=UTF-8")
+            ));
             resp.setContent(("{\"message\":\"demo-mode-json-serialization-failed\"}").getBytes(StandardCharsets.UTF_8));
             return resp;
         }

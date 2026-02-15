@@ -31,12 +31,11 @@ public class EmployeeWorkflowTests extends ApiTestBase {
         // Create
         int createdId =
                 OrangeHrmApi.authed(cookies)
-                        .body(Map.of(
+                        .body(new java.util.LinkedHashMap<String, Object>(Map.of(
                                 "title", "API-AUTO-" + System.currentTimeMillis(),
                                 "description", "Created by API automation suite",
-                                "specification", null,
                                 "note", "cleanup expected"
-                        ))
+                        )))
                         .when()
                         .post(endpoint)
                         .then()
