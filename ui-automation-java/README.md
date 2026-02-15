@@ -5,6 +5,12 @@ Selenium WebDriver UI automation for OrangeHRM demo: https://opensource-demo.ora
 - Execution: local Chrome / Firefox / Edge (no Grid)  
 - Credentials/config: placeholders via `.env` file
 
+## Test plan
+
+For overall scope, module coverage goals, and the repository’s data-driven testing approach, see the central test plan:
+
+- `../../test-plan/index.md`
+
 ## Prerequisites
 - Java 17+
 - Maven 3.9+

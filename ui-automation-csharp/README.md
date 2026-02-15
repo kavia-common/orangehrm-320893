@@ -5,6 +5,12 @@ Selenium WebDriver UI automation for OrangeHRM demo: https://opensource-demo.ora
 - Execution: local Chrome / Firefox / Edge (no Grid)  
 - Configuration: `runsettings.local.runsettings` + optional `.env` (not committed)
 
+## Test plan
+
+For overall scope, module coverage goals, and the repository’s data-driven testing approach, see the central test plan:
+
+- `../../test-plan/index.md`
+
 ## Prerequisites
 - .NET SDK 8+
 - Chrome/Firefox/Edge installed
