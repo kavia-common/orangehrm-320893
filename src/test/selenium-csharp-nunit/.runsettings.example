@@ -21,6 +21,9 @@
       <ORANGEHRM_BASE_URL>http://php80/orangehrm/web/index.php</ORANGEHRM_BASE_URL>
       <ORANGEHRM_ADMIN_USERNAME>Admin</ORANGEHRM_ADMIN_USERNAME>
       <ORANGEHRM_ADMIN_PASSWORD>admin123</ORANGEHRM_ADMIN_PASSWORD>
+
+      <!-- Optional: used by our Allure setup fixture default -->
+      <ALLURE_RESULTS_DIR>../allure-results</ALLURE_RESULTS_DIR>
     </EnvironmentVariables>
   </RunConfiguration>
 </RunSettings>

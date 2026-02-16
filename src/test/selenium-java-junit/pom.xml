@@ -31,6 +31,9 @@
     <selenium.version>4.18.1</selenium.version>
     <slf4j.version>2.0.12</slf4j.version>
 
+    <!-- Allure reporting -->
+    <allure.version>2.27.0</allure.version>
+
     <!-- Default behavior: NO real browser -->
     <orangehrm.discoveryOnly>true</orangehrm.discoveryOnly>
   </properties>
@@ -41,6 +44,14 @@
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter</artifactId>
       <version>${junit.jupiter.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- Allure JUnit 5 integration (writes allure-results during test execution) -->
+    <dependency>
+      <groupId>io.qameta.allure</groupId>
+      <artifactId>allure-junit5</artifactId>
+      <version>${allure.version}</version>
       <scope>test</scope>
     </dependency>
 
@@ -63,6 +74,20 @@
 
   <build>
     <plugins>
+      <!--
+        Force modern Java compilation for test sources.
+        Without this, some Maven/JDK combos default to -source/-target 5 and fail on modern JDKs.
+      -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.11.0</version>
+        <configuration>
+          <release>${maven.compiler.release}</release>
+          <encoding>${project.build.sourceEncoding}</encoding>
+        </configuration>
+      </plugin>
+
       <!-- Ensure JUnit 5 discovery/execution works in Maven test phase -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -74,6 +99,9 @@
           <!-- Pass discovery-only flag to tests -->
           <systemPropertyVariables>
             <orangehrm.discoveryOnly>${orangehrm.discoveryOnly}</orangehrm.discoveryOnly>
+
+            <!-- Allure: where to write raw results -->
+            <allure.results.directory>${project.basedir}/allure-results</allure.results.directory>
           </systemPropertyVariables>
         </configuration>
       </plugin>

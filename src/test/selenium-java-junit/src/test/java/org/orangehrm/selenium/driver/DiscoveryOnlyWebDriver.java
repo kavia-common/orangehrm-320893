@@ -103,7 +103,28 @@ public final class DiscoveryOnlyWebDriver implements WebDriver, JavascriptExecut
 
     @Override
     public Capabilities getCapabilities() {
-        return new Capabilities() {};
+        /*
+         * Selenium 4 expects Capabilities implementations to provide getCapability(String).
+         * An empty anonymous Capabilities breaks compilation/runtime on newer Selenium versions.
+         *
+         * This minimal implementation intentionally advertises no capabilities (discovery-only mode).
+         */
+        return new Capabilities() {
+            @Override
+            public Object getCapability(String capabilityName) {
+                return null;
+            }
+
+            @Override
+            public boolean is(String capabilityName) {
+                return false;
+            }
+
+            @Override
+            public java.util.Map<String, Object> asMap() {
+                return java.util.Collections.emptyMap();
+            }
+        };
     }
 
     /**

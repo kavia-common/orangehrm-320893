@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "dgSpecHash": "qIsj4ttzS4cTgN4lvyTKAF0TGPujzcSQNcbUQiTFjUXELWhk6FCnDX0nBSBAU3BTdL0riKncoT9eZl/Qpo/hEA==",
+  "success": true,
+  "projectFilePath": "/home/kavia/workspace/code-generation/orangehrm-320893/src/test/selenium-csharp-nunit/OrangeHrm.SeleniumNUnit/OrangeHrm.SeleniumNUnit.csproj",
+  "expectedPackageFiles": [
+    "/home/kavia/.nuget/packages/allure.net.commons/2.12.0/allure.net.commons.2.12.0.nupkg.sha512",
+    "/home/kavia/.nuget/packages/allure.nunit/2.12.0/allure.nunit.2.12.0.nupkg.sha512",
+    "/home/kavia/.nuget/packages/aspectinjector/2.8.1/aspectinjector.2.8.1.nupkg.sha512",
+    "/home/kavia/.nuget/packages/microsoft.codecoverage/17.10.0/microsoft.codecoverage.17.10.0.nupkg.sha512",
+    "/home/kavia/.nuget/packages/microsoft.net.test.sdk/17.10.0/microsoft.net.test.sdk.17.10.0.nupkg.sha512",
+    "/home/kavia/.nuget/packages/microsoft.testplatform.objectmodel/17.10.0/microsoft.testplatform.objectmodel.17.10.0.nupkg.sha512",
+    "/home/kavia/.nuget/packages/microsoft.testplatform.testhost/17.10.0/microsoft.testplatform.testhost.17.10.0.nupkg.sha512",
+    "/home/kavia/.nuget/packages/mimetypesmap/1.0.8/mimetypesmap.1.0.8.nupkg.sha512",
+    "/home/kavia/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512",
+    "/home/kavia/.nuget/packages/nunit/4.2.2/nunit.4.2.2.nupkg.sha512",
+    "/home/kavia/.nuget/packages/nunit3testadapter/4.5.0/nunit3testadapter.4.5.0.nupkg.sha512",
+    "/home/kavia/.nuget/packages/selenium.support/4.18.1/selenium.support.4.18.1.nupkg.sha512",
+    "/home/kavia/.nuget/packages/selenium.webdriver/4.18.1/selenium.webdriver.4.18.1.nupkg.sha512",
+    "/home/kavia/.nuget/packages/system.collections.immutable/5.0.0/system.collections.immutable.5.0.0.nupkg.sha512",
+    "/home/kavia/.nuget/packages/system.reflection.metadata/1.6.0/system.reflection.metadata.1.6.0.nupkg.sha512"
+  ],
+  "logs": []
+}
