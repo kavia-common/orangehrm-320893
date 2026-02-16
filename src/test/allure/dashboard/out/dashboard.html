@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Central Allure Dashboard</title>
+  <style>
+    :root{
+      --bg:#0b1220; --panel:#111a2e; --text:#e7eefc; --muted:#aab7d6;
+      --ok:#4ade80; --bad:#fb7185; --warn:#fbbf24; --line:#22304f;
+      --link:#93c5fd;
+    }
+    body{ margin:0; font-family: ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;
+      background:var(--bg); color:var(--text); }
+    header{ padding:20px 22px; border-bottom:1px solid var(--line); background:linear-gradient(180deg,#0b1220,#0b1220 70%,#09101d); }
+    h1{ margin:0 0 6px 0; font-size:18px; font-weight:700; }
+    .sub{ color:var(--muted); font-size:13px; }
+    main{ padding:18px 22px 28px; max-width:1100px; }
+    a{ color:var(--link); }
+    .grid{ display:grid; grid-template-columns:repeat(12,1fr); gap:12px; }
+    .card{ grid-column:span 12; background:var(--panel); border:1px solid var(--line);
+      border-radius:10px; padding:14px 14px 12px; }
+    @media(min-width:900px){
+      .card.half{ grid-column:span 6; }
+    }
+    .kpi{ display:flex; gap:14px; flex-wrap:wrap; }
+    .kpi .item{ padding:10px 12px; border:1px solid var(--line); border-radius:10px; min-width:140px; background:#0d162a; }
+    .kpi .label{ color:var(--muted); font-size:12px; }
+    .kpi .value{ font-size:18px; font-weight:800; margin-top:4px; }
+    table{ width:100%; border-collapse:collapse; font-size:13px; }
+    th,td{ padding:9px 8px; border-bottom:1px solid var(--line); }
+    th{ text-align:left; color:var(--muted); font-weight:700; }
+    td.num{ text-align:right; font-variant-numeric: tabular-nums; }
+    .ok{ color:var(--ok); }
+    .bad{ color:var(--bad); }
+    .warn{ color:var(--warn); }
+    .muted{ color:var(--muted); }
+    code{ background:#0d162a; border:1px solid var(--line); padding:2px 6px; border-radius:7px; color:var(--text); }
+    ul{ margin:8px 0 0 20px; color:var(--muted); }
+    .paths{ display:grid; grid-template-columns:1fr; gap:6px; margin-top:10px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Central Allure Dashboard (Java + C#)</h1>
+    <div class="sub">
+      Generated at <code>2026-02-16T20:19:31.319Z</code> •
+      Unified report: <a href="./allure-report/index.html">allure-report/index.html</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="grid">
+      <section class="card">
+        <div class="kpi">
+          <div class="item">
+            <div class="label">Total</div>
+            <div class="value">56</div>
+          </div>
+          <div class="item">
+            <div class="label">Passed</div>
+            <div class="value ok">47</div>
+          </div>
+          <div class="item">
+            <div class="label">Failed</div>
+            <div class="value bad">0</div>
+          </div>
+          <div class="item">
+            <div class="label">Broken</div>
+            <div class="value warn">0</div>
+          </div>
+          <div class="item">
+            <div class="label">Skipped</div>
+            <div class="value muted">9</div>
+          </div>
+          <div class="item">
+            <div class="label">Pass rate</div>
+            <div class="value">83.9%</div>
+          </div>
+        </div>
+
+        <div class="paths">
+          <div class="sub">Inputs:</div>
+          <div class="sub">Java results: <code>src/test/selenium-java-junit/allure-results</code></div>
+          <div class="sub">C# results: <code>src/test/selenium-csharp-nunit/OrangeHrm.SeleniumNUnit/bin/Release/allure-results</code></div>
+          <div class="sub">Combined: <code>src/test/allure/dashboard/out/combined-allure-results</code></div>
+          <div class="sub">Allure HTML: <code>src/test/allure/dashboard/out/allure-report</code></div>
+          <div class="sub">Metrics JSON: <code>src/test/allure/dashboard/out/metrics/summary.json</code></div>
+        </div>
+      </section>
+
+      <section class="card half">
+        <h2 style="margin:0 0 10px 0; font-size:14px;">By source</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Source</th><th class="num">Total</th><th class="num">Passed</th><th class="num">Failed</th><th class="num">Broken</th><th class="num">Skipped</th><th class="num">Pass rate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+        <td>java</td>
+        <td class="num">51</td>
+        <td class="num ok">42</td>
+        <td class="num bad">0</td>
+        <td class="num warn">0</td>
+        <td class="num muted">9</td>
+        <td class="num">82.4%</td>
+      </tr>
+<tr>
+        <td>csharp</td>
+        <td class="num">5</td>
+        <td class="num ok">5</td>
+        <td class="num bad">0</td>
+        <td class="num warn">0</td>
+        <td class="num muted">0</td>
+        <td class="num">100.0%</td>
+      </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="card half">
+        <h2 style="margin:0 0 10px 0; font-size:14px;">Cross-browser (best-effort)</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Browser</th><th class="num">Total</th><th class="num">Passed</th><th class="num">Failed</th><th class="num">Broken</th><th class="num">Skipped</th><th class="num">Pass rate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+        <td>unknown</td>
+        <td class="num">55</td>
+        <td class="num ok">46</td>
+        <td class="num bad">0</td>
+        <td class="num warn">0</td>
+        <td class="num muted">9</td>
+        <td class="num">83.6%</td>
+      </tr>
+<tr>
+        <td>chrome</td>
+        <td class="num">1</td>
+        <td class="num ok">1</td>
+        <td class="num bad">0</td>
+        <td class="num warn">0</td>
+        <td class="num muted">0</td>
+        <td class="num">100.0%</td>
+      </tr>
+          </tbody>
+        </table>
+        <div class="sub" style="margin-top:8px;">
+          Note: if browser labels aren't present in raw results, tests are grouped under <code>unknown</code>.
+        </div>
+      </section>
+
+      <section class="card">
+        <h2 style="margin:0 0 10px 0; font-size:14px;">Examples of failures/broken (first 25)</h2>
+        <ul>
+          <li class='muted'>None</li>
+        </ul>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,67 @@
+{
+  "generatedAt": "2026-02-16T20:19:31.319Z",
+  "paths": {
+    "javaResults": "src/test/selenium-java-junit/allure-results",
+    "csharpResults": "src/test/selenium-csharp-nunit/OrangeHrm.SeleniumNUnit/bin/Release/allure-results",
+    "combinedResults": "src/test/allure/dashboard/out/combined-allure-results",
+    "allureReport": "src/test/allure/dashboard/out/allure-report"
+  },
+  "totals": {
+    "total": 56,
+    "passed": 47,
+    "failed": 0,
+    "broken": 0,
+    "skipped": 9,
+    "unknown": 0
+  },
+  "passRate": 0.8392857142857143,
+  "bySource": {
+    "csharp": {
+      "total": 5,
+      "passed": 5,
+      "failed": 0,
+      "broken": 0,
+      "skipped": 0,
+      "unknown": 0
+    },
+    "java": {
+      "total": 51,
+      "passed": 42,
+      "failed": 0,
+      "broken": 0,
+      "skipped": 9,
+      "unknown": 0
+    }
+  },
+  "byFramework": {
+    "nunit": 5,
+    "junit-platform": 51
+  },
+  "byBrowser": {
+    "unknown": 55,
+    "chrome": 1
+  },
+  "byBrowserAndStatus": {
+    "unknown": {
+      "total": 55,
+      "passed": 46,
+      "failed": 0,
+      "broken": 0,
+      "skipped": 9,
+      "unknown": 0
+    },
+    "chrome": {
+      "total": 1,
+      "passed": 1,
+      "failed": 0,
+      "broken": 0,
+      "skipped": 0,
+      "unknown": 0
+    }
+  },
+  "failingExamples": [],
+  "notes": [
+    "Browser detection is best-effort based on common Allure label conventions. If no browser label exists, tests are grouped under 'unknown'.",
+    "This is a centralized discovery-only dashboard; use the full Allure HTML report for detailed per-test timelines and attachments."
+  ]
+}
