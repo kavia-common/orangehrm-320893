@@ -31,6 +31,9 @@
     <PackageReference Include="Selenium.WebDriver" Version="4.18.1" />
     <PackageReference Include="Selenium.Support" Version="4.18.1" />
 
+    <!-- API automation -->
+    <PackageReference Include="RestSharp" Version="112.1.0" />
+
     <!-- Allure NUnit integration -->
     <PackageReference Include="Allure.NUnit" Version="2.12.0" />
     <PackageReference Include="Allure.Net.Commons" Version="2.12.0" />
