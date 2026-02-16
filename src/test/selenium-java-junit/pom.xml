@@ -28,6 +28,8 @@
 
     <!-- Keep these modern but not overly strict; can be pinned later if needed -->
     <junit.jupiter.version>5.10.2</junit.jupiter.version>
+    <!-- Keep JUnit Platform aligned with JUnit Jupiter to ensure suite annotations are available -->
+    <junit.platform.version>1.10.2</junit.platform.version>
     <selenium.version>4.18.1</selenium.version>
     <slf4j.version>2.0.12</slf4j.version>
 
@@ -50,6 +52,14 @@
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter</artifactId>
       <version>${junit.jupiter.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- JUnit Platform Suite API (required for org.junit.platform.suite.api annotations) -->
+    <dependency>
+      <groupId>org.junit.platform</groupId>
+      <artifactId>junit-platform-suite-api</artifactId>
+      <version>${junit.platform.version}</version>
       <scope>test</scope>
     </dependency>
 

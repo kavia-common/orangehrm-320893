@@ -58,6 +58,19 @@
               "target": "Package",
               "version": "[4.5.0, )"
             },
+            "Reqnroll": {
+              "target": "Package",
+              "version": "[2.0.0, )"
+            },
+            "Reqnroll.NUnit": {
+              "target": "Package",
+              "version": "[2.0.0, )"
+            },
+            "Reqnroll.Tools.MsBuild.Generation": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.0, )"
+            },
             "RestSharp": {
               "target": "Package",
               "version": "[112.1.0, )"

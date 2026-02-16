@@ -1,0 +1,201 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------< org.orangehrm:orangehrm-selenium-junit >---------------
+[INFO] Building orangehrm-selenium-junit 1.0.0
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/cucumber/cucumber-java/7.15.0/cucumber-java-7.15.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/cucumber/cucumber-java/7.15.0/cucumber-java-7.15.0.pom (8.4 kB at 34 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/cucumber/cucumber-jvm/7.15.0/cucumber-jvm-7.15.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/cucumber/cucumber-jvm/7.15.0/cucumber-jvm-7.15.0.pom (21 kB at 513 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/cucumber/cucumber-parent/4.1.1/cucumber-parent-4.1.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/cucumber/cucumber-parent/4.1.1/cucumber-parent-4.1.1.pom (21 kB at 539 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/cucumber/cucumber-bom/7.15.0/cucumber-bom-7.15.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/cucumber/cucumber-bom/7.15.0/cucumber-bom-7.15.0.pom (6.5 kB at 171 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-bom/2.16.0/jackson-bom-2.16.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-bom/2.16.0/jackson-bom-2.16.0.pom (18 kB at 467 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-parent/2.16/jackson-parent-2.16.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-parent/2.16/jackson-parent-2.16.pom (6.5 kB at 181 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/oss-parent/56/oss-parent-56.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/oss-parent/56/oss-parent-56.pom (24 kB at 620 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/cucumber/cucumber-core/7.15.0/cucumber-core-7.15.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/cucumber/cucumber-core/7.15.0/cucumber-core-7.15.0.pom (12 kB at 338 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/cucumber/cucumber-gherkin/7.15.0/cucumber-gherkin-7.15.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/cucumber/cucumber-gherkin/7.15.0/cucumber-gherkin-7.15.0.pom (1.8 kB at 46 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/cucumber/cucumber-plugin/7.15.0/cucumber-plugin-7.15.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/cucumber/cucumber-plugin/7.15.0/cucumber-plugin-7.15.0.pom (1.9 kB at 49 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/cucumber/cucumber-gherkin-messages/7.15.0/cucumber-gherkin-messages-7.15.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/cucumber/cucumber-gherkin-messages/7.15.0/cucumber-gherkin-messages-7.15.0.pom (1.9 kB at 48 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/cucumber/gherkin/26.2.0/gherkin-26.2.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/cucumber/gherkin/26.2.0/gherkin-26.2.0.pom (4.3 kB at 122 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-bom/2.14.2/jackson-bom-2.14.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-bom/2.14.2/jackson-bom-2.14.2.pom (17 kB at 437 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-parent/2.14/jackson-parent-2.14.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-parent/2.14/jackson-parent-2.14.pom (7.7 kB at 191 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/oss-parent/48/oss-parent-48.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/oss-parent/48/oss-parent-48.pom (24 kB at 625 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/cucumber/messages/maven-metadata.xml
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/cucumber/messages/maven-metadata.xml (3.2 kB at 80 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/cucumber/messages/19.1.4/messages-19.1.4.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/cucumber/messages/19.1.4/messages-19.1.4.pom (4.1 kB at 127 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/cucumber/cucumber-parent/3.0.0/cucumber-parent-3.0.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/cucumber/cucumber-parent/3.0.0/cucumber-parent-3.0.0.pom (22 kB at 660 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-bom/2.13.4/jackson-bom-2.13.4.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-bom/2.13.4/jackson-bom-2.13.4.pom (17 kB at 496 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-parent/2.13/jackson-parent-2.13.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-parent/2.13/jackson-parent-2.13.pom (7.4 kB at 200 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/oss-parent/43/oss-parent-43.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/oss-parent/43/oss-parent-43.pom (24 kB at 638 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/cucumber/messages/20.0.0/messages-20.0.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/cucumber/messages/20.0.0/messages-20.0.0.pom (4.2 kB at 120 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-bom/2.14.0/jackson-bom-2.14.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-bom/2.14.0/jackson-bom-2.14.0.pom (17 kB at 473 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/cucumber/messages/21.0.1/messages-21.0.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/cucumber/messages/21.0.1/messages-21.0.1.pom (4.4 kB at 123 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-bom/2.14.1/jackson-bom-2.14.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-bom/2.14.1/jackson-bom-2.14.1.pom (17 kB at 546 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/cucumber/messages/22.0.0/messages-22.0.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/cucumber/messages/22.0.0/messages-22.0.0.pom (4.4 kB at 127 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/cucumber/tag-expressions/6.0.0/tag-expressions-6.0.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/cucumber/tag-expressions/6.0.0/tag-expressions-6.0.0.pom (2.4 kB at 69 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/cucumber/cucumber-expressions/17.0.1/cucumber-expressions-17.0.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/cucumber/cucumber-expressions/17.0.1/cucumber-expressions-17.0.1.pom (3.3 kB at 83 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/cucumber/datatable/7.15.0/datatable-7.15.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/cucumber/datatable/7.15.0/datatable-7.15.0.pom (6.2 kB at 150 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/cucumber/docstring/7.15.0/docstring-7.15.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/cucumber/docstring/7.15.0/docstring-7.15.0.pom (2.7 kB at 76 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/cucumber/html-formatter/20.4.0/html-formatter-20.4.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/cucumber/html-formatter/20.4.0/html-formatter-20.4.0.pom (3.3 kB at 88 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-bom/2.15.2/jackson-bom-2.15.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-bom/2.15.2/jackson-bom-2.15.2.pom (18 kB at 529 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-parent/2.15/jackson-parent-2.15.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-parent/2.15/jackson-parent-2.15.pom (6.5 kB at 204 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/oss-parent/50/oss-parent-50.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/oss-parent/50/oss-parent-50.pom (24 kB at 695 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/cucumber/messages/18.0.0/messages-18.0.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/cucumber/messages/18.0.0/messages-18.0.0.pom (4.0 kB at 122 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/cucumber/cucumber-parent/2.3.2/cucumber-parent-2.3.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/cucumber/cucumber-parent/2.3.2/cucumber-parent-2.3.2.pom (22 kB at 660 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.8.2/junit-bom-5.8.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.8.2/junit-bom-5.8.2.pom (5.6 kB at 171 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-bom/2.13.2/jackson-bom-2.13.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-bom/2.13.2/jackson-bom-2.13.2.pom (17 kB at 511 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/cucumber/messages/19.0.0/messages-19.0.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/cucumber/messages/19.0.0/messages-19.0.0.pom (4.1 kB at 123 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-bom/2.13.3/jackson-bom-2.13.3.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-bom/2.13.3/jackson-bom-2.13.3.pom (17 kB at 511 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/cucumber/messages/19.1.0/messages-19.1.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/cucumber/messages/19.1.0/messages-19.1.0.pom (4.1 kB at 88 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/cucumber/messages/19.1.1/messages-19.1.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/cucumber/messages/19.1.1/messages-19.1.1.pom (4.1 kB at 123 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/cucumber/messages/19.1.2/messages-19.1.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/cucumber/messages/19.1.2/messages-19.1.2.pom (4.1 kB at 119 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/cucumber/messages/19.1.3/messages-19.1.3.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/cucumber/messages/19.1.3/messages-19.1.3.pom (4.1 kB at 120 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.9.0/junit-bom-5.9.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.9.0/junit-bom-5.9.0.pom (5.6 kB at 176 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/cucumber/junit-xml-formatter/0.2.0/junit-xml-formatter-0.2.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/cucumber/junit-xml-formatter/0.2.0/junit-xml-formatter-0.2.0.pom (3.7 kB at 107 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/cucumber/ci-environment/10.0.0/ci-environment-10.0.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/cucumber/ci-environment/10.0.0/ci-environment-10.0.0.pom (6.1 kB at 173 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-bom/2.15.3/jackson-bom-2.15.3.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-bom/2.15.3/jackson-bom-2.15.3.pom (18 kB at 486 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/cucumber/cucumber-junit-platform-engine/7.15.0/cucumber-junit-platform-engine-7.15.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/cucumber/cucumber-junit-platform-engine/7.15.0/cucumber-junit-platform-engine-7.15.0.pom (3.2 kB at 96 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.10.1/junit-platform-engine-1.10.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.10.1/junit-platform-engine-1.10.1.pom (3.2 kB at 100 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/1.10.1/junit-platform-commons-1.10.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/1.10.1/junit-platform-commons-1.10.1.pom (2.8 kB at 94 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/cucumber/cucumber-java/7.15.0/cucumber-java-7.15.0.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/cucumber/cucumber-core/7.15.0/cucumber-core-7.15.0.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/cucumber/cucumber-gherkin/7.15.0/cucumber-gherkin-7.15.0.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/cucumber/cucumber-gherkin-messages/7.15.0/cucumber-gherkin-messages-7.15.0.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/cucumber/gherkin/26.2.0/gherkin-26.2.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/cucumber/cucumber-gherkin-messages/7.15.0/cucumber-gherkin-messages-7.15.0.jar (28 kB at 361 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/cucumber/messages/22.0.0/messages-22.0.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/cucumber/cucumber-gherkin/7.15.0/cucumber-gherkin-7.15.0.jar (7.3 kB at 85 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/cucumber/tag-expressions/6.0.0/tag-expressions-6.0.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/cucumber/cucumber-java/7.15.0/cucumber-java-7.15.0.jar (739 kB at 7.3 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/cucumber/cucumber-expressions/17.0.1/cucumber-expressions-17.0.1.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/cucumber/gherkin/26.2.0/gherkin-26.2.0.jar (111 kB at 1.1 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/cucumber/datatable/7.15.0/datatable-7.15.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/cucumber/messages/22.0.0/messages-22.0.0.jar (90 kB at 892 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/cucumber/cucumber-plugin/7.15.0/cucumber-plugin-7.15.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/cucumber/tag-expressions/6.0.0/tag-expressions-6.0.0.jar (13 kB at 126 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/cucumber/docstring/7.15.0/docstring-7.15.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/cucumber/cucumber-expressions/17.0.1/cucumber-expressions-17.0.1.jar (78 kB at 671 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/cucumber/html-formatter/20.4.0/html-formatter-20.4.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/cucumber/datatable/7.15.0/datatable-7.15.0.jar (108 kB at 888 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/cucumber/junit-xml-formatter/0.2.0/junit-xml-formatter-0.2.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/cucumber/cucumber-plugin/7.15.0/cucumber-plugin-7.15.0.jar (33 kB at 236 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/cucumber/ci-environment/10.0.0/ci-environment-10.0.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/cucumber/docstring/7.15.0/docstring-7.15.0.jar (12 kB at 83 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/cucumber/cucumber-junit-platform-engine/7.15.0/cucumber-junit-platform-engine-7.15.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/cucumber/junit-xml-formatter/0.2.0/junit-xml-formatter-0.2.0.jar (17 kB at 109 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.10.1/junit-platform-engine-1.10.1.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/cucumber/html-formatter/20.4.0/html-formatter-20.4.0.jar (594 kB at 3.4 MB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/cucumber/ci-environment/10.0.0/ci-environment-10.0.0.jar (50 kB at 279 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/cucumber/cucumber-core/7.15.0/cucumber-core-7.15.0.jar (3.0 MB at 14 MB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/cucumber/cucumber-junit-platform-engine/7.15.0/cucumber-junit-platform-engine-7.15.0.jar (52 kB at 273 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.10.1/junit-platform-engine-1.10.1.jar (205 kB at 1.1 MB/s)
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ orangehrm-selenium-junit ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/kavia/workspace/code-generation/orangehrm-320893/src/test/selenium-java-junit/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.11.0:compile (default-compile) @ orangehrm-selenium-junit ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ orangehrm-selenium-junit ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.11.0:testCompile (default-testCompile) @ orangehrm-selenium-junit ---
+[INFO] Changes detected - recompiling the module! :dependency
+[INFO] Compiling 15 source files with javac [debug release 17] to target/test-classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /home/kavia/workspace/code-generation/orangehrm-320893/src/test/selenium-java-junit/src/test/java/org/orangehrm/bdd/CucumberTest.java:[4,36] package org.junit.platform.suite.api does not exist
+[ERROR] /home/kavia/workspace/code-generation/orangehrm-320893/src/test/selenium-java-junit/src/test/java/org/orangehrm/bdd/CucumberTest.java:[5,36] package org.junit.platform.suite.api does not exist
+[ERROR] /home/kavia/workspace/code-generation/orangehrm-320893/src/test/selenium-java-junit/src/test/java/org/orangehrm/bdd/CucumberTest.java:[6,36] package org.junit.platform.suite.api does not exist
+[ERROR] /home/kavia/workspace/code-generation/orangehrm-320893/src/test/selenium-java-junit/src/test/java/org/orangehrm/bdd/CucumberTest.java:[7,36] package org.junit.platform.suite.api does not exist
+[ERROR] /home/kavia/workspace/code-generation/orangehrm-320893/src/test/selenium-java-junit/src/test/java/org/orangehrm/bdd/CucumberTest.java:[16,2] cannot find symbol
+  symbol: class Suite
+[ERROR] /home/kavia/workspace/code-generation/orangehrm-320893/src/test/selenium-java-junit/src/test/java/org/orangehrm/bdd/CucumberTest.java:[17,2] cannot find symbol
+  symbol: class IncludeEngines
+[ERROR] /home/kavia/workspace/code-generation/orangehrm-320893/src/test/selenium-java-junit/src/test/java/org/orangehrm/bdd/CucumberTest.java:[18,2] cannot find symbol
+  symbol: class SelectClasspathResource
+[ERROR] /home/kavia/workspace/code-generation/orangehrm-320893/src/test/selenium-java-junit/src/test/java/org/orangehrm/bdd/CucumberTest.java:[19,2] cannot find symbol
+  symbol: class ConfigurationParameter
+[ERROR] /home/kavia/workspace/code-generation/orangehrm-320893/src/test/selenium-java-junit/src/test/java/org/orangehrm/bdd/CucumberTest.java:[20,2] cannot find symbol
+  symbol: class ConfigurationParameter
+[INFO] 9 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.403 s
+[INFO] Finished at: 2026-02-16T19:33:01Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.11.0:testCompile (default-testCompile) on project orangehrm-selenium-junit: Compilation failure: Compilation failure: 
+[ERROR] /home/kavia/workspace/code-generation/orangehrm-320893/src/test/selenium-java-junit/src/test/java/org/orangehrm/bdd/CucumberTest.java:[4,36] package org.junit.platform.suite.api does not exist
+[ERROR] /home/kavia/workspace/code-generation/orangehrm-320893/src/test/selenium-java-junit/src/test/java/org/orangehrm/bdd/CucumberTest.java:[5,36] package org.junit.platform.suite.api does not exist
+[ERROR] /home/kavia/workspace/code-generation/orangehrm-320893/src/test/selenium-java-junit/src/test/java/org/orangehrm/bdd/CucumberTest.java:[6,36] package org.junit.platform.suite.api does not exist
+[ERROR] /home/kavia/workspace/code-generation/orangehrm-320893/src/test/selenium-java-junit/src/test/java/org/orangehrm/bdd/CucumberTest.java:[7,36] package org.junit.platform.suite.api does not exist
+[ERROR] /home/kavia/workspace/code-generation/orangehrm-320893/src/test/selenium-java-junit/src/test/java/org/orangehrm/bdd/CucumberTest.java:[16,2] cannot find symbol
+[ERROR]   symbol: class Suite
+[ERROR] /home/kavia/workspace/code-generation/orangehrm-320893/src/test/selenium-java-junit/src/test/java/org/orangehrm/bdd/CucumberTest.java:[17,2] cannot find symbol
+[ERROR]   symbol: class IncludeEngines
+[ERROR] /home/kavia/workspace/code-generation/orangehrm-320893/src/test/selenium-java-junit/src/test/java/org/orangehrm/bdd/CucumberTest.java:[18,2] cannot find symbol
+[ERROR]   symbol: class SelectClasspathResource
+[ERROR] /home/kavia/workspace/code-generation/orangehrm-320893/src/test/selenium-java-junit/src/test/java/org/orangehrm/bdd/CucumberTest.java:[19,2] cannot find symbol
+[ERROR]   symbol: class ConfigurationParameter
+[ERROR] /home/kavia/workspace/code-generation/orangehrm-320893/src/test/selenium-java-junit/src/test/java/org/orangehrm/bdd/CucumberTest.java:[20,2] cannot find symbol
+[ERROR]   symbol: class ConfigurationParameter
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

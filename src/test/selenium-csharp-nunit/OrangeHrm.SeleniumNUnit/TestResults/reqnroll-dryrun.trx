@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="2d43eed8-f36c-42af-8ddb-3a62a62d531d" name="@556873b5300c 2026-02-16 19:33:24" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-02-16T19:33:24.4060382+00:00" queuing="2026-02-16T19:33:24.4060383+00:00" start="2026-02-16T19:33:22.9075739+00:00" finish="2026-02-16T19:33:24.4152877+00:00" />
+  <TestSettings name="default" id="8c3d5680-5c16-4e0f-923a-bdffc60b0bee">
+    <Deployment runDeploymentRoot="_556873b5300c_2026-02-16_19_33_24" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="eefcff94-4dad-4590-b104-57508f87e84c" testId="7aa9eb9d-b4d5-056d-a5b3-ec76e628ead2" testName="InvalidCredentials_ReturnSuccessFalse" computerName="556873b5300c" duration="00:00:00.0008590" startTime="2026-02-16T19:33:24.1890933+00:00" endTime="2026-02-16T19:33:24.1899519+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="eefcff94-4dad-4590-b104-57508f87e84c">
+      <Output>
+        <StdOut>Discovery-only mode: test executed without outbound HTTP calls.</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="590ed8f3-964b-4712-8189-e8ba9eabd11f" testId="11190cbe-9dd5-21ed-f84d-2afba6768630" testName="CanNavigateToLoginPage" computerName="556873b5300c" duration="00:00:00.0046650" startTime="2026-02-16T19:33:24.1916470+00:00" endTime="2026-02-16T19:33:24.1963117+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="590ed8f3-964b-4712-8189-e8ba9eabd11f">
+      <Output>
+        <StdOut>Discovery-only mode: test executed without launching a browser.</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="14bc2e42-ecfe-484e-b609-8800e78582e9" testId="0cfc3152-47e0-914e-29c9-7ff4fce51c8b" testName="SuccessfulLoginShowsDashboard" computerName="556873b5300c" duration="00:00:00.0491840" startTime="2026-02-16T19:33:24.1048321+00:00" endTime="2026-02-16T19:33:24.1539349+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="14bc2e42-ecfe-484e-b609-8800e78582e9">
+      <Output>
+        <StdOut>Given OrangeHRM is available at "http://localhost/orangehrm/web/index.php"
+-&gt; done: LoginSteps.GivenOrangeHrmIsAvailableAt("http://localhost/...") (0.0s)
+When I login as "Admin" with password "admin123"
+-&gt; done: LoginSteps.WhenILoginAsWithPassword("Admin", "admin123") (0.0s)
+Then I should see the dashboard
+-&gt; done: LoginSteps.ThenIShouldSeeTheDashboard() (0.0s)
+-&gt; duration: Scenario: Successful login shows dashboard: 38.1ms</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="92317d69-8461-4601-91f6-a59a64efb94e" testId="3dd4bd09-4ac9-872f-6b82-780ef361b3d7" testName="UnauthenticatedRequest_IsForbiddenOrUnauthorized" computerName="556873b5300c" duration="00:00:00.0006030" startTime="2026-02-16T19:33:24.1908189+00:00" endTime="2026-02-16T19:33:24.1914218+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="92317d69-8461-4601-91f6-a59a64efb94e">
+      <Output>
+        <StdOut>Discovery-only mode: test executed without outbound HTTP calls.</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="229cbb24-d8db-4948-b0b3-c7c0c06ea4f8" testId="77ee3502-9384-e072-d261-cc1697691a9c" testName="CanAuthenticateUsingFunctionalTestingValidateEndpoint" computerName="556873b5300c" duration="00:00:00.0206490" startTime="2026-02-16T19:33:24.1683948+00:00" endTime="2026-02-16T19:33:24.1890441+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="229cbb24-d8db-4948-b0b3-c7c0c06ea4f8">
+      <Output>
+        <StdOut>Discovery-only mode: test executed without outbound HTTP calls.</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="c9947a76-2567-40c3-a3c7-fd276542035c" testId="c715d5f6-df86-e8c6-ddee-ed90f9a093ae" testName="AdminCanCreateJobTitle_ThenListReturnsData" computerName="556873b5300c" duration="00:00:00.0006920" startTime="2026-02-16T19:33:24.1901019+00:00" endTime="2026-02-16T19:33:24.1907936+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c9947a76-2567-40c3-a3c7-fd276542035c">
+      <Output>
+        <StdOut>Discovery-only mode: test executed without outbound HTTP calls.</StdOut>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="CanAuthenticateUsingFunctionalTestingValidateEndpoint" storage="/home/kavia/workspace/code-generation/orangehrm-320893/src/test/selenium-csharp-nunit/orangehrm.seleniumnunit/bin/release/net8.0/orangehrm.seleniumnunit.dll" id="77ee3502-9384-e072-d261-cc1697691a9c">
+      <Execution id="229cbb24-d8db-4948-b0b3-c7c0c06ea4f8" />
+      <TestMethod codeBase="/home/kavia/workspace/code-generation/orangehrm-320893/src/test/selenium-csharp-nunit/OrangeHrm.SeleniumNUnit/bin/Release/net8.0/OrangeHrm.SeleniumNUnit.dll" adapterTypeName="executor://nunit3testexecutor/" className="OrangeHrm.SeleniumNUnit.Tests.ApiAuthTests" name="CanAuthenticateUsingFunctionalTestingValidateEndpoint" />
+    </UnitTest>
+    <UnitTest name="UnauthenticatedRequest_IsForbiddenOrUnauthorized" storage="/home/kavia/workspace/code-generation/orangehrm-320893/src/test/selenium-csharp-nunit/orangehrm.seleniumnunit/bin/release/net8.0/orangehrm.seleniumnunit.dll" id="3dd4bd09-4ac9-872f-6b82-780ef361b3d7">
+      <Execution id="92317d69-8461-4601-91f6-a59a64efb94e" />
+      <TestMethod codeBase="/home/kavia/workspace/code-generation/orangehrm-320893/src/test/selenium-csharp-nunit/OrangeHrm.SeleniumNUnit/bin/Release/net8.0/OrangeHrm.SeleniumNUnit.dll" adapterTypeName="executor://nunit3testexecutor/" className="OrangeHrm.SeleniumNUnit.Tests.ApiEmployeeWorkflowTests" name="UnauthenticatedRequest_IsForbiddenOrUnauthorized" />
+    </UnitTest>
+    <UnitTest name="SuccessfulLoginShowsDashboard" storage="/home/kavia/workspace/code-generation/orangehrm-320893/src/test/selenium-csharp-nunit/orangehrm.seleniumnunit/bin/release/net8.0/orangehrm.seleniumnunit.dll" id="0cfc3152-47e0-914e-29c9-7ff4fce51c8b">
+      <Execution id="14bc2e42-ecfe-484e-b609-8800e78582e9" />
+      <TestMethod codeBase="/home/kavia/workspace/code-generation/orangehrm-320893/src/test/selenium-csharp-nunit/OrangeHrm.SeleniumNUnit/bin/Release/net8.0/OrangeHrm.SeleniumNUnit.dll" adapterTypeName="executor://nunit3testexecutor/" className="OrangeHrm.SeleniumNUnit.Features.LoginFeature" name="SuccessfulLoginShowsDashboard" />
+    </UnitTest>
+    <UnitTest name="AdminCanCreateJobTitle_ThenListReturnsData" storage="/home/kavia/workspace/code-generation/orangehrm-320893/src/test/selenium-csharp-nunit/orangehrm.seleniumnunit/bin/release/net8.0/orangehrm.seleniumnunit.dll" id="c715d5f6-df86-e8c6-ddee-ed90f9a093ae">
+      <Execution id="c9947a76-2567-40c3-a3c7-fd276542035c" />
+      <TestMethod codeBase="/home/kavia/workspace/code-generation/orangehrm-320893/src/test/selenium-csharp-nunit/OrangeHrm.SeleniumNUnit/bin/Release/net8.0/OrangeHrm.SeleniumNUnit.dll" adapterTypeName="executor://nunit3testexecutor/" className="OrangeHrm.SeleniumNUnit.Tests.ApiEmployeeWorkflowTests" name="AdminCanCreateJobTitle_ThenListReturnsData" />
+    </UnitTest>
+    <UnitTest name="InvalidCredentials_ReturnSuccessFalse" storage="/home/kavia/workspace/code-generation/orangehrm-320893/src/test/selenium-csharp-nunit/orangehrm.seleniumnunit/bin/release/net8.0/orangehrm.seleniumnunit.dll" id="7aa9eb9d-b4d5-056d-a5b3-ec76e628ead2">
+      <Execution id="eefcff94-4dad-4590-b104-57508f87e84c" />
+      <TestMethod codeBase="/home/kavia/workspace/code-generation/orangehrm-320893/src/test/selenium-csharp-nunit/OrangeHrm.SeleniumNUnit/bin/Release/net8.0/OrangeHrm.SeleniumNUnit.dll" adapterTypeName="executor://nunit3testexecutor/" className="OrangeHrm.SeleniumNUnit.Tests.ApiAuthTests" name="InvalidCredentials_ReturnSuccessFalse" />
+    </UnitTest>
+    <UnitTest name="CanNavigateToLoginPage" storage="/home/kavia/workspace/code-generation/orangehrm-320893/src/test/selenium-csharp-nunit/orangehrm.seleniumnunit/bin/release/net8.0/orangehrm.seleniumnunit.dll" id="11190cbe-9dd5-21ed-f84d-2afba6768630">
+      <Execution id="590ed8f3-964b-4712-8189-e8ba9eabd11f" />
+      <TestMethod codeBase="/home/kavia/workspace/code-generation/orangehrm-320893/src/test/selenium-csharp-nunit/OrangeHrm.SeleniumNUnit/bin/Release/net8.0/OrangeHrm.SeleniumNUnit.dll" adapterTypeName="executor://nunit3testexecutor/" className="OrangeHrm.SeleniumNUnit.Tests.SampleLoginNavigationTest" name="CanNavigateToLoginPage" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="7aa9eb9d-b4d5-056d-a5b3-ec76e628ead2" executionId="eefcff94-4dad-4590-b104-57508f87e84c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="11190cbe-9dd5-21ed-f84d-2afba6768630" executionId="590ed8f3-964b-4712-8189-e8ba9eabd11f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0cfc3152-47e0-914e-29c9-7ff4fce51c8b" executionId="14bc2e42-ecfe-484e-b609-8800e78582e9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3dd4bd09-4ac9-872f-6b82-780ef361b3d7" executionId="92317d69-8461-4601-91f6-a59a64efb94e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="77ee3502-9384-e072-d261-cc1697691a9c" executionId="229cbb24-d8db-4948-b0b3-c7c0c06ea4f8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c715d5f6-df86-e8c6-ddee-ed90f9a093ae" executionId="c9947a76-2567-40c3-a3c7-fd276542035c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="6" executed="6" passed="6" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>NUnit Adapter 4.5.0.0: Test execution started
+Running all tests in /home/kavia/workspace/code-generation/orangehrm-320893/src/test/selenium-csharp-nunit/OrangeHrm.SeleniumNUnit/bin/Release/net8.0/OrangeHrm.SeleniumNUnit.dll
+   NUnit3TestExecutor discovered 6 of 6 NUnit test cases using Current Discovery mode, Non-Explicit run
+CanAuthenticateUsingFunctionalTestingValidateEndpoint: Discovery-only mode: test executed without outbound HTTP calls.
+InvalidCredentials_ReturnSuccessFalse: Discovery-only mode: test executed without outbound HTTP calls.
+AdminCanCreateJobTitle_ThenListReturnsData: Discovery-only mode: test executed without outbound HTTP calls.
+UnauthenticatedRequest_IsForbiddenOrUnauthorized: Discovery-only mode: test executed without outbound HTTP calls.
+CanNavigateToLoginPage: Discovery-only mode: test executed without launching a browser.
+NUnit Adapter 4.5.0.0: Test execution complete
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="556873b5300c" outcome="Warning" timestamp="2026-02-16T19:33:24.1764354+00:00">
+        <Text>Given OrangeHRM is available at "http://localhost/orangehrm/web/index.php"
+-&gt; done: LoginSteps.GivenOrangeHrmIsAvailableAt("http://localhost/...") (0.0s)
+When I login as "Admin" with password "admin123"
+-&gt; done: LoginSteps.WhenILoginAsWithPassword("Admin", "admin123") (0.0s)
+Then I should see the dashboard
+-&gt; done: LoginSteps.ThenIShouldSeeTheDashboard() (0.0s)
+-&gt; duration: Scenario: Successful login shows dashboard: 38.1ms
+</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>
