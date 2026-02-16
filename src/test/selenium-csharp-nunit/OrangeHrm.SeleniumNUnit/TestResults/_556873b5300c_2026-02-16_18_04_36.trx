@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="8f217d4e-f477-4fc0-8014-bd684fe935ae" name="@556873b5300c 2026-02-16 18:04:36" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-02-16T18:04:36.2789424+00:00" queuing="2026-02-16T18:04:36.2789425+00:00" start="2026-02-16T18:04:35.4063991+00:00" finish="2026-02-16T18:04:36.2880631+00:00" />
+  <TestSettings name="default" id="9b30e669-cd42-47b8-ba53-db79c0113314">
+    <Deployment runDeploymentRoot="_556873b5300c_2026-02-16_18_04_36" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="45080fce-5a2e-4b3c-af5b-73f6dee96254" testId="0fed87c1-de5a-6bff-1c81-09cfcb0960db" testName="CanNavigateToLoginPage_WhenRealBrowserModeEnabled" computerName="556873b5300c" duration="00:00:00.0288150" startTime="2026-02-16T18:04:36.0614154+00:00" endTime="2026-02-16T18:04:36.0901593+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="45080fce-5a2e-4b3c-af5b-73f6dee96254">
+      <Output>
+        <StdOut>Discovery-only mode enabled (no real browser launch).</StdOut>
+        <ErrorInfo>
+          <Message>Discovery-only mode enabled (no real browser launch).</Message>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="CanNavigateToLoginPage_WhenRealBrowserModeEnabled" storage="/home/kavia/workspace/code-generation/orangehrm-320893/src/test/selenium-csharp-nunit/orangehrm.seleniumnunit/bin/release/net8.0/orangehrm.seleniumnunit.dll" id="0fed87c1-de5a-6bff-1c81-09cfcb0960db">
+      <Execution id="45080fce-5a2e-4b3c-af5b-73f6dee96254" />
+      <TestMethod codeBase="/home/kavia/workspace/code-generation/orangehrm-320893/src/test/selenium-csharp-nunit/OrangeHrm.SeleniumNUnit/bin/Release/net8.0/OrangeHrm.SeleniumNUnit.dll" adapterTypeName="executor://nunit3testexecutor/" className="OrangeHrm.SeleniumNUnit.Tests.SampleLoginNavigationTest" name="CanNavigateToLoginPage_WhenRealBrowserModeEnabled" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="0fed87c1-de5a-6bff-1c81-09cfcb0960db" executionId="45080fce-5a2e-4b3c-af5b-73f6dee96254" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="0" passed="0" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>NUnit Adapter 4.5.0.0: Test execution started
+Running all tests in /home/kavia/workspace/code-generation/orangehrm-320893/src/test/selenium-csharp-nunit/OrangeHrm.SeleniumNUnit/bin/Release/net8.0/OrangeHrm.SeleniumNUnit.dll
+   NUnit3TestExecutor discovered 1 of 1 NUnit test cases using Current Discovery mode, Non-Explicit run
+CanNavigateToLoginPage_WhenRealBrowserModeEnabled: Discovery-only mode enabled (no real browser launch).
+NUnit Adapter 4.5.0.0: Test execution complete
+Test 'CanNavigateToLoginPage_WhenRealBrowserModeEnabled' was skipped in the test run.
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

@@ -1,0 +1,1 @@
+{"total":2,"items":[{"uid":"1eecf25483d28d214b5091c9801fc7b4","name":"org.orangehrm.selenium.tests.DiscoveryOnlySmokeTest","statistic":{"failed":0,"broken":0,"skipped":0,"passed":1,"unknown":0,"total":1}},{"uid":"71a001cc16aef3a7de46bcae978905df","name":"org.orangehrm.selenium.tests.LoginTest","statistic":{"failed":0,"broken":0,"skipped":1,"passed":0,"unknown":0,"total":1}}]}

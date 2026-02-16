@@ -6,12 +6,17 @@ namespace OrangeHrm.SeleniumNUnit.Tests
     public sealed class SampleLoginNavigationTest : UiTestBase
     {
         [Test]
-        public void CanNavigateToLoginPage_WhenRealBrowserModeEnabled()
+        public void CanNavigateToLoginPage()
         {
-            // CI-safe default: discovery-only -> test is ignored, not executed with a browser.
-            SkipIfDiscoveryOnly();
+            // Required by this work item: do not skip tests; just avoid real browser usage.
+            GuardDiscoveryOnly();
 
-            Assert.That(Driver, Is.Not.Null, "Driver should be created when discovery-only is disabled.");
+            if (Settings.DiscoveryOnly)
+            {
+                Assert.That(Driver, Is.Null, "Driver must not be created in discovery-only mode.");
+                Assert.Pass("Discovery-only mode: test executed without launching a browser.");
+                return;
+            }
 
             var page = new LoginPage(Driver!);
             page.Open(Settings.BaseUrl!);

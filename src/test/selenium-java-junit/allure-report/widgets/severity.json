@@ -1,0 +1,1 @@
+[{"uid":"ae717cd7c9e72e16","name":"discoveryOnlyDefaultIsTrueUnlessOverridden()","time":{"start":1771265123315,"stop":1771265123317,"duration":2},"status":"passed","severity":"normal"},{"uid":"ce6abc059eef4f8b","name":"adminCanLogin_exampleSkeleton()","time":{"start":1771265123230,"stop":1771265123256,"duration":26},"status":"skipped","severity":"normal"}]

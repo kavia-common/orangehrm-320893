@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OrangeHrm.SeleniumNUnit")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6b66d6cdbebc911b602b923ec3137a54b749a4c7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+685db1d90df69887e4062efb02c116044f072cb6")]
 [assembly: System.Reflection.AssemblyProductAttribute("OrangeHrm.SeleniumNUnit")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OrangeHrm.SeleniumNUnit")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

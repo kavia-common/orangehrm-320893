@@ -4,7 +4,7 @@
     Example runsettings to provide environment variables to dotnet test without committing secrets.
 
     Usage:
-      dotnet test --settings .runsettings.example
+      dotnet test -settings .runsettings.example
 
     IMPORTANT: This skeleton defaults to discovery-only.
     To intentionally enable real mode, set:
