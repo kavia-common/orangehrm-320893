@@ -37,6 +37,24 @@
     <!-- Allure NUnit integration -->
     <PackageReference Include="Allure.NUnit" Version="2.12.0" />
     <PackageReference Include="Allure.Net.Commons" Version="2.12.0" />
+
+    <!-- BDD (Reqnroll) -->
+    <!-- Needed for discovery/dry-run to compile feature code-behind and bind steps. -->
+    <PackageReference Include="Reqnroll" Version="2.0.0" />
+    <PackageReference Include="Reqnroll.NUnit" Version="2.0.0" />
+    <PackageReference Include="Reqnroll.Tools.MsBuild.Generation" Version="2.0.0" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Ensure Gherkin features are part of the project for discovery -->
+    <None Include="Features\**\*.feature">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+
+    <!-- Ensure Reqnroll runtime configuration is available during test discovery/execution -->
+    <None Include="reqnroll.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
