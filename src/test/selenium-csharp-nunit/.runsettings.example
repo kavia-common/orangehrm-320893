@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RunSettings>
+  <!--
+    Example runsettings to provide environment variables to dotnet test without committing secrets.
+
+    Usage:
+      dotnet test --settings .runsettings.example
+
+    IMPORTANT: This skeleton defaults to discovery-only.
+    To intentionally enable real mode, set:
+      ORANGEHRM_DISCOVERY_ONLY = false
+
+    Also set:
+      ORANGEHRM_BASE_URL, ORANGEHRM_ADMIN_USERNAME, ORANGEHRM_ADMIN_PASSWORD
+  -->
+  <RunConfiguration>
+    <EnvironmentVariables>
+      <ORANGEHRM_DISCOVERY_ONLY>true</ORANGEHRM_DISCOVERY_ONLY>
+      <BROWSER>chrome</BROWSER>
+      <HEADLESS>true</HEADLESS>
+      <ORANGEHRM_BASE_URL>http://php80/orangehrm/web/index.php</ORANGEHRM_BASE_URL>
+      <ORANGEHRM_ADMIN_USERNAME>Admin</ORANGEHRM_ADMIN_USERNAME>
+      <ORANGEHRM_ADMIN_PASSWORD>admin123</ORANGEHRM_ADMIN_PASSWORD>
+    </EnvironmentVariables>
+  </RunConfiguration>
+</RunSettings>
