@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<test-run id="0" name="OrangeHrm.SeleniumNUnit.dll" fullname="/home/kavia/workspace/code-generation/orangehrm-320893/src/test/selenium-csharp-nunit/OrangeHrm.SeleniumNUnit/bin/Release/net8.0/OrangeHrm.SeleniumNUnit.dll" runstate="Runnable" testcasecount="5" result="Passed" total="0" passed="0" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.15.4.0" clr-version="8.0.22" start-time="2026-02-16 19:02:58Z" end-time="2026-02-16 19:02:58Z" duration="0.023611">
+  <command-line><![CDATA[/home/kavia/workspace/code-generation/orangehrm-320893/src/test/selenium-csharp-nunit/OrangeHrm.SeleniumNUnit/bin/Release/net8.0/testhost.dll --port 36553 --endpoint 127.0.0.1:036553 --role client --parentprocessid 42644 --telemetryoptedin false]]></command-line>
+  <filter>
+    <test re="1">OrangeHrm\.SeleniumNUnit\.Api</test>
+  </filter>
+  <test-suite type="Assembly" id="0-1009" name="OrangeHrm.SeleniumNUnit.dll" fullname="/home/kavia/workspace/code-generation/orangehrm-320893/src/test/selenium-csharp-nunit/OrangeHrm.SeleniumNUnit/bin/Release/net8.0/OrangeHrm.SeleniumNUnit.dll" runstate="Runnable" testcasecount="5" result="Passed" start-time="2026-02-16T19:02:58.3766905Z" end-time="2026-02-16T19:02:58.3786600Z" duration="0.002010" total="0" passed="0" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="0">
+    <environment framework-version="4.2.2.0" clr-version="8.0.22" os-version="Ubuntu 24.04.3 LTS" platform="Unix" cwd="/home/kavia/workspace/code-generation/orangehrm-320893/src/test/selenium-csharp-nunit/test-artifacts/demo/csharp-nunit" machine-name="556873b5300c" user="kavia" user-domain="556873b5300c" culture="en-US" uiculture="en-US" os-architecture="x64" />
+    <settings>
+      <setting name="NumberOfTestWorkers" value="1" />
+      <setting name="SynchronousEvents" value="False" />
+      <setting name="InternalTraceLevel" value="Off" />
+      <setting name="RandomSeed" value="1345762515" />
+      <setting name="SkipNonTestAssemblies" value="True" />
+      <setting name="ProcessModel" value="InProcess" />
+      <setting name="DomainUsage" value="Single" />
+      <setting name="DefaultTestNamePattern" value="{m}{a}" />
+      <setting name="WorkDirectory" value="/home/kavia/workspace/code-generation/orangehrm-320893/src/test/selenium-csharp-nunit/OrangeHrm.SeleniumNUnit/bin/Release/net8.0/../../../../test-artifacts/demo/csharp-nunit" />
+    </settings>
+    <properties>
+      <property name="_PID" value="42659" />
+      <property name="_APPDOMAIN" value="testhost" />
+    </properties>
+  </test-suite>
+</test-run>
