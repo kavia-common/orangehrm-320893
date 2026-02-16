@@ -63,6 +63,17 @@
       <scope>test</scope>
     </dependency>
 
+    <!--
+      JUnit Platform Suite Engine (required at runtime so @Suite-based classes are discoverable/executable).
+      Without this, Surefire/JUnitPlatformProvider will report "Tests run: 0" even if the suite compiles.
+    -->
+    <dependency>
+      <groupId>org.junit.platform</groupId>
+      <artifactId>junit-platform-suite-engine</artifactId>
+      <version>${junit.platform.version}</version>
+      <scope>test</scope>
+    </dependency>
+
     <!-- Cucumber (JUnit Platform Engine) -->
     <dependency>
       <groupId>io.cucumber</groupId>
