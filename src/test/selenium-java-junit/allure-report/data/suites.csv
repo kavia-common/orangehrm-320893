@@ -1,3 +1,3 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Mon Feb 16 18:06:50 UTC 2026","Mon Feb 16 18:06:50 UTC 2026","2","","org.orangehrm.selenium.tests.DiscoveryOnlySmokeTest","","org.orangehrm.selenium.tests.DiscoveryOnlySmokeTest","discoveryOnlyDefaultIsTrueUnlessOverridden","discoveryOnlyDefaultIsTrueUnlessOverridden()",""
-"skipped","Mon Feb 16 18:06:50 UTC 2026","Mon Feb 16 18:06:50 UTC 2026","27","","org.orangehrm.selenium.tests.LoginTest","","org.orangehrm.selenium.tests.LoginTest","adminCanLogin_exampleSkeleton","adminCanLogin_exampleSkeleton()",""
+"skipped","Mon Feb 16 18:08:47 UTC 2026","Mon Feb 16 18:08:47 UTC 2026","32","","org.orangehrm.selenium.tests.LoginTest","","org.orangehrm.selenium.tests.LoginTest","adminCanLogin_exampleSkeleton","adminCanLogin_exampleSkeleton()",""
+"passed","Mon Feb 16 18:08:47 UTC 2026","Mon Feb 16 18:08:47 UTC 2026","2","","org.orangehrm.selenium.tests.DiscoveryOnlySmokeTest","","org.orangehrm.selenium.tests.DiscoveryOnlySmokeTest","discoveryOnlyDefaultIsTrueUnlessOverridden","discoveryOnlyDefaultIsTrueUnlessOverridden()",""
