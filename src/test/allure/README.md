@@ -24,12 +24,15 @@ From repo root:
 ```bash
 cd src/test/selenium-csharp-nunit
 export PATH=/home/kavia/.local/bin:$PATH
-ORANGEHRM_DISCOVERY_ONLY=true dotnet test -c Release --logger "trx;LogFileName=TestResults.trx" \
-  -- TestRunParameters.Parameter\(name="allureResultsDir",value="../allure-results"\)
+ORANGEHRM_DISCOVERY_ONLY=true dotnet test -c Release --logger "trx;LogFileName=TestResults.trx"
 ```
 
 Results folder:
 - `src/test/selenium-csharp-nunit/allure-results`
+
+Notes:
+- The C# suite standardizes Allure output to module-root `./allure-results` (via `ALLURE_RESULTS_DIRECTORY` set in `AllureSetup`).
+- You can override by exporting `ALLURE_RESULTS_DIRECTORY` if needed.
 
 Generate HTML report:
 
@@ -64,3 +67,17 @@ allure generate ./allure-results -o ./allure-report --clean
 
 Open:
 - `src/test/selenium-java-junit/allure-report/index.html`
+
+---
+
+## Centralized dashboard (Java + C#)
+
+After running tests in both suites (so both `allure-results` folders exist), generate the centralized dashboard:
+
+```bash
+node src/test/allure/dashboard/generate-dashboard.js
+```
+
+Open:
+
+- `src/test/allure/dashboard/out/dashboard.html`

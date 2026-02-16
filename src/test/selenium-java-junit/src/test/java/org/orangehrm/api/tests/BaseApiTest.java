@@ -2,6 +2,7 @@ package org.orangehrm.api.tests;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Assertions;
+import org.orangehrm.allure.AllureMetadata;
 import org.orangehrm.api.client.OrangeHrmApiClient;
 import org.orangehrm.api.config.OrangeHrmApiConfig;
 
@@ -23,6 +24,11 @@ public abstract class BaseApiTest {
         // Default ORANGEHRM_API_DISCOVERY_ONLY=true => requireSecrets=false
         this.config = OrangeHrmApiConfig.fromEnv(false);
         this.client = new OrangeHrmApiClient(config);
+
+        // Allure metadata for aggregation. For API tests we still publish suite/language/framework.
+        // We reuse UI config shape only for environment generation; browser will be "unknown".
+        String resultsDir = System.getProperty("allure.results.directory", "./allure-results");
+        AllureMetadata.applyCommonLabelsAndEnvironment("java-junit-api", resultsDir, null);
     }
 
     protected void guardDiscoveryOnly() {

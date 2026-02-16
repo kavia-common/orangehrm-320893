@@ -4,6 +4,7 @@ using System.IO;
 using System.Text.Json;
 using NUnit.Framework;
 using NUnit.Framework.Interfaces;
+using OrangeHrm.SeleniumNUnit.Config;
 
 namespace OrangeHrm.SeleniumNUnit.Tests
 {
@@ -40,6 +41,9 @@ namespace OrangeHrm.SeleniumNUnit.Tests
             var start = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
             var stop = start;
 
+            // Best-effort browser metadata (non-sensitive).
+            var ui = OrangeHrmSettings.Load();
+
             var result = new Dictionary<string, object?>
             {
                 ["uuid"] = Guid.NewGuid().ToString(),
@@ -51,8 +55,13 @@ namespace OrangeHrm.SeleniumNUnit.Tests
                 ["stop"] = stop,
                 ["labels"] = new[]
                 {
+                    // Standardized labels for cross-language aggregation
+                    new Dictionary<string, string> { ["name"] = "suite", ["value"] = "csharp-nunit" },
                     new Dictionary<string, string> { ["name"] = "framework", ["value"] = "nunit" },
-                    new Dictionary<string, string> { ["name"] = "language", ["value"] = "csharp" }
+                    new Dictionary<string, string> { ["name"] = "language", ["value"] = "csharp" },
+
+                    // Cross-browser key for dashboard grouping
+                    new Dictionary<string, string> { ["name"] = "browser", ["value"] = ui.Browser ?? "unknown" }
                 }
             };
 
