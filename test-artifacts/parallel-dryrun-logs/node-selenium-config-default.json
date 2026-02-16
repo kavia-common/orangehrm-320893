@@ -1,0 +1,8 @@
+{
+  "baseUrl": "http://example",
+  "adminUsername": "u",
+  "adminPassword": "p",
+  "browser": "chrome",
+  "headless": false,
+  "parallelWorkers": 4
+}

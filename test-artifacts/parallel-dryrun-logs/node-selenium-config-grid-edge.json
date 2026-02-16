@@ -1,0 +1,9 @@
+{
+  "baseUrl": "http://example",
+  "adminUsername": "u",
+  "adminPassword": "p",
+  "browser": "edge",
+  "headless": false,
+  "remoteUrl": "http://localhost:4444/wd/hub",
+  "parallelWorkers": 4
+}

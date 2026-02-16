@@ -1,0 +1,12 @@
+Test run for /home/kavia/workspace/code-generation/orangehrm-320893/src/test/selenium-csharp-nunit/OrangeHrm.SeleniumNUnit/bin/Release/net8.0/OrangeHrm.SeleniumNUnit.dll (.NETCoreApp,Version=v8.0)
+Microsoft (R) Test Execution Command Line Tool Version 17.8.0 (x64)
+Copyright (c) Microsoft Corporation.  All rights reserved.
+
+The following Tests are available:
+    SuccessfulLoginShowsDashboard
+    SuccessfulLoginShowsDashboard
+    CanAuthenticateUsingFunctionalTestingValidateEndpoint
+    InvalidCredentials_ReturnSuccessFalse
+    AdminCanCreateJobTitle_ThenListReturnsData
+    UnauthenticatedRequest_IsForbiddenOrUnauthorized
+    CanNavigateToLoginPage
