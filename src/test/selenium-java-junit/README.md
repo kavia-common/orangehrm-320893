@@ -43,6 +43,39 @@ This should:
 
 ---
 
+## Cucumber BDD dry-run (default)
+
+This suite also includes a minimal **Cucumber (JUnit Platform)** setup.
+
+Feature files live under:
+
+- `src/test/resources/features/*.feature`
+
+Step definitions and runner live under:
+
+- `src/test/java/org/orangehrm/bdd/steps/*`
+- `src/test/java/org/orangehrm/bdd/CucumberTest.java`
+
+By default, Maven is configured to run Cucumber in **dry-run mode**, which means it will:
+- Parse all `.feature` files
+- Validate that each step has a matching step definition ("step binding")
+- **Not execute step bodies** (so it will not launch browsers)
+
+Run:
+
+```bash
+cd src/test/selenium-java-junit
+mvn -q test
+```
+
+To intentionally disable dry-run (not recommended in CI):
+
+```bash
+mvn -q test -Dcucumber.dryRun=false
+```
+
+---
+
 ## Enabling real browser mode (intentional)
 
 If you want to actually run browser automation:

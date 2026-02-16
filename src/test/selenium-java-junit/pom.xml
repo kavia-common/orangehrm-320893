@@ -34,8 +34,14 @@
     <!-- Allure reporting -->
     <allure.version>2.27.0</allure.version>
 
+    <!-- Cucumber BDD -->
+    <cucumber.version>7.15.0</cucumber.version>
+
     <!-- Default behavior: NO real browser -->
     <orangehrm.discoveryOnly>true</orangehrm.discoveryOnly>
+
+    <!-- Default behavior: validate step bindings without executing browser logic -->
+    <cucumber.dryRun>true</cucumber.dryRun>
   </properties>
 
   <dependencies>
@@ -44,6 +50,20 @@
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter</artifactId>
       <version>${junit.jupiter.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- Cucumber (JUnit Platform Engine) -->
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-java</artifactId>
+      <version>${cucumber.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-junit-platform-engine</artifactId>
+      <version>${cucumber.version}</version>
       <scope>test</scope>
     </dependency>
 
@@ -116,13 +136,23 @@
         <configuration>
           <useModulePath>false</useModulePath>
 
-          <!-- Pass discovery-only flag to tests -->
+          <!-- Pass discovery-only + cucumber flags to tests -->
           <systemPropertyVariables>
             <orangehrm.discoveryOnly>${orangehrm.discoveryOnly}</orangehrm.discoveryOnly>
+
+            <!-- Cucumber: dry-run validates bindings without executing step code -->
+            <cucumber.dryRun>${cucumber.dryRun}</cucumber.dryRun>
 
             <!-- Allure: where to write raw results -->
             <allure.results.directory>${project.basedir}/allure-results</allure.results.directory>
           </systemPropertyVariables>
+
+          <!-- Make sure Surefire uses JUnit Platform (needed for cucumber-junit-platform-engine) -->
+          <properties>
+            <configurationParameters>
+              cucumber.execution.dry-run=${cucumber.dryRun}
+            </configurationParameters>
+          </properties>
         </configuration>
       </plugin>
     </plugins>
