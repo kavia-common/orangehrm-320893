@@ -1,0 +1,11 @@
+{
+  "timeTests": [
+    {
+      "testCaseId": "TIME_001",
+      "employeeName": "John Doe",
+      "weekStart": "2025-02-01",
+      "hoursWorked": 8,
+      "action": "submit"
+    }
+  ]
+}

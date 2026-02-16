@@ -1,0 +1,20 @@
+{
+  "name": "orangehrm-selenium-regression",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Selenium WebDriver UI regression tests for OrangeHRM (data-driven, 150+ scenarios).",
+  "scripts": {
+    "test": "node ./runner/runAll.js",
+    "test:headless": "HEADLESS=true node ./runner/runAll.js",
+    "test:chrome": "BROWSER=chrome node ./runner/runAll.js",
+    "test:firefox": "BROWSER=firefox node ./runner/runAll.js",
+    "lint": "eslint . --ext .js --max-warnings=0"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "selenium-webdriver": "^4.18.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0"
+  }
+}
