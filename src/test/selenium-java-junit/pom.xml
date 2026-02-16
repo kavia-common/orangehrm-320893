@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Java (JUnit 5) Selenium skeleton for OrangeHRM.
+
+  IMPORTANT:
+  - This module is designed for "discovery-only validation" by default.
+  - It MUST NOT launch a real browser unless explicitly enabled.
+
+  Usage:
+    mvn -q test
+  To enable real browser usage intentionally:
+    mvn -q test -Dorangehrm.discoveryOnly=false
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.orangehrm</groupId>
+  <artifactId>orangehrm-selenium-junit</artifactId>
+  <version>1.0.0</version>
+  <name>orangehrm-selenium-junit</name>
+  <description>Java + JUnit Selenium UI automation skeleton for OrangeHRM (discovery-only by default).</description>
+
+  <properties>
+    <maven.compiler.release>17</maven.compiler.release>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+    <!-- Keep these modern but not overly strict; can be pinned later if needed -->
+    <junit.jupiter.version>5.10.2</junit.jupiter.version>
+    <selenium.version>4.18.1</selenium.version>
+    <slf4j.version>2.0.12</slf4j.version>
+
+    <!-- Default behavior: NO real browser -->
+    <orangehrm.discoveryOnly>true</orangehrm.discoveryOnly>
+  </properties>
+
+  <dependencies>
+    <!-- JUnit 5 -->
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version>${junit.jupiter.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- Selenium API -->
+    <dependency>
+      <groupId>org.seleniumhq.selenium</groupId>
+      <artifactId>selenium-java</artifactId>
+      <version>${selenium.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- Simple logging (used only if real mode is enabled) -->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-simple</artifactId>
+      <version>${slf4j.version}</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <!-- Ensure JUnit 5 discovery/execution works in Maven test phase -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.2.5</version>
+        <configuration>
+          <useModulePath>false</useModulePath>
+
+          <!-- Pass discovery-only flag to tests -->
+          <systemPropertyVariables>
+            <orangehrm.discoveryOnly>${orangehrm.discoveryOnly}</orangehrm.discoveryOnly>
+          </systemPropertyVariables>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
