@@ -8,6 +8,10 @@
     "test:headless": "HEADLESS=true node ./runner/runAll.js",
     "test:chrome": "BROWSER=chrome node ./runner/runAll.js",
     "test:firefox": "BROWSER=firefox node ./runner/runAll.js",
+    "test:edge": "BROWSER=edge node ./runner/runAll.js",
+    "test:grid:chrome": "SELENIUM_REMOTE_URL=http://localhost:4444/wd/hub BROWSER=chrome node ./runner/runAll.js",
+    "test:grid:firefox": "SELENIUM_REMOTE_URL=http://localhost:4444/wd/hub BROWSER=firefox node ./runner/runAll.js",
+    "test:grid:edge": "SELENIUM_REMOTE_URL=http://localhost:4444/wd/hub BROWSER=edge node ./runner/runAll.js",
     "lint": "eslint . --ext .js --max-warnings=0"
   },
   "dependencies": {

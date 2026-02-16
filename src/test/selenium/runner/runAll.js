@@ -3,8 +3,10 @@
 /**
  * Entry point for Selenium regression suite.
  *
- * Loads base fixtures, expands them into 150+ scenarios, then executes them sequentially
- * (to reduce flakiness and shared-state issues).
+ * Loads base fixtures, expands them into scenarios, then executes them in parallel
+ * using a configurable worker pool. Each worker uses its own WebDriver session.
+ *
+ * This is designed for Selenium Grid execution (remote) to reduce overall wall time.
  *
  * Exit code:
  * - 0 if all scenarios pass
@@ -43,6 +45,60 @@ const DISPATCH = {
   Time: runTimeScenario,
 };
 
+async function runScenarioInFreshSession(cfg, scenario) {
+  const handler = DISPATCH[scenario.module];
+  if (!handler) {
+    throw new Error(`No handler for module="${scenario.module}"`);
+  }
+
+  const driver = await buildDriver({
+    browser: cfg.browser,
+    headless: cfg.headless,
+    remoteUrl: cfg.remoteUrl,
+  });
+
+  try {
+    await driver.manage().setTimeouts({implicit: 0, pageLoad: 60000, script: 30000});
+    await handler(driver, cfg, scenario);
+  } finally {
+    await driver.quit();
+  }
+}
+
+async function runWithConcurrency(items, concurrency, workerFn) {
+  const results = new Array(items.length);
+  let nextIndex = 0;
+
+  async function workerLoop(workerId) {
+    while (true) {
+      const i = nextIndex++;
+      if (i >= items.length) return;
+
+      const item = items[i];
+      const started = Date.now();
+      try {
+        await workerFn(item, i, workerId);
+        results[i] = {status: 'passed', durationMs: Date.now() - started};
+      } catch (err) {
+        results[i] = {
+          status: 'failed',
+          durationMs: Date.now() - started,
+          error: err && err.stack ? err.stack : String(err),
+        };
+      }
+    }
+  }
+
+  const workers = [];
+  const c = Math.max(1, Math.min(concurrency, items.length));
+  for (let w = 0; w < c; w++) {
+    workers.push(workerLoop(w));
+  }
+  await Promise.all(workers);
+
+  return results;
+}
+
 (async () => {
   const cfg = loadConfig();
 
@@ -66,41 +122,34 @@ const DISPATCH = {
     failures: [],
   };
 
-  // One browser session across suite to reduce startup cost; each scenario should navigate as needed.
-  const driver = await buildDriver({browser: cfg.browser, headless: cfg.headless});
+  // eslint-disable-next-line no-console
+  console.log(
+    `Running ${scenarios.length} scenarios with PARALLEL_WORKERS=${cfg.parallelWorkers}` +
+      (cfg.remoteUrl ? ` on GRID=${cfg.remoteUrl}` : ' using LOCAL drivers'),
+  );
 
-  try {
-    // Make UI interactions more stable by keeping a consistent viewport.
-    await driver.manage().setTimeouts({implicit: 0, pageLoad: 60000, script: 30000});
-
-    for (const s of scenarios) {
-      const handler = DISPATCH[s.module];
-      if (!handler) {
-        results.failed++;
-        results.failures.push({id: s.id, module: s.module, title: s.title, error: 'No handler'});
-        continue;
-      }
-
-      const started = Date.now();
-      try {
-        await handler(driver, cfg, s);
-        results.passed++;
-        // eslint-disable-next-line no-console
-        console.log(`[PASS] ${s.id} [${s.module}] ${s.title} (${Date.now() - started}ms)`);
-      } catch (err) {
-        results.failed++;
-        results.failures.push({
-          id: s.id,
-          module: s.module,
-          title: s.title,
-          error: err && err.stack ? err.stack : String(err),
-        });
-        // eslint-disable-next-line no-console
-        console.error(`[FAIL] ${s.id} [${s.module}] ${s.title}\n${err && err.stack ? err.stack : err}`);
-      }
+  const perScenario = await runWithConcurrency(scenarios, cfg.parallelWorkers, async (s) => {
+    const started = Date.now();
+    try {
+      await runScenarioInFreshSession(cfg, s);
+      // eslint-disable-next-line no-console
+      console.log(`[PASS] ${s.id} [${s.module}] ${s.title} (${Date.now() - started}ms)`);
+    } catch (err) {
+      // eslint-disable-next-line no-console
+      console.error(`[FAIL] ${s.id} [${s.module}] ${s.title}\n${err && err.stack ? err.stack : err}`);
+      throw err;
     }
-  } finally {
-    await driver.quit();
+  });
+
+  for (let i = 0; i < perScenario.length; i++) {
+    const r = perScenario[i];
+    const s = scenarios[i];
+    if (r.status === 'passed') {
+      results.passed++;
+    } else {
+      results.failed++;
+      results.failures.push({id: s.id, module: s.module, title: s.title, error: r.error});
+    }
   }
 
   // eslint-disable-next-line no-console

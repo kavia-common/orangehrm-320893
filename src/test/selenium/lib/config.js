@@ -4,7 +4,15 @@
 function loadConfig() {
   /**
    * Load Selenium test configuration from environment variables.
-   * @returns {{baseUrl: string, adminUsername: string, adminPassword: string, browser: string, headless: boolean}}
+   * @returns {{
+   *   baseUrl: string,
+   *   adminUsername: string,
+   *   adminPassword: string,
+   *   browser: string,
+   *   headless: boolean,
+   *   remoteUrl: (string|undefined),
+   *   parallelWorkers: number
+   * }}
    */
   const baseUrl = process.env.ORANGEHRM_BASE_URL;
   const adminUsername = process.env.ORANGEHRM_ADMIN_USERNAME;
@@ -25,7 +33,12 @@ function loadConfig() {
     String(process.env.HEADLESS || '').toLowerCase() === 'true' ||
     String(process.env.HEADLESS || '').toLowerCase() === '1';
 
-  return {baseUrl, adminUsername, adminPassword, browser, headless};
+  const remoteUrl = process.env.SELENIUM_REMOTE_URL || undefined;
+
+  const parallelWorkersRaw = String(process.env.PARALLEL_WORKERS || '').trim();
+  const parallelWorkers = parallelWorkersRaw ? Math.max(1, parseInt(parallelWorkersRaw, 10) || 1) : 4;
+
+  return {baseUrl, adminUsername, adminPassword, browser, headless, remoteUrl, parallelWorkers};
 }
 
 module.exports = {loadConfig};

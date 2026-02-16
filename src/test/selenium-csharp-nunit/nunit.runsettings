@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RunSettings>
+  <NUnit>
+    <!--
+      Controls NUnit worker pool size.
+
+      Recommended usage:
+        export NUNIT_NUMBER_OF_TEST_WORKERS=6
+        dotnet test --settings ../nunit.runsettings
+
+      NOTE: Some runners only accept numeric literals here; we keep this file as documentation-friendly
+      and prefer setting workers via environment variable in CI plus passing --workers option when applicable.
+    -->
+    <NumberOfTestWorkers>4</NumberOfTestWorkers>
+  </NUnit>
+</RunSettings>

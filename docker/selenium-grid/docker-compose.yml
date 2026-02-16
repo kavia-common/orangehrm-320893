@@ -1,0 +1,68 @@
+version: "3.8"
+
+# Selenium Grid 4 (EventBus-based) with scalable browser nodes.
+#
+# Usage examples:
+#   # Start grid with defaults
+#   docker compose -f docker/selenium-grid/docker-compose.yml up -d
+#
+#   # Scale nodes (Chrome/Firefox/Edge)
+#   SE_NODE_MAX_SESSIONS=2 SE_NODE_OVERRIDE_MAX_SESSIONS=true \
+#   CHROME_NODES=4 FIREFOX_NODES=2 EDGE_NODES=2 \
+#   docker compose -f docker/selenium-grid/docker-compose.yml up -d --scale chrome=${CHROME_NODES:-2} --scale firefox=${FIREFOX_NODES:-2} --scale edge=${EDGE_NODES:-1}
+#
+# Grid UI:
+#   http://localhost:4444/ui
+#
+# WebDriver endpoint:
+#   http://localhost:4444/wd/hub
+
+services:
+  selenium-hub:
+    image: selenium/hub:4.18.1
+    container_name: selenium-hub
+    ports:
+      - "4444:4444"
+    environment:
+      # Keep defaults; can be tuned if needed.
+      - SE_LOG_LEVEL=${SE_LOG_LEVEL:-INFO}
+
+  chrome:
+    image: selenium/node-chrome:4.18.1
+    shm_size: 2gb
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      # Parallelism controls (per container)
+      - SE_NODE_MAX_SESSIONS=${SE_NODE_MAX_SESSIONS:-1}
+      - SE_NODE_OVERRIDE_MAX_SESSIONS=${SE_NODE_OVERRIDE_MAX_SESSIONS:-true}
+      - SE_LOG_LEVEL=${SE_LOG_LEVEL:-INFO}
+
+  firefox:
+    image: selenium/node-firefox:4.18.1
+    shm_size: 2gb
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - SE_NODE_MAX_SESSIONS=${SE_NODE_MAX_SESSIONS:-1}
+      - SE_NODE_OVERRIDE_MAX_SESSIONS=${SE_NODE_OVERRIDE_MAX_SESSIONS:-true}
+      - SE_LOG_LEVEL=${SE_LOG_LEVEL:-INFO}
+
+  edge:
+    image: selenium/node-edge:4.18.1
+    shm_size: 2gb
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - SE_NODE_MAX_SESSIONS=${SE_NODE_MAX_SESSIONS:-1}
+      - SE_NODE_OVERRIDE_MAX_SESSIONS=${SE_NODE_OVERRIDE_MAX_SESSIONS:-true}
+      - SE_LOG_LEVEL=${SE_LOG_LEVEL:-INFO}

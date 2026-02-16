@@ -32,7 +32,7 @@ namespace OrangeHrm.SeleniumNUnit.Config
         public string? AdminPassword { get; }
 
         /// <summary>
-        /// Browser name ("chrome" or "firefox"). Default: "chrome".
+        /// Browser name ("chrome", "firefox", or "edge"). Default: "chrome".
         /// </summary>
         public string Browser { get; }
 
@@ -41,13 +41,20 @@ namespace OrangeHrm.SeleniumNUnit.Config
         /// </summary>
         public bool Headless { get; }
 
+        /// <summary>
+        /// Optional Selenium Grid RemoteWebDriver URL (e.g. http://localhost:4444/wd/hub).
+        /// If set, the driver factory will create remote sessions instead of local drivers.
+        /// </summary>
+        public string? SeleniumRemoteUrl { get; }
+
         private OrangeHrmSettings(
             bool discoveryOnly,
             string? baseUrl,
             string? adminUsername,
             string? adminPassword,
             string browser,
-            bool headless)
+            bool headless,
+            string? seleniumRemoteUrl)
         {
             DiscoveryOnly = discoveryOnly;
             BaseUrl = baseUrl;
@@ -55,6 +62,7 @@ namespace OrangeHrm.SeleniumNUnit.Config
             AdminPassword = adminPassword;
             Browser = browser;
             Headless = headless;
+            SeleniumRemoteUrl = seleniumRemoteUrl;
         }
 
         // PUBLIC_INTERFACE
@@ -82,13 +90,16 @@ namespace OrangeHrm.SeleniumNUnit.Config
             var adminUsername = Environment.GetEnvironmentVariable("ORANGEHRM_ADMIN_USERNAME");
             var adminPassword = Environment.GetEnvironmentVariable("ORANGEHRM_ADMIN_PASSWORD");
 
+            var seleniumRemoteUrl = Environment.GetEnvironmentVariable("SELENIUM_REMOTE_URL");
+
             return new OrangeHrmSettings(
                 discoveryOnly: discoveryOnly,
                 baseUrl: baseUrl,
                 adminUsername: adminUsername,
                 adminPassword: adminPassword,
                 browser: string.IsNullOrWhiteSpace(browser) ? "chrome" : browser,
-                headless: headless
+                headless: headless,
+                seleniumRemoteUrl: seleniumRemoteUrl
             );
         }
 

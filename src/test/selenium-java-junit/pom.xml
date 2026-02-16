@@ -44,6 +44,14 @@
 
     <!-- Default behavior: validate step bindings without executing browser logic -->
     <cucumber.dryRun>true</cucumber.dryRun>
+
+    <!-- Default parallel execution controls (overridden via env in CI/locally) -->
+    <junit.parallel.enabled>${env.JUNIT_PARALLEL_ENABLED}</junit.parallel.enabled>
+    <junit.parallelism>${env.JUNIT_PARALLELISM}</junit.parallelism>
+
+    <!-- Fallbacks if env vars are not provided -->
+    <env.JUNIT_PARALLEL_ENABLED>true</env.JUNIT_PARALLEL_ENABLED>
+    <env.JUNIT_PARALLELISM>4</env.JUNIT_PARALLELISM>
   </properties>
 
   <dependencies>
@@ -166,12 +174,22 @@
 
             <!-- Allure: where to write raw results -->
             <allure.results.directory>${project.basedir}/allure-results</allure.results.directory>
+
+            <!-- JUnit 5 parallelism (read by junit-platform). These can be overridden via env. -->
+            <junit.parallel.enabled>${env.JUNIT_PARALLEL_ENABLED}</junit.parallel.enabled>
+            <junit.parallelism>${env.JUNIT_PARALLELISM}</junit.parallelism>
           </systemPropertyVariables>
 
           <!-- Make sure Surefire uses JUnit Platform (needed for cucumber-junit-platform-engine) -->
           <properties>
             <configurationParameters>
               cucumber.execution.dry-run=${cucumber.dryRun}
+
+              junit.jupiter.execution.parallel.enabled=${junit.parallel.enabled}
+              junit.jupiter.execution.parallel.mode.default=concurrent
+              junit.jupiter.execution.parallel.mode.classes.default=concurrent
+              junit.jupiter.execution.parallel.config.strategy=fixed
+              junit.jupiter.execution.parallel.config.fixed.parallelism=${junit.parallelism}
             </configurationParameters>
           </properties>
         </configuration>

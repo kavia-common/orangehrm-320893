@@ -12,6 +12,7 @@ namespace OrangeHrm.SeleniumNUnit.Tests
     /// - In discovery-only mode, tests should NOT launch a real browser.
     /// - Tests should still execute (no Ignore/Skip), so reporting (e.g., Allure) is produced.
     /// </summary>
+    [Parallelizable(ParallelScope.All)]
     public abstract class UiTestBase
     {
         protected OrangeHrmSettings Settings { get; private set; } = null!;
