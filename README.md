@@ -46,6 +46,13 @@ Sourceforge : https://sourceforge.net/p/orangehrm
 ### Website
 https://www.orangehrm.com/
 
+### Test plan (this repository)
+This repository includes a central master test plan describing module scope (Login, PIM, Leave, Recruitment, Time, Admin, Dashboard), UI/API test types, the data-driven testing approach, and coverage goals:
+
+- `test-plan/index.md`
+
+The master test plan also links to any JSON test data fixtures used by data-driven tests under `src/test/functional/cypress/fixtures/`.
+
 ## Help & Support
 Submit your help requests through [OrangeHRM Help Portal](https://starterhelp.orangehrm.com/hc/en-us/requests/new) or Email to [ossupport@orangehrm.com](mailto:ossupport@orangehrm.com)
 
