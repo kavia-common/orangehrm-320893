@@ -115,3 +115,9 @@
 /home/kavia/workspace/code-generation/orangehrm-320893/src/test/selenium-csharp-nunit/OrangeHrm.SeleniumNUnit/bin/Release/net8.0/Microsoft.Extensions.DependencyModel.dll
 /home/kavia/workspace/code-generation/orangehrm-320893/src/test/selenium-csharp-nunit/OrangeHrm.SeleniumNUnit/bin/Release/net8.0/Reqnroll.dll
 /home/kavia/workspace/code-generation/orangehrm-320893/src/test/selenium-csharp-nunit/OrangeHrm.SeleniumNUnit/bin/Release/net8.0/SpecFlow.Internal.Json.dll
+/home/kavia/workspace/code-generation/orangehrm-320893/src/test/selenium-csharp-nunit/OrangeHrm.SeleniumNUnit/bin/Release/net8.0/Features/admin.feature
+/home/kavia/workspace/code-generation/orangehrm-320893/src/test/selenium-csharp-nunit/OrangeHrm.SeleniumNUnit/bin/Release/net8.0/Features/dashboard.feature
+/home/kavia/workspace/code-generation/orangehrm-320893/src/test/selenium-csharp-nunit/OrangeHrm.SeleniumNUnit/bin/Release/net8.0/Features/leave.feature
+/home/kavia/workspace/code-generation/orangehrm-320893/src/test/selenium-csharp-nunit/OrangeHrm.SeleniumNUnit/bin/Release/net8.0/Features/pim.feature
+/home/kavia/workspace/code-generation/orangehrm-320893/src/test/selenium-csharp-nunit/OrangeHrm.SeleniumNUnit/bin/Release/net8.0/Features/recruitment.feature
+/home/kavia/workspace/code-generation/orangehrm-320893/src/test/selenium-csharp-nunit/OrangeHrm.SeleniumNUnit/bin/Release/net8.0/Features/time.feature

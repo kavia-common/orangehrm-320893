@@ -1,0 +1,1 @@
+{"total":2,"items":[{"uid":"341025b3c1c9d088fec9defb1e2150b6","name":"org.orangehrm.api.tests.EmployeeWorkflowApiTest","statistic":{"failed":0,"broken":0,"skipped":0,"passed":2,"unknown":0,"total":2}},{"uid":"47ad47a091ed2c6e0226458b82a53c0e","name":"org.orangehrm.api.tests.AuthApiTest","statistic":{"failed":0,"broken":0,"skipped":0,"passed":2,"unknown":0,"total":2}}]}
