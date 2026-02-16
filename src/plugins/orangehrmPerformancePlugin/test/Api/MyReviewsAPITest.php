@@ -21,11 +21,59 @@ namespace OrangeHRM\Tests\Performance\Api;
 
 use OrangeHRM\Framework\Services;
 use OrangeHRM\Performance\Api\MyReviewAPI;
+use OrangeHRM\Tests\Util\DataProvider\JsonTestDataProvider;
 use OrangeHRM\Tests\Util\EndpointIntegrationTestCase;
 use OrangeHRM\Tests\Util\Integration\TestCaseParams;
 
 class MyReviewsAPITest extends EndpointIntegrationTestCase
 {
+    /**
+     * Demonstrates JSON-driven testing using external authoritative JSON examples.
+     *
+     * This test does not replace the existing YAML testcase-driven tests; it provides
+     * an additional pattern for teams that want to maintain test input in JSON.
+     *
+     * @dataProvider dataProviderFromExternalJsonExamples
+     */
+    public function testExternalJsonExamples(array $tc): void
+    {
+        // For demonstration, we assert the JSON contract and that "testCaseId" is provided.
+        // The external API examples are generic (e.g., "/api/login") and not directly tied
+        // to this endpoint test harness.
+        $this->assertNotEmpty($tc['testCaseId']);
+        $this->assertArrayHasKey('endpoint', $tc);
+        $this->assertArrayHasKey('method', $tc);
+        $this->assertArrayHasKey('expectedStatusCode', $tc);
+
+        // Keep this test lightweight and non-invasive: it's primarily verifying
+        // the data-driven ingestion + contract.
+        $this->assertIsString($tc['endpoint']);
+        $this->assertIsString($tc['method']);
+        $this->assertIsInt($tc['expectedStatusCode']);
+    }
+
+    /**
+     * PUBLIC_INTERFACE
+     * @return array<string, array{0: array<string, mixed>}>
+     */
+    public function dataProviderFromExternalJsonExamples(): array
+    {
+        /** This is a public function. */
+        $path = realpath(__DIR__ . '/../../../../test/phpunit/resources/testdata/apiData.json');
+        if ($path === false) {
+            throw new \RuntimeException('Unable to locate apiData.json testdata resource');
+        }
+
+        $root = JsonTestDataProvider::loadJson($path);
+        $cases = JsonTestDataProvider::getCases($root, 'apiTests');
+
+        $out = [];
+        foreach ($cases as $case) {
+            $name = $case['testCaseId'];
+            $out[$name] = [$case];
+        }
+        return $out;
+    }
     /**
      * @dataProvider dataProviderForTestGetAll
      */

@@ -15,32 +15,58 @@
  * If not, see <https://www.gnu.org/licenses/>.
  */
 
-describe('Core - Login Page', function () {
+import {
+  getTestCases,
+  loadAndValidateFixture,
+} from '../../../support/testDataProvider';
+
+describe('Core - Login Page (Data-driven)', function () {
   before(function () {
     cy.task('db:reset');
     cy.intercept('POST', '**/auth/validate').as('postLogin');
-    cy.fixture('user').then(({admin}) => {
-      this.user = admin;
-    });
+
+    // Load + validate external test data (authoritative JSON fixture)
+    loadAndValidateFixture('loginData', 'schemas/loginData.schema.json').then(
+      (data) => {
+        this.loginData = data;
+      },
+    );
   });
 
-  it('should login as admin', function () {
-    cy.visit('/auth/login');
-    cy.getOXD('form').within(() => {
-      cy.getOXDInput('Username').type(this.user.username);
-      cy.getOXDInput('Password').type(this.user.password);
+  it('executes login scenarios from loginData.json', function () {
+    const cases = getTestCases(this.loginData, 'loginTests');
+
+    // Keep it simple: execute each case sequentially in one test to avoid
+    // Cypress "dynamic test generation" limitations.
+    cases.forEach((tc) => {
+      cy.log(`[${tc.testCaseId}] ${tc.description}`);
+
+      cy.visit('/auth/login');
+
+      if (tc.username !== '') {
+        cy.getOXDInput('Username').type(tc.username);
+      }
+      if (tc.password !== '') {
+        cy.getOXDInput('Password').type(tc.password);
+      }
+
       cy.getOXD('button').contains('Login').click();
-    });
-    cy.wait('@postLogin')
-      .its('response.headers')
-      .should('have.property', 'location')
-      .and('match', /dashboard\/index/);
-  });
 
-  it('login form validations should work', function () {
-    cy.visit('/auth/login');
-    cy.getOXD('button').contains('Login').click();
-    cy.getOXDInput('Username').isInvalid('Required');
-    cy.getOXDInput('Password').isInvalid('Required');
+      if (tc.expectedResult === 'success') {
+        cy.wait('@postLogin')
+          .its('response.headers')
+          .should('have.property', 'location')
+          .and('match', /dashboard\/index/);
+      } else if (tc.expectedResult === 'validation_error') {
+        cy.getOXDInput('Username').isInvalid('Required');
+        cy.getOXDInput('Password').isInvalid('Required');
+      } else if (tc.expectedResult === 'error') {
+        // Keep assertion generic (app may show toast/inline error depending on version).
+        // We at least assert we are still on the login screen (no redirect).
+        cy.location('pathname').should('match', /\/auth\/login/);
+      } else {
+        throw new Error(`Unhandled expectedResult: ${tc.expectedResult}`);
+      }
+    });
   });
 });

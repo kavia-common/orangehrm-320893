@@ -1,0 +1,9 @@
+{
+  "dashboardTests": [
+    {
+      "testCaseId": "DASH_001",
+      "widgetName": "Quick Launch",
+      "expectedVisible": true
+    }
+  ]
+}

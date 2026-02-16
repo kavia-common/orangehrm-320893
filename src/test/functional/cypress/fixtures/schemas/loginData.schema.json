@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "OrangeHRM Cypress Data - Login",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["loginTests"],
+  "properties": {
+    "loginTests": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "testCaseId",
+          "description",
+          "username",
+          "password",
+          "expectedResult"
+        ],
+        "properties": {
+          "testCaseId": {"type": "string", "minLength": 1},
+          "description": {"type": "string"},
+          "username": {"type": "string"},
+          "password": {"type": "string"},
+          "expectedResult": {
+            "type": "string",
+            "enum": ["success", "error", "validation_error"]
+          }
+        }
+      }
+    }
+  }
+}

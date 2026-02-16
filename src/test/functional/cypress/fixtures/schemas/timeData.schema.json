@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "OrangeHRM Cypress Data - Time",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["timeTests"],
+  "properties": {
+    "timeTests": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "testCaseId",
+          "employeeName",
+          "weekStart",
+          "hoursWorked",
+          "action"
+        ],
+        "properties": {
+          "testCaseId": {"type": "string", "minLength": 1},
+          "employeeName": {"type": "string", "minLength": 1},
+          "weekStart": {"type": "string", "format": "date"},
+          "hoursWorked": {"type": "number", "minimum": 0},
+          "action": {"type": "string", "minLength": 1}
+        }
+      }
+    }
+  }
+}

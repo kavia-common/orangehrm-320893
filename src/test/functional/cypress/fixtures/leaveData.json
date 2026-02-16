@@ -1,0 +1,12 @@
+{
+  "leaveTests": [
+    {
+      "testCaseId": "LEAVE_001",
+      "employeeName": "John Doe",
+      "leaveType": "Annual Leave",
+      "fromDate": "2025-02-01",
+      "toDate": "2025-02-05",
+      "expectedStatus": "Pending Approval"
+    }
+  ]
+}

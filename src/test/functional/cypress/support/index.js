@@ -15,8 +15,17 @@
  * If not, see <https://www.gnu.org/licenses/>.
  */
 
+/**
+ * Cypress support entry point.
+ *
+ * Imported once before every spec file.
+ */
+
 // Import commands.js using ES2015 syntax:
 import './commands';
+
+// Data-driven testing utilities (schema validation + fixture loader)
+import './testDataProvider';
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
