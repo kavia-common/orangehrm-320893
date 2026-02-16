@@ -52,10 +52,14 @@ namespace OrangeHrm.SeleniumNUnit.Tests
         }
 
         // PUBLIC_INTERFACE
-        [TearDown]
+        [OneTimeTearDown]
         public void GlobalTearDown()
         {
-            // Fallback writer: guarantees `allure-results` contains at least one result JSON per test.
+            // SetUpFixture supports ONLY one-time teardown.
+            //
+            // We still want to guarantee at least some Allure output exists even if the adapter
+            // doesn't emit results (e.g., in no-browser/demo mode). We therefore write a minimal
+            // result in the one-time teardown as a fallback safety net.
             var resultsDir = ResolveResultsDir();
             try
             {
@@ -64,7 +68,6 @@ namespace OrangeHrm.SeleniumNUnit.Tests
             catch
             {
                 // Never fail the test run due to reporting.
-                // (Allure generation will simply have fewer/no entries.)
             }
         }
     }
